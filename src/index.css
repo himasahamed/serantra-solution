@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  background: #050505;
+  color: white;
+
+  font-family:
+    Inter,
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: #2563eb;
+  color: white;
+}
+
+/* ========================================
+   SCROLLBAR
+======================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* ========================================
+   LETTER SCROLL ANIMATION
+======================================== */
+
+.animated-text {
+  display: inline;
+}
+
+.animated-letter {
+  display: inline-block;
+
+  opacity: 0;
+
+  transform:
+    translateY(28px)
+    rotateX(65deg);
+
+  filter: blur(5px);
+
+  transition:
+    opacity 0.55s ease,
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.55s ease;
+}
+
+.animated-letter-visible {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    rotateX(0);
+
+  filter: blur(0);
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animated-letter {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}
