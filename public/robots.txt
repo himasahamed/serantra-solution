@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.serantrasolution.com/sitemap.xml
+Sitemap: https://serantra-solution.vercel.app/sitemap.xml
