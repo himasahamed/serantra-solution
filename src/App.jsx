@@ -15,11 +15,9 @@ import RequestQuote from "./pages/RequestQuote";
 export default function App() {
   return (
     <BrowserRouter>
-
       <Navbar />
 
       <Routes>
-
         <Route
           path="/"
           element={<Home />}
@@ -39,11 +37,9 @@ export default function App() {
           path="/request-quote"
           element={<RequestQuote />}
         />
-
       </Routes>
 
       <Footer />
-
     </BrowserRouter>
   );
 }
