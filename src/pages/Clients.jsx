@@ -1,5 +1,4 @@
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const clients = [
   {
@@ -32,6 +31,26 @@ const clients = [
     image: "/images/clients/client-4.jpg",
     description:
       "A custom software solution created to improve operational efficiency.",
+  },
+];
+
+const clientSteps = [
+  {
+    number: "01",
+    title: "Make a Request",
+    text: "Tell us about your project and what you need.",
+  },
+
+  {
+    number: "02",
+    title: "We Analyze",
+    text: "We review your requirements, goals and project scope.",
+  },
+
+  {
+    number: "03",
+    title: "We Provide a Proposal",
+    text: "You receive a clear, non-binding project proposal.",
   },
 ];
 
@@ -69,18 +88,18 @@ export default function Clients() {
 
       </section>
 
-      {/* CLIENT GRID */}
+      {/* CLIENT PROJECTS - NO BOXES */}
 
-      <section className="py-24">
+      <section className="py-28">
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-x-10 gap-y-20 md:grid-cols-2">
 
-            {clients.map((client) => (
+            {clients.map((client, index) => (
               <article
                 key={client.name}
-                className="group overflow-hidden border border-white/10 bg-[#090909]"
+                className="group"
               >
 
                 <div className="overflow-hidden">
@@ -89,33 +108,41 @@ export default function Clients() {
                     src={client.image}
                     alt={`${client.name} project`}
                     loading="lazy"
-                    className="h-[340px] w-full object-cover transition duration-700 group-hover:scale-105"
+                    className="h-[360px] w-full object-cover transition duration-700 group-hover:scale-[1.03]"
                   />
 
                 </div>
 
-                <div className="p-8">
+                <div className="mt-7 flex gap-6">
 
-                  <p className="text-xs uppercase tracking-[0.2em] text-blue-400">
-                    {client.service}
-                  </p>
+                  <span className="font-mono text-xs text-blue-400">
+                    0{index + 1}
+                  </span>
 
-                  <h2 className="mt-4 text-2xl font-medium">
-                    {client.name}
-                  </h2>
+                  <div>
 
-                  <p className="mt-4 leading-7 text-zinc-500">
-                    {client.description}
-                  </p>
+                    <p className="text-xs uppercase tracking-[0.18em] text-blue-400">
+                      {client.service}
+                    </p>
 
-                  <a
-                    href="/#contact"
-                    className="mt-7 inline-flex items-center gap-2 text-sm"
-                  >
-                    Discuss a similar project
+                    <h2 className="mt-3 text-2xl font-medium">
+                      {client.name}
+                    </h2>
 
-                    <ArrowRight size={15} />
-                  </a>
+                    <p className="mt-4 max-w-lg leading-7 text-zinc-500">
+                      {client.description}
+                    </p>
+
+                    <a
+                      href="/#contact"
+                      className="mt-6 inline-flex items-center gap-2 text-sm text-zinc-300"
+                    >
+                      View Project
+
+                      <ArrowRight size={14} />
+                    </a>
+
+                  </div>
 
                 </div>
 
@@ -128,24 +155,104 @@ export default function Clients() {
 
       </section>
 
-      {/* CTA */}
+      {/* CLIENT PROCESS */}
 
-      <section className="border-t border-white/10 bg-[#090909]">
+      <section className="border-t border-white/10 bg-[#080808] py-28">
 
-        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-10 px-6 py-24 lg:flex-row lg:items-end lg:px-8">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
-          <h2 className="max-w-3xl text-4xl font-medium tracking-[-0.04em] md:text-5xl">
-            Want your business to become
+          <p className="text-xs uppercase tracking-[0.25em] text-blue-400">
+            Start Your Project
+          </p>
+
+          <h2 className="mt-6 max-w-3xl text-4xl font-medium tracking-[-0.04em] md:text-5xl">
+            A simple way to
             <span className="block text-zinc-500">
-              our next success story?
+              start working with us.
             </span>
           </h2>
 
+          {/* DESKTOP ARROW PROCESS */}
+
+          <div className="mt-20 hidden lg:grid lg:grid-cols-3">
+
+            {clientSteps.map((step, index) => (
+              <div
+                key={step.number}
+                className={`client-process-arrow relative min-h-[220px] ${
+                  index > 0 ? "-ml-5" : ""
+                }`}
+              >
+
+                <div className="relative z-10 flex h-full flex-col justify-between px-14 py-10">
+
+                  <div>
+
+                    <p className="text-xs uppercase tracking-[0.18em] text-blue-400">
+                      Step {step.number}
+                    </p>
+
+                    <h3 className="mt-5 text-2xl font-medium">
+                      {step.title}
+                    </h3>
+
+                    <p className="mt-4 max-w-xs leading-7 text-zinc-500">
+                      {step.text}
+                    </p>
+
+                  </div>
+
+                  <span className="mt-8 text-4xl font-light text-zinc-700">
+                    {index + 1}
+                  </span>
+
+                </div>
+
+              </div>
+            ))}
+
+          </div>
+
+          {/* MOBILE VERSION */}
+
+          <div className="mt-16 space-y-10 lg:hidden">
+
+            {clientSteps.map((step, index) => (
+              <div
+                key={step.number}
+                className="relative border-b border-white/10 pb-10"
+              >
+
+                <div className="flex gap-6">
+
+                  <span className="text-3xl font-light text-blue-400">
+                    {index + 1}
+                  </span>
+
+                  <div>
+
+                    <h3 className="text-xl font-medium">
+                      {step.title}
+                    </h3>
+
+                    <p className="mt-3 leading-7 text-zinc-500">
+                      {step.text}
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+            ))}
+
+          </div>
+
           <a
             href="/#contact"
-            className="flex w-fit items-center gap-3 bg-white px-7 py-4 font-semibold text-black"
+            className="mt-14 inline-flex items-center gap-3 bg-white px-7 py-4 font-semibold text-black transition hover:bg-blue-500 hover:text-white"
           >
-            Start a Project
+            Request a Free Quote
 
             <ArrowRight size={17} />
           </a>
