@@ -1,282 +1,142 @@
-import { useState } from "react";
-
 import {
   ArrowRight,
-  ChevronDown,
-  Menu,
-  X,
+  MoveUpRight,
 } from "lucide-react";
 
-import {
-  Link,
-  NavLink,
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import { services } from "../data/services";
-
-export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-
+export default function Hero() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
+    <section
+      id="home"
+      className="relative flex min-h-screen items-center overflow-hidden bg-black pt-20"
+      style={{
+        backgroundImage: "url('/images/hero-bg.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* ======================================
+          DARK OVERLAY
+      ====================================== */}
 
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
+      <div className="absolute inset-0 bg-black/20" />
 
-        {/* LOGO */}
+      {/* LEFT SIDE GRADIENT */}
 
-        <Link
-          to="/"
-          className="shrink-0"
-          onClick={() => setMenuOpen(false)}
-        >
-          <span className="block text-lg font-bold tracking-[0.18em] text-white">
-            SERANTRA
-          </span>
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-transparent" />
 
-          <span className="block text-[9px] tracking-[0.45em] text-blue-400">
-            SOLUTION
-          </span>
-        </Link>
+      {/* BOTTOM GRADIENT */}
 
-
-        {/* DESKTOP NAVIGATION */}
-
-        <nav className="hidden items-center gap-8 lg:flex">
-
-          <NavLink
-            to="/"
-            className="text-sm text-zinc-400 transition hover:text-white"
-          >
-            Home
-          </NavLink>
-
-          <a
-            href="/#about"
-            className="text-sm text-zinc-400 transition hover:text-white"
-          >
-            About
-          </a>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
 
 
-          {/* SERVICES DROPDOWN */}
+      {/* ======================================
+          HERO CONTENT
+      ====================================== */}
 
-          <div
-            className="relative"
-            onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
-          >
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-32 lg:px-8">
 
-            <button
-              type="button"
-              onClick={() => setServicesOpen(!servicesOpen)}
-              className="flex items-center gap-1.5 text-sm text-zinc-400 transition hover:text-white"
-            >
-              Services
+        <div className="max-w-4xl">
 
-              <ChevronDown
-                size={15}
-                className={`transition duration-300 ${
-                  servicesOpen ? "rotate-180" : ""
-                }`}
-              />
-            </button>
+          {/* SMALL LABEL */}
 
+          <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-blue-400/20 bg-black/20 px-4 py-2 backdrop-blur-md">
 
-            {servicesOpen && (
-              <div className="absolute left-1/2 top-full w-[460px] -translate-x-1/2 pt-5">
+            <span className="h-2 w-2 rounded-full bg-blue-400 shadow-[0_0_12px_#60a5fa]" />
 
-                <div className="bg-[#080808] px-6 py-5 shadow-2xl">
-
-                  <p className="pb-4 text-[10px] uppercase tracking-[0.24em] text-blue-400">
-                    Services & Solutions
-                  </p>
-
-                  {services.map((service) => (
-                    <Link
-                      key={service.slug}
-                      to={`/services/${service.slug}`}
-                      onClick={() => setServicesOpen(false)}
-                      className="group flex items-center justify-between border-t border-white/10 py-4"
-                    >
-                      <span className="text-sm text-zinc-400 transition group-hover:translate-x-1 group-hover:text-white">
-                        {service.title}
-                      </span>
-
-                      <ArrowRight
-                        size={14}
-                        className="text-zinc-700 transition group-hover:translate-x-1 group-hover:text-blue-400"
-                      />
-                    </Link>
-                  ))}
-
-                </div>
-
-              </div>
-            )}
+            <span className="text-xs uppercase tracking-[0.15em] text-blue-100">
+              Software Development · Web · UI/UX
+            </span>
 
           </div>
 
 
-          <NavLink
-            to="/clients"
-            className="text-sm text-zinc-400 transition hover:text-white"
-          >
-            Clients
-          </NavLink>
+          {/* MAIN HEADING */}
+
+          <h1 className="text-5xl font-medium leading-[0.98] tracking-[-0.05em] text-white sm:text-6xl md:text-7xl lg:text-8xl">
+
+            Software Development
+
+            <span className="block bg-gradient-to-r from-blue-300 via-indigo-300 to-purple-300 bg-clip-text text-transparent">
+              & Digital Solutions
+            </span>
+
+          </h1>
 
 
-          <a
-            href="/#projects"
-            className="text-sm text-zinc-400 transition hover:text-white"
-          >
-            Projects
-          </a>
+          {/* DESCRIPTION */}
+
+          <p className="mt-8 max-w-2xl text-base leading-8 text-zinc-200 sm:text-lg">
+
+            Serantra Solution builds modern websites, scalable web
+            applications, custom software and user-focused digital
+            experiences designed to help businesses grow.
+
+          </p>
 
 
-          <a
-            href="/#contact"
-            className="text-sm text-zinc-400 transition hover:text-white"
-          >
-            Contact
-          </a>
+          {/* BUTTONS */}
 
-        </nav>
-
-
-        {/* START PROJECT */}
-
-        <Link
-          to="/request-quote"
-          className="hidden items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-blue-500 hover:text-white lg:flex"
-        >
-          Start a Project
-
-          <ArrowRight size={16} />
-        </Link>
-
-
-        {/* MOBILE BUTTON */}
-
-        <button
-          type="button"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle navigation"
-          className="text-white lg:hidden"
-        >
-          {menuOpen ? (
-            <X size={26} />
-          ) : (
-            <Menu size={26} />
-          )}
-        </button>
-
-      </div>
-
-
-      {/* MOBILE NAVIGATION */}
-
-      {menuOpen && (
-        <div className="border-t border-white/10 bg-black px-6 py-7 lg:hidden">
-
-          <nav className="flex flex-col gap-6">
-
-            <Link
-              to="/"
-              onClick={() => setMenuOpen(false)}
-              className="text-zinc-300"
-            >
-              Home
-            </Link>
-
-            <a
-              href="/#about"
-              onClick={() => setMenuOpen(false)}
-              className="text-zinc-300"
-            >
-              About
-            </a>
-
-
-            <button
-              type="button"
-              onClick={() => setServicesOpen(!servicesOpen)}
-              className="flex items-center justify-between text-left text-zinc-300"
-            >
-              Services
-
-              <ChevronDown
-                size={16}
-                className={`transition ${
-                  servicesOpen ? "rotate-180" : ""
-                }`}
-              />
-            </button>
-
-
-            {servicesOpen && (
-              <div className="ml-3 flex flex-col border-l border-white/10 pl-5">
-
-                {services.map((service) => (
-                  <Link
-                    key={service.slug}
-                    to={`/services/${service.slug}`}
-                    onClick={() => {
-                      setMenuOpen(false);
-                      setServicesOpen(false);
-                    }}
-                    className="border-b border-white/5 py-3 text-sm text-zinc-500"
-                  >
-                    {service.title}
-                  </Link>
-                ))}
-
-              </div>
-            )}
-
-
-            <Link
-              to="/clients"
-              onClick={() => setMenuOpen(false)}
-              className="text-zinc-300"
-            >
-              Clients
-            </Link>
-
-
-            <a
-              href="/#projects"
-              onClick={() => setMenuOpen(false)}
-              className="text-zinc-300"
-            >
-              Projects
-            </a>
-
-
-            <a
-              href="/#contact"
-              onClick={() => setMenuOpen(false)}
-              className="text-zinc-300"
-            >
-              Contact
-            </a>
-
+          <div className="mt-10 flex flex-wrap items-center gap-6">
 
             <Link
               to="/request-quote"
-              onClick={() => setMenuOpen(false)}
-              className="mt-3 flex w-fit items-center gap-2 bg-white px-5 py-3 text-sm font-semibold text-black"
+              className="group flex items-center gap-3 bg-white px-7 py-4 text-sm font-semibold text-black transition duration-300 hover:bg-blue-500 hover:text-white"
             >
               Start a Project
 
-              <ArrowRight size={16} />
+              <ArrowRight
+                size={17}
+                className="transition duration-300 group-hover:translate-x-1"
+              />
             </Link>
 
-          </nav>
+
+            <a
+              href="#services"
+              className="group flex items-center gap-3 border-b border-white/40 py-4 text-sm font-medium text-white transition duration-300 hover:border-blue-400 hover:text-blue-300"
+            >
+              Explore Services
+
+              <MoveUpRight
+                size={16}
+                className="transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+              />
+            </a>
+
+          </div>
 
         </div>
-      )}
 
-    </header>
+
+        {/* ======================================
+            HERO BOTTOM SERVICES
+        ====================================== */}
+
+        <div className="mt-24 flex flex-wrap gap-x-10 gap-y-5 border-t border-white/15 pt-7 text-xs uppercase tracking-[0.15em] text-zinc-300">
+
+          <span>
+            Website Development
+          </span>
+
+          <span>
+            Software Development
+          </span>
+
+          <span>
+            UI/UX Design
+          </span>
+
+          <span>
+            Web Applications
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
   );
 }
