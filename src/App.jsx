@@ -1,31 +1,43 @@
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+} from "react-router-dom";
+
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Services from "./components/Services";
-import WhyChooseUs from "./components/WhyChooseUs";
-import Process from "./components/Process";
-import Projects from "./components/Projects";
-import FAQ from "./components/FAQ";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+
+import Home from "./pages/Home";
+import Clients from "./pages/Clients";
+import ServicePage from "./pages/ServicePage";
 
 export default function App() {
   return (
-    <>
+    <BrowserRouter>
+
       <Navbar />
 
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <WhyChooseUs />
-        <Process />
-        <Projects />
-        <FAQ />
-        <Contact />
-      </main>
+      <Routes>
+
+        <Route
+          path="/"
+          element={<Home />}
+        />
+
+        <Route
+          path="/clients"
+          element={<Clients />}
+        />
+
+        <Route
+          path="/services/:slug"
+          element={<ServicePage />}
+        />
+
+      </Routes>
 
       <Footer />
-    </>
+
+    </BrowserRouter>
   );
 }
