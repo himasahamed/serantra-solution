@@ -14,17 +14,16 @@ import {
 
 import { services } from "../data/services";
 
+
 export default function ServicePage() {
   const { slug } = useParams();
+
 
   const service = services.find(
     (item) => item.slug === slug
   );
 
-  /*
-    Scroll to top whenever user opens
-    another service page.
-  */
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -32,39 +31,97 @@ export default function ServicePage() {
     });
   }, [slug]);
 
-  /*
-    If service URL does not exist,
-    return user to homepage.
-  */
+
   if (!service) {
-    return <Navigate to="/" replace />;
+    return (
+      <Navigate
+        to="/"
+        replace
+      />
+    );
   }
 
-  /*
-    Other services shown near bottom.
-  */
+
   const relatedServices = services
-    .filter((item) => item.slug !== service.slug)
+    .filter(
+      (item) =>
+        item.slug !== service.slug
+    )
     .slice(0, 3);
+
+
+  const developmentSteps = [
+    {
+      number: "01",
+
+      title: "Understand",
+
+      description:
+        "We understand your business, users, goals and project requirements.",
+    },
+
+    {
+      number: "02",
+
+      title: "Plan",
+
+      description:
+        "We define the project structure, functionality, technology and development direction.",
+    },
+
+    {
+      number: "03",
+
+      title: "Design",
+
+      description:
+        "We create clear, modern and user-focused interface experiences.",
+    },
+
+    {
+      number: "04",
+
+      title: "Develop",
+
+      description:
+        "We transform the approved design into a responsive and maintainable digital product.",
+    },
+
+    {
+      number: "05",
+
+      title: "Test",
+
+      description:
+        "We review functionality, responsiveness, usability and performance.",
+    },
+
+    {
+      number: "06",
+
+      title: "Launch",
+
+      description:
+        "We deploy the product and continue providing technical support when required.",
+    },
+  ];
+
 
   return (
     <main className="min-h-screen bg-[#050505] pt-20 text-white">
 
-      {/* =====================================================
+      {/* ========================================
           HERO
-      ====================================================== */}
+      ======================================== */}
 
       <section className="relative overflow-hidden border-b border-white/10">
 
-        {/* Background glow */}
-
         <div className="pointer-events-none absolute right-[-250px] top-[-180px] h-[700px] w-[700px] rounded-full bg-blue-600/10 blur-[170px]" />
 
-        <div className="pointer-events-none absolute left-[15%] top-[50%] h-[400px] w-[400px] rounded-full bg-purple-600/5 blur-[150px]" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-36">
 
-          {/* Breadcrumb */}
+          {/* BREADCRUMB */}
 
           <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.18em]">
 
@@ -93,9 +150,8 @@ export default function ServicePage() {
 
           </div>
 
-          <div className="mt-16 grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
 
-            {/* LEFT */}
+          <div className="mt-16 grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
 
             <div>
 
@@ -103,41 +159,43 @@ export default function ServicePage() {
                 Serantra Solution
               </p>
 
+
               <h1 className="mt-6 max-w-5xl text-5xl font-medium leading-[0.98] tracking-[-0.055em] sm:text-6xl lg:text-7xl xl:text-8xl">
                 {service.title}
               </h1>
 
             </div>
 
-            {/* RIGHT */}
 
-            <div className="lg:pb-2">
+            <div>
 
               <p className="max-w-xl text-lg leading-8 text-zinc-400">
                 {service.heroText}
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-4">
 
-                <a
-                  href="#service-contact"
+              <div className="mt-9 flex flex-wrap gap-5">
+
+                <Link
+                  to="/request-quote"
                   className="group inline-flex items-center gap-3 bg-white px-7 py-4 text-sm font-semibold text-black transition hover:bg-blue-500 hover:text-white"
                 >
-                  Start a Project
+                  Request a Free Quote
 
                   <ArrowRight
                     size={17}
                     className="transition group-hover:translate-x-1"
                   />
-                </a>
+                </Link>
+
 
                 <a
                   href="#overview"
-                  className="inline-flex items-center gap-3 border-b border-white/30 py-4 text-sm text-zinc-300 transition hover:border-blue-400 hover:text-blue-400"
+                  className="group inline-flex items-center gap-2 border-b border-white/30 py-4 text-sm text-zinc-300 transition hover:border-blue-400 hover:text-blue-400"
                 >
                   Explore Service
 
-                  <MoveUpRight size={16} />
+                  <MoveUpRight size={15} />
                 </a>
 
               </div>
@@ -146,11 +204,13 @@ export default function ServicePage() {
 
           </div>
 
-          {/* Hero bottom info */}
+
+          {/* HERO INFORMATION */}
 
           <div className="mt-24 grid gap-8 border-t border-white/10 pt-8 sm:grid-cols-3">
 
             <div>
+
               <p className="text-xs uppercase tracking-[0.18em] text-zinc-600">
                 Service
               </p>
@@ -158,9 +218,12 @@ export default function ServicePage() {
               <p className="mt-2 text-sm text-zinc-300">
                 {service.title}
               </p>
+
             </div>
 
+
             <div>
+
               <p className="text-xs uppercase tracking-[0.18em] text-zinc-600">
                 Focus
               </p>
@@ -168,9 +231,12 @@ export default function ServicePage() {
               <p className="mt-2 text-sm text-zinc-300">
                 Performance & User Experience
               </p>
+
             </div>
 
+
             <div>
+
               <p className="text-xs uppercase tracking-[0.18em] text-zinc-600">
                 Approach
               </p>
@@ -178,6 +244,7 @@ export default function ServicePage() {
               <p className="mt-2 text-sm text-zinc-300">
                 Strategy · Design · Development
               </p>
+
             </div>
 
           </div>
@@ -187,18 +254,16 @@ export default function ServicePage() {
       </section>
 
 
-      {/* =====================================================
+      {/* ========================================
           OVERVIEW
-      ====================================================== */}
+      ======================================== */}
 
       <section
         id="overview"
         className="py-28 lg:py-36"
       >
 
-        <div className="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
-
-          {/* LEFT */}
+        <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
 
           <div>
 
@@ -206,17 +271,19 @@ export default function ServicePage() {
               Service Overview
             </p>
 
+
             <h2 className="mt-6 text-4xl font-medium tracking-[-0.04em] md:text-5xl">
+
               Built around your
 
               <span className="block text-zinc-500">
                 business requirements.
               </span>
+
             </h2>
 
           </div>
 
-          {/* RIGHT */}
 
           <div>
 
@@ -224,12 +291,11 @@ export default function ServicePage() {
               {service.description}
             </p>
 
+
             <p className="mt-8 leading-8 text-zinc-500">
               Our approach focuses on creating digital solutions
               that are practical, maintainable and aligned with
-              your long-term goals. We combine planning, design
-              and development to create an experience that works
-              for both your business and your users.
+              your long-term goals.
             </p>
 
           </div>
@@ -239,17 +305,15 @@ export default function ServicePage() {
       </section>
 
 
-      {/* =====================================================
+      {/* ========================================
           BENEFITS
-      ====================================================== */}
+      ======================================== */}
 
       <section className="border-y border-white/10 bg-[#080808] py-28 lg:py-36">
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
-          <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
-
-            {/* TITLE */}
+          <div className="grid gap-14 lg:grid-cols-[0.7fr_1.3fr]">
 
             <div>
 
@@ -257,17 +321,19 @@ export default function ServicePage() {
                 Benefits
               </p>
 
+
               <h2 className="mt-6 text-4xl font-medium tracking-[-0.04em] md:text-5xl">
+
                 What you can
 
                 <span className="block text-zinc-500">
                   expect.
                 </span>
+
               </h2>
 
             </div>
 
-            {/* BENEFIT LIST */}
 
             <div>
 
@@ -282,9 +348,11 @@ export default function ServicePage() {
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
-                    <p className="text-base text-zinc-300 transition group-hover:text-white md:text-lg">
+
+                    <p className="text-zinc-300 transition group-hover:text-white md:text-lg">
                       {benefit}
                     </p>
+
 
                     <Check
                       size={16}
@@ -306,9 +374,9 @@ export default function ServicePage() {
       </section>
 
 
-      {/* =====================================================
+      {/* ========================================
           CAPABILITIES
-      ====================================================== */}
+      ======================================== */}
 
       <section className="py-28 lg:py-36">
 
@@ -322,20 +390,21 @@ export default function ServicePage() {
                 Capabilities
               </p>
 
+
               <h2 className="mt-6 text-4xl font-medium tracking-[-0.04em] md:text-5xl">
                 What we can build.
               </h2>
 
             </div>
 
+
             <p className="max-w-md leading-7 text-zinc-500">
-              Our service can be adapted to different
-              industries, workflows and project requirements.
+              Our service can be adapted to different industries,
+              workflows and project requirements.
             </p>
 
           </div>
 
-          {/* No cards */}
 
           <div className="mt-16">
 
@@ -352,15 +421,17 @@ export default function ServicePage() {
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
+
                     <h3 className="text-xl font-medium text-zinc-300 transition duration-300 group-hover:translate-x-2 group-hover:text-white md:text-3xl">
                       {feature}
                     </h3>
 
                   </div>
 
+
                   <ArrowRight
                     size={20}
-                    className="shrink-0 text-zinc-700 transition duration-300 group-hover:translate-x-1 group-hover:text-blue-400"
+                    className="shrink-0 text-zinc-700 transition group-hover:translate-x-1 group-hover:text-blue-400"
                   />
 
                 </div>
@@ -376,9 +447,9 @@ export default function ServicePage() {
       </section>
 
 
-      {/* =====================================================
-          DEVELOPMENT APPROACH
-      ====================================================== */}
+      {/* ========================================
+          APPROACH
+      ======================================== */}
 
       <section className="border-y border-white/10 bg-[#080808] py-28 lg:py-36">
 
@@ -388,65 +459,38 @@ export default function ServicePage() {
             Our Approach
           </p>
 
+
           <h2 className="mt-6 max-w-3xl text-4xl font-medium tracking-[-0.04em] md:text-5xl">
+
             A clear path from idea
 
             <span className="block text-zinc-500">
               to final delivery.
             </span>
+
           </h2>
 
-          {/* OPEN PROCESS - NO BOXES */}
 
           <div className="mt-20">
 
-            {[
-              {
-                number: "01",
-                title: "Understand",
-                text: "We understand your business, users and project requirements.",
-              },
-              {
-                number: "02",
-                title: "Plan",
-                text: "We define functionality, structure, technology and project direction.",
-              },
-              {
-                number: "03",
-                title: "Design",
-                text: "We create clear and user-focused interface experiences.",
-              },
-              {
-                number: "04",
-                title: "Develop",
-                text: "We build the product using modern and maintainable technologies.",
-              },
-              {
-                number: "05",
-                title: "Test",
-                text: "We review responsiveness, functionality, usability and performance.",
-              },
-              {
-                number: "06",
-                title: "Launch",
-                text: "We deploy the product and provide ongoing support when required.",
-              },
-            ].map((step) => (
+            {developmentSteps.map((step) => (
               <div
                 key={step.number}
-                className="grid gap-5 border-t border-white/10 py-8 md:grid-cols-[90px_0.7fr_1.3fr] md:items-start md:py-10"
+                className="grid gap-5 border-t border-white/10 py-8 md:grid-cols-[90px_0.7fr_1.3fr] md:py-10"
               >
 
                 <span className="font-mono text-xs text-blue-400">
                   {step.number}
                 </span>
 
+
                 <h3 className="text-xl font-medium md:text-2xl">
                   {step.title}
                 </h3>
 
+
                 <p className="max-w-xl leading-7 text-zinc-500">
-                  {step.text}
+                  {step.description}
                 </p>
 
               </div>
@@ -461,9 +505,9 @@ export default function ServicePage() {
       </section>
 
 
-      {/* =====================================================
+      {/* ========================================
           RELATED SERVICES
-      ====================================================== */}
+      ======================================== */}
 
       <section className="py-28 lg:py-36">
 
@@ -473,9 +517,11 @@ export default function ServicePage() {
             Explore More
           </p>
 
+
           <h2 className="mt-6 text-4xl font-medium tracking-[-0.04em] md:text-5xl">
             Related services.
           </h2>
+
 
           <div className="mt-16">
 
@@ -493,11 +539,13 @@ export default function ServicePage() {
                       0{index + 1}
                     </span>
 
+
                     <div>
 
                       <h3 className="text-xl font-medium text-zinc-300 transition group-hover:text-white md:text-2xl">
                         {related.title}
                       </h3>
+
 
                       <p className="mt-2 hidden max-w-xl text-sm text-zinc-600 md:block">
                         {related.description}
@@ -507,9 +555,10 @@ export default function ServicePage() {
 
                   </div>
 
+
                   <ArrowRight
                     size={19}
-                    className="shrink-0 text-zinc-700 transition duration-300 group-hover:translate-x-1 group-hover:text-blue-400"
+                    className="text-zinc-700 transition group-hover:translate-x-1 group-hover:text-blue-400"
                   />
 
                 </Link>
@@ -525,16 +574,14 @@ export default function ServicePage() {
       </section>
 
 
-      {/* =====================================================
-          CONTACT CTA
-      ====================================================== */}
+      {/* ========================================
+          QUOTE CTA
+      ======================================== */}
 
-      <section
-        id="service-contact"
-        className="relative overflow-hidden bg-blue-600"
-      >
+      <section className="relative overflow-hidden bg-blue-600">
 
         <div className="pointer-events-none absolute right-[-100px] top-[-150px] h-[500px] w-[500px] rounded-full bg-white/10 blur-[100px]" />
+
 
         <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-28">
 
@@ -546,9 +593,11 @@ export default function ServicePage() {
                 Start Your Project
               </p>
 
+
               <h2 className="mt-6 max-w-4xl text-4xl font-medium tracking-[-0.045em] md:text-6xl">
                 Need {service.title.toLowerCase()}?
               </h2>
+
 
               <p className="mt-6 max-w-2xl leading-7 text-blue-100/80">
                 Tell us about your project and we can discuss
@@ -557,17 +606,18 @@ export default function ServicePage() {
 
             </div>
 
-            <a
-              href="/#contact"
+
+            <Link
+              to="/request-quote"
               className="group flex w-fit shrink-0 items-center gap-3 bg-white px-7 py-4 text-sm font-semibold text-black transition hover:bg-black hover:text-white"
             >
-              Contact Serantra Solution
+              Request a Free Quote
 
               <ArrowRight
                 size={17}
                 className="transition group-hover:translate-x-1"
               />
-            </a>
+            </Link>
 
           </div>
 

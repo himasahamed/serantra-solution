@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Clients from "./pages/Clients";
 import ServicePage from "./pages/ServicePage";
+import RequestQuote from "./pages/RequestQuote";
 
 export default function App() {
   return (
@@ -32,6 +33,11 @@ export default function App() {
         <Route
           path="/services/:slug"
           element={<ServicePage />}
+        />
+
+        <Route
+          path="/request-quote"
+          element={<RequestQuote />}
         />
 
       </Routes>
