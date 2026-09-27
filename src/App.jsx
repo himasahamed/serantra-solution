@@ -6,7 +6,6 @@ import {
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-
 import ScrollToTop from "./components/ScrollToTop";
 import SiteMotion from "./components/SiteMotion";
 
@@ -26,20 +25,28 @@ export default function App() {
 
       <main id="main-content">
         <Routes>
+          {/* HOME */}
+
           <Route
             path="/"
             element={<Home />}
           />
+
+          {/* SERVICES PAGE */}
+
+          <Route
+            path="/services"
+            element={<ServicePage />}
+          />
+
+          {/* CLIENTS */}
 
           <Route
             path="/clients"
             element={<Clients />}
           />
 
-          <Route
-            path="/services/:slug"
-            element={<ServicePage />}
-          />
+          {/* REQUEST QUOTE */}
 
           <Route
             path="/request-quote"

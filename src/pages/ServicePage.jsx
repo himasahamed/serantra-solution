@@ -1,105 +1,290 @@
-import { ArrowLeft, ArrowUpRight, Check, ChevronRight } from "lucide-react";
-import { Link, useParams } from "react-router-dom";
-import { services } from "../data/services";
+import {
+  ArrowRight,
+  Bot,
+  Code2,
+  Laptop,
+  Megaphone,
+  Palette,
+  PenTool,
+  Sparkles,
+  Workflow,
+} from "lucide-react";
+
+import { Link } from "react-router-dom";
 import "./ServicePage.css";
 
-export default function ServicePage() {
-  const { slug } = useParams();
-  const service = services.find((item) => item.slug === slug);
+const services = [
+  {
+    icon: Laptop,
+    title: "Software Development",
+    description:
+      "Custom software solutions tailored to your unique business requirements with modern technologies.",
+    features: [
+      "Custom Applications",
+      "System Integration",
+      "API Development",
+      "Scalable Architecture",
+    ],
+  },
 
-  if (!service) {
-    return (
-      <section className="service-not-found">
-        <h1>Service not found</h1>
-        <Link to="/">Return Home</Link>
-      </section>
+  {
+    icon: Code2,
+    title: "Web Development",
+    description:
+      "Building high-performance, responsive websites tailored to your business needs with modern technologies.",
+    features: [
+      "Responsive Design",
+      "Fast Performance",
+      "SEO Optimized",
+      "Modern Frameworks",
+    ],
+  },
+
+  {
+    icon: Palette,
+    title: "Brand Identity",
+    description:
+      "Creating a cohesive brand identity with logo design, typography, and color palette.",
+    features: [
+      "Logo Design",
+      "Style Guides",
+      "Brand Strategy",
+      "Visual Identity",
+    ],
+  },
+
+  {
+    icon: Sparkles,
+    title: "Creative Designing",
+    description:
+      "Crafting visually stunning graphics, from marketing materials to social media content.",
+    features: [
+      "Brand Materials",
+      "Social Media",
+      "Print Design",
+      "Illustrations",
+    ],
+  },
+
+  {
+    icon: Workflow,
+    title: "UI/UX Design",
+    description:
+      "Designing intuitive and engaging user experiences for websites and applications.",
+    features: [
+      "User Research",
+      "Wireframing",
+      "Prototyping",
+      "Usability Testing",
+    ],
+  },
+
+  {
+    icon: Megaphone,
+    title: "Digital Marketing",
+    description:
+      "Boosting your online presence with SEO, social media strategies, and targeted campaigns.",
+    features: [
+      "SEO Optimization",
+      "Social Media",
+      "Content Marketing",
+      "Analytics",
+    ],
+  },
+
+  {
+    icon: PenTool,
+    title: "Creative & Copywriting",
+    description:
+      "Compelling content and creative copy that drives engagement and conversions.",
+    features: [
+      "Website Copy",
+      "Blog Writing",
+      "Ad Campaigns",
+      "Brand Voice",
+    ],
+  },
+
+  {
+    icon: Bot,
+    title: "AI Integration & Automation",
+    description:
+      "Smart AI solutions and automation to streamline your business processes.",
+    features: [
+      "AI Chatbots",
+      "Process Automation",
+      "Machine Learning",
+      "Data Analytics",
+    ],
+  },
+];
+
+export default function ServicePage() {
+  const handleMouseMove = (event) => {
+    const card = event.currentTarget;
+
+    const rect =
+      card.getBoundingClientRect();
+
+    const x =
+      event.clientX - rect.left;
+
+    const y =
+      event.clientY - rect.top;
+
+    card.style.setProperty(
+      "--service-mouse-x",
+      `${x}px`
     );
-  }
+
+    card.style.setProperty(
+      "--service-mouse-y",
+      `${y}px`
+    );
+  };
 
   return (
-    <div className="service-page">
-      <section className="service-page-hero">
-        <div className="service-page-shell">
-          <Link to="/#services" className="service-back-link motion-reveal">
-            <ArrowLeft size={16} />
-            All Services
-          </Link>
+    <section className="all-services-page">
+      {/* BACKGROUND */}
 
-          <div className="service-page-kicker motion-reveal">Serantra Solution / Service</div>
-          <h1 className="motion-reveal">{service.title}</h1>
-          <p className="motion-reveal">{service.description}</p>
+      <div
+        className="all-services-background"
+        aria-hidden="true"
+      >
+        <div className="all-services-grid-background" />
 
-          <Link to="/request-quote" className="service-page-cta motion-reveal">
-            Discuss This Service
-            <ArrowUpRight size={18} />
-          </Link>
-        </div>
-      </section>
+        <div className="all-services-main-glow" />
 
-      <section className="service-page-content">
-        <div className="service-page-shell service-page-columns">
-          <div className="service-page-side motion-reveal">
-            <span>What you can expect</span>
-            <h2>Built around outcomes, not a fixed template.</h2>
+        <div className="all-services-side-glow" />
+      </div>
+
+      <div className="all-services-container">
+        {/* HEADING */}
+
+        <div className="all-services-heading">
+          <div className="all-services-label">
+            <span />
+
+            ABOUT OUR AGENCY
           </div>
 
-          <div className="service-benefits motion-stagger">
-            {service.benefits.map((benefit) => (
-              <div key={benefit} className="service-benefit-row">
-                <Check size={18} />
-                <p>{benefit}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+          <h1>
+            What We
+            <span> Offer</span>
+          </h1>
 
-      <section className="service-capabilities">
-        <div className="service-page-shell">
-          <div className="service-section-heading motion-reveal">
-            <span>Capabilities</span>
-            <h2>What this service can include.</h2>
-          </div>
+          <p>
+            From concept to completion, we provide
+            end-to-end digital solutions that help
+            businesses thrive in today's competitive
+            landscape.
+          </p>
 
-          <div className="service-capability-list motion-stagger">
-            {service.features.map((feature) => (
-              <div key={feature}>
-                <span>{feature}</span>
-                <ChevronRight size={17} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+          <Link
+            to="/request-quote"
+            className="all-services-cta"
+          >
+            Get Started Now
 
-      <section className="service-approach">
-        <div className="service-page-shell service-page-columns">
-          <div className="service-page-side motion-reveal">
-            <span>Our approach</span>
-            <h2>A clear path from requirement to launch.</h2>
-          </div>
-
-          <div className="service-approach-list motion-stagger">
-            {service.approach.map((step, index) => (
-              <div key={step}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <p>{step}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="service-final-cta">
-        <div className="service-page-shell">
-          <h2 className="motion-reveal">Ready to talk about your {service.title.toLowerCase()} project?</h2>
-          <Link to="/request-quote" className="service-page-cta motion-reveal">
-            Start a Project
-            <ArrowUpRight size={18} />
+            <ArrowRight
+              size={16}
+              strokeWidth={2}
+            />
           </Link>
         </div>
-      </section>
-    </div>
+
+        {/* SERVICES */}
+
+        <div className="all-services-grid">
+          {services.map(
+            (service, index) => {
+              const Icon = service.icon;
+
+              return (
+                <article
+                  key={service.title}
+                  className="all-service-card"
+                  onMouseMove={
+                    handleMouseMove
+                  }
+                >
+                  {/* MOUSE GLOW */}
+
+                  <div
+                    className="all-service-cursor-glow"
+                    aria-hidden="true"
+                  />
+
+                  {/* NUMBER */}
+
+                  <span className="all-service-number">
+                    {String(
+                      index + 1
+                    ).padStart(2, "0")}
+                  </span>
+
+                  {/* ICON */}
+
+                  <div className="all-service-icon">
+                    <Icon
+                      size={23}
+                      strokeWidth={1.9}
+                    />
+                  </div>
+
+                  {/* TITLE */}
+
+                  <h2>
+                    {service.title}
+                  </h2>
+
+                  {/* DESCRIPTION */}
+
+                  <p className="all-service-description">
+                    {
+                      service.description
+                    }
+                  </p>
+
+                  {/* FEATURES */}
+
+                  <ul className="all-service-features">
+                    {service.features.map(
+                      (feature) => (
+                        <li key={feature}>
+                          <span />
+
+                          {feature}
+                        </li>
+                      )
+                    )}
+                  </ul>
+
+                  {/* VISUAL ONLY */}
+
+                  <div className="all-service-learn-more">
+                    Learn More
+
+                    <ArrowRight
+                      size={14}
+                      strokeWidth={2}
+                    />
+                  </div>
+
+                  {/* BOTTOM LIGHT */}
+
+                  <div
+                    className="all-service-bottom-light"
+                    aria-hidden="true"
+                  >
+                    <span />
+                  </div>
+                </article>
+              );
+            }
+          )}
+        </div>
+      </div>
+    </section>
   );
 }
-
