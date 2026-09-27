@@ -1,98 +1,81 @@
-import { ArrowRight } from "lucide-react";
-import AnimatedText from "./AnimatedText";
+import { ArrowUpRight } from "lucide-react";
+import "./Projects.css";
 
 const projects = [
   {
     title: "Business Website Platform",
-    type: "Website Development",
-    description:
-      "A modern responsive company website focused on performance, SEO and generating customer enquiries.",
+    category: "Website Development",
+    image: "/images/projects/project-1.jpg",
+    size: "large",
   },
-
   {
-    title: "Business Management System",
-    type: "Web Application",
-    description:
-      "A scalable web application designed to organize workflows and improve business efficiency.",
+    title: "Operations Dashboard",
+    category: "Web Application",
+    image: "/images/projects/project-2.jpg",
+    size: "small",
   },
-
+  {
+    title: "Property Management System",
+    category: "Custom Software",
+    image: "/images/projects/project-3.jpg",
+    size: "small",
+  },
   {
     title: "SaaS Product Experience",
-    type: "UI/UX Design",
-    description:
-      "A modern SaaS interface focused on navigation, usability and professional product experience.",
+    category: "SaaS Development",
+    image: "/images/projects/project-4.jpg",
+    size: "large",
+  },
+  {
+    title: "Digital Product Redesign",
+    category: "UI/UX Design",
+    image: "/images/projects/project-5.jpg",
+    size: "equal",
+  },
+  {
+    title: "Support & Optimization",
+    category: "Maintenance & Support",
+    image: "/images/projects/project-6.jpg",
+    size: "equal",
   },
 ];
 
 export default function Projects() {
   return (
-    <section
-      id="projects"
-      className="bg-[#f4f4f5] py-28 text-black lg:py-36"
-    >
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="projects" className="projects-section">
+      <div className="projects-shell">
+        <div className="projects-heading">
+          <div className="projects-kicker motion-reveal"><span />Selected Work</div>
+          <h2 className="motion-reveal">
+            Crafted solutions that drive
+            <span className="project-gradient-text"> digital transformation</span>
+          </h2>
+          <p className="motion-reveal">
+            A selection of the kinds of digital products, systems and experiences we create for modern businesses.
+          </p>
+        </div>
 
-        <p className="text-xs uppercase tracking-[0.25em] text-blue-600">
-          Selected Projects
-        </p>
-
-        <h2 className="mt-6 text-4xl font-medium tracking-[-0.04em] md:text-6xl">
-          <AnimatedText
-            text="Our projects."
-            delay={45}
-          />
-        </h2>
-
-        <div className="mt-20">
-
+        <div className="projects-grid motion-stagger">
           {projects.map((project, index) => (
             <article
               key={project.title}
-              className="group grid gap-10 border-t border-black/10 py-14 md:grid-cols-[120px_1fr_1fr]"
+              className={`project-card project-card-${project.size} project-card-${index + 1}`}
             >
-
-              <div>
-                <span className="font-mono text-sm text-blue-600">
-                  0{index + 1}
-                </span>
+              <img src={project.image} alt="" loading="lazy" />
+              <div className="project-overlay" />
+              <div className="project-details">
+                <span>{project.category}</span>
+                <div>
+                  <h3>{project.title}</h3>
+                  <ArrowUpRight size={20} />
+                </div>
               </div>
-
-              <div>
-                <p className="text-xs uppercase tracking-[0.18em] text-blue-600">
-                  {project.type}
-                </p>
-
-                <h3 className="mt-4 text-3xl font-medium tracking-[-0.03em]">
-                  {project.title}
-                </h3>
-              </div>
-
-              <div>
-                <p className="max-w-md leading-7 text-zinc-600">
-                  {project.description}
-                </p>
-
-                <a
-                  href="#contact"
-                  className="mt-7 inline-flex items-center gap-2 text-sm font-medium"
-                >
-                  Discuss your project
-
-                  <ArrowRight
-                    size={15}
-                    className="transition group-hover:translate-x-1"
-                  />
-                </a>
-              </div>
-
             </article>
           ))}
-
-          <div className="border-t border-black/10" />
-
         </div>
-
       </div>
+
+      <div className="section-motion-line" aria-hidden="true" />
     </section>
   );
 }

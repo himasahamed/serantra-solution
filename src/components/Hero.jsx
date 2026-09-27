@@ -1,142 +1,139 @@
-import {
-  ArrowRight,
-  MoveUpRight,
-} from "lucide-react";
-
+import { useEffect, useRef } from "react";
+import { ArrowRight, ArrowUpRight, Code2, Database, Layers3, MousePointer2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import "./Hero.css";
 
 export default function Hero() {
+  const visualRef = useRef(null);
+
+  useEffect(() => {
+    const visual = visualRef.current;
+    if (!visual) return undefined;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) return undefined;
+
+    const handleMouseMove = (event) => {
+      const rect = visual.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      const rotateY = (x / rect.width - 0.5) * 14;
+      const rotateX = (y / rect.height - 0.5) * -12;
+
+      visual.style.setProperty("--hero-rotate-x", `${rotateX}deg`);
+      visual.style.setProperty("--hero-rotate-y", `${rotateY}deg`);
+      visual.style.setProperty("--hero-mouse-x", `${x}px`);
+      visual.style.setProperty("--hero-mouse-y", `${y}px`);
+    };
+
+    const resetVisual = () => {
+      visual.style.setProperty("--hero-rotate-x", "0deg");
+      visual.style.setProperty("--hero-rotate-y", "0deg");
+    };
+
+    visual.addEventListener("mousemove", handleMouseMove);
+    visual.addEventListener("mouseleave", resetVisual);
+
+    return () => {
+      visual.removeEventListener("mousemove", handleMouseMove);
+      visual.removeEventListener("mouseleave", resetVisual);
+    };
+  }, []);
+
   return (
-    <section
-      id="home"
-      className="relative flex min-h-screen items-center overflow-hidden bg-black pt-20"
-      style={{
-        backgroundImage: "url('/images/hero-bg.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      {/* ======================================
-          DARK OVERLAY
-      ====================================== */}
-
-      <div className="absolute inset-0 bg-black/20" />
-
-      {/* LEFT SIDE GRADIENT */}
-
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-transparent" />
-
-      {/* BOTTOM GRADIENT */}
-
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
-
-
-      {/* ======================================
-          HERO CONTENT
-      ====================================== */}
-
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-32 lg:px-8">
-
-        <div className="max-w-4xl">
-
-          {/* SMALL LABEL */}
-
-          <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-blue-400/20 bg-black/20 px-4 py-2 backdrop-blur-md">
-
-            <span className="h-2 w-2 rounded-full bg-blue-400 shadow-[0_0_12px_#60a5fa]" />
-
-            <span className="text-xs uppercase tracking-[0.15em] text-blue-100">
-              Software Development · Web · UI/UX
-            </span>
-
-          </div>
-
-
-          {/* MAIN HEADING */}
-
-          <h1 className="text-5xl font-medium leading-[0.98] tracking-[-0.05em] text-white sm:text-6xl md:text-7xl lg:text-8xl">
-
-            Software Development
-
-            <span className="block bg-gradient-to-r from-blue-300 via-indigo-300 to-purple-300 bg-clip-text text-transparent">
-              & Digital Solutions
-            </span>
-
-          </h1>
-
-
-          {/* DESCRIPTION */}
-
-          <p className="mt-8 max-w-2xl text-base leading-8 text-zinc-200 sm:text-lg">
-
-            Serantra Solution builds modern websites, scalable web
-            applications, custom software and user-focused digital
-            experiences designed to help businesses grow.
-
-          </p>
-
-
-          {/* BUTTONS */}
-
-          <div className="mt-10 flex flex-wrap items-center gap-6">
-
-            <Link
-              to="/request-quote"
-              className="group flex items-center gap-3 bg-white px-7 py-4 text-sm font-semibold text-black transition duration-300 hover:bg-blue-500 hover:text-white"
-            >
-              Start a Project
-
-              <ArrowRight
-                size={17}
-                className="transition duration-300 group-hover:translate-x-1"
-              />
-            </Link>
-
-
-            <a
-              href="#services"
-              className="group flex items-center gap-3 border-b border-white/40 py-4 text-sm font-medium text-white transition duration-300 hover:border-blue-400 hover:text-blue-300"
-            >
-              Explore Services
-
-              <MoveUpRight
-                size={16}
-                className="transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-              />
-            </a>
-
-          </div>
-
-        </div>
-
-
-        {/* ======================================
-            HERO BOTTOM SERVICES
-        ====================================== */}
-
-        <div className="mt-24 flex flex-wrap gap-x-10 gap-y-5 border-t border-white/15 pt-7 text-xs uppercase tracking-[0.15em] text-zinc-300">
-
-          <span>
-            Website Development
-          </span>
-
-          <span>
-            Software Development
-          </span>
-
-          <span>
-            UI/UX Design
-          </span>
-
-          <span>
-            Web Applications
-          </span>
-
-        </div>
-
+    <section id="home" className="serantra-hero">
+      <div className="serantra-hero-background" aria-hidden="true">
+        <div className="hero-grid-background" />
+        <div className="hero-light hero-light-one" />
+        <div className="hero-light hero-light-two" />
+        <div className="hero-light hero-light-three" />
+        <span className="hero-particle hero-particle-1" />
+        <span className="hero-particle hero-particle-2" />
+        <span className="hero-particle hero-particle-3" />
+        <span className="hero-particle hero-particle-4" />
+        <span className="hero-particle hero-particle-5" />
       </div>
 
+      <div className="serantra-hero-container">
+        <div className="serantra-hero-content">
+          <div className="hero-eyebrow motion-reveal">
+            <span className="hero-eyebrow-dot" />
+            Digital solutions engineered for growth
+          </div>
+
+          <h1 className="serantra-hero-title motion-reveal">
+            We build digital
+            <span className="hero-gradient-word">experiences</span>
+            that move businesses forward.
+          </h1>
+
+          <p className="serantra-hero-description motion-reveal">
+            From modern websites and powerful web applications to custom software and SaaS platforms,
+            Serantra Solution transforms ideas into scalable digital products.
+          </p>
+
+          <div className="serantra-hero-actions motion-reveal">
+            <Link to="/request-quote" className="hero-primary-button">
+              <span>Start a Project</span>
+              <ArrowUpRight size={18} strokeWidth={2} />
+              <span className="hero-button-light" />
+            </Link>
+
+            <a href="#services" className="hero-secondary-button">
+              Explore Our Services
+              <ArrowRight size={18} strokeWidth={1.8} />
+            </a>
+          </div>
+
+          <div className="hero-mini-info motion-reveal">
+            <div><span className="hero-info-dot" /><p>Websites</p></div>
+            <div><span className="hero-info-dot" /><p>Web Apps</p></div>
+            <div><span className="hero-info-dot" /><p>Custom Software</p></div>
+          </div>
+        </div>
+
+        <div className="hero-visual-stage" ref={visualRef} data-parallax="slow">
+          <div className="hero-mouse-light" />
+
+          <div className="hero-visual-3d">
+            <div className="hero-orbit hero-orbit-one" />
+            <div className="hero-orbit hero-orbit-two" />
+
+            <div className="hero-core">
+              <div className="hero-core-glow" />
+              <div className="hero-core-symbol"><span /><span /></div>
+              <p>SERANTRA</p>
+              <small>DIGITAL SYSTEM</small>
+            </div>
+
+            <div className="hero-floating-card hero-floating-card-one">
+              <div className="hero-floating-icon"><Code2 size={18} strokeWidth={1.8} /></div>
+              <div><small>DEVELOPMENT</small><strong>Web Applications</strong></div>
+            </div>
+
+            <div className="hero-floating-card hero-floating-card-two">
+              <div className="hero-floating-icon"><Database size={18} strokeWidth={1.8} /></div>
+              <div><small>SYSTEMS</small><strong>Custom Software</strong></div>
+            </div>
+
+            <div className="hero-floating-card hero-floating-card-three">
+              <div className="hero-floating-icon"><Layers3 size={18} strokeWidth={1.8} /></div>
+              <div><small>EXPERIENCE</small><strong>UI / UX Design</strong></div>
+            </div>
+
+            <div className="hero-cursor-card">
+              <MousePointer2 size={15} fill="currentColor" />
+              <span>Build</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="hero-scroll-indicator">
+        <span>Scroll to explore</span>
+        <div className="hero-scroll-line"><span /></div>
+      </div>
     </section>
   );
 }
+

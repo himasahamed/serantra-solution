@@ -1,175 +1,171 @@
 export const services = [
-    {
-      slug: "website-development",
-      title: "Website Development",
-      shortTitle: "Website Development",
-      description:
-        "Professional, responsive and SEO-focused websites designed to strengthen your business presence and convert visitors into customers.",
-  
-      heroText:
-        "Modern websites designed for performance, usability and business growth.",
-  
-      benefits: [
-        "Responsive across desktop, tablet and mobile",
-        "SEO-friendly website architecture",
-        "Fast loading and optimized performance",
-        "Modern UI and professional layouts",
-        "Scalable and maintainable development",
-        "Contact and enquiry integration",
-      ],
-  
-      features: [
-        "Corporate Websites",
-        "Landing Pages",
-        "Business Websites",
-        "Portfolio Websites",
-        "Responsive Development",
-        "SEO Optimization",
-      ],
-    },
-  
-    {
-      slug: "web-application-development",
-      title: "Web Application Development",
-      shortTitle: "Web Applications",
-      description:
-        "Scalable web applications built around your workflows, customers and business requirements.",
-  
-      heroText:
-        "Powerful web applications built around real business requirements.",
-  
-      benefits: [
-        "Custom application architecture",
-        "Responsive user interfaces",
-        "Secure development practices",
-        "API integration",
-        "Scalable application structure",
-        "Performance optimization",
-      ],
-  
-      features: [
-        "Business Platforms",
-        "Management Systems",
-        "Customer Portals",
-        "Dashboards",
-        "API Integrations",
-        "Admin Panels",
-      ],
-    },
-  
-    {
-      slug: "software-development",
-      title: "Custom Software Development",
-      shortTitle: "Software Development",
-      description:
-        "Purpose-built software solutions designed to simplify operations and improve business efficiency.",
-  
-      heroText:
-        "Software solutions developed around how your business actually works.",
-  
-      benefits: [
-        "Custom business functionality",
-        "Scalable architecture",
-        "Process automation",
-        "System integration",
-        "Maintainable codebase",
-        "Ongoing technical support",
-      ],
-  
-      features: [
-        "Custom Business Software",
-        "Automation Solutions",
-        "Management Systems",
-        "Internal Platforms",
-        "System Integration",
-        "Software Maintenance",
-      ],
-    },
-  
-    {
-      slug: "ui-ux-design",
-      title: "UI/UX Design",
-      shortTitle: "UI/UX Design",
-      description:
-        "User-focused digital interfaces designed for clarity, usability and memorable experiences.",
-  
-      heroText:
-        "Digital experiences designed around people, products and business goals.",
-  
-      benefits: [
-        "User-focused design",
-        "Modern visual interfaces",
-        "Wireframes and prototypes",
-        "Responsive interface design",
-        "Consistent design systems",
-        "Improved usability",
-      ],
-  
-      features: [
-        "UI Design",
-        "UX Design",
-        "Wireframing",
-        "Interactive Prototypes",
-        "Dashboard Design",
-        "Design Systems",
-      ],
-    },
-  
-    {
-      slug: "saas-development",
-      title: "SaaS Development",
-      shortTitle: "SaaS Development",
-      description:
-        "Modern SaaS applications and interfaces designed for scalability, performance and long-term product growth.",
-  
-      heroText:
-        "Scalable SaaS products built for modern digital businesses.",
-  
-      benefits: [
-        "Scalable application architecture",
-        "Modern dashboards",
-        "User account systems",
-        "Subscription-ready structures",
-        "Responsive interfaces",
-        "Continuous improvements",
-      ],
-  
-      features: [
-        "SaaS Platforms",
-        "Product Dashboards",
-        "Customer Portals",
-        "Admin Systems",
-        "Analytics Interfaces",
-        "Product UI/UX",
-      ],
-    },
-  
-    {
-      slug: "maintenance-support",
-      title: "Maintenance & Support",
-      shortTitle: "Maintenance & Support",
-      description:
-        "Ongoing website and software support designed to keep your digital products secure, stable and up to date.",
-  
-      heroText:
-        "Reliable technical support after your project goes live.",
-  
-      benefits: [
-        "Bug fixes",
-        "Website updates",
-        "Performance monitoring",
-        "Security improvements",
-        "Feature enhancements",
-        "Technical assistance",
-      ],
-  
-      features: [
-        "Website Maintenance",
-        "Software Support",
-        "Performance Optimization",
-        "Bug Fixing",
-        "Feature Updates",
-        "Technical Support",
-      ],
-    },
-  ];
+  {
+    slug: "website-development",
+    title: "Website Development",
+    short: "Fast, responsive and conversion-focused websites built around your brand.",
+    description:
+      "We design and develop modern business websites that are responsive, fast, accessible and easy to maintain. Every website is shaped around your brand, users and business goals rather than a fixed template.",
+    benefits: [
+      "Responsive experiences across desktop, tablet and mobile",
+      "Performance-focused implementation and technical SEO foundations",
+      "Clear user journeys designed around your business objectives",
+      "Scalable structure for future pages, features and integrations",
+    ],
+    features: [
+      "Corporate and company websites",
+      "Landing pages and campaign websites",
+      "Content-driven marketing websites",
+      "Contact, inquiry and lead-generation forms",
+      "Analytics and third-party integrations",
+      "Deployment and launch support",
+    ],
+    approach: [
+      "Understand your goals and audience",
+      "Plan the structure and user journey",
+      "Create the visual direction",
+      "Develop, test and optimize",
+      "Launch and support future improvements",
+    ],
+  },
+  {
+    slug: "web-application-development",
+    title: "Web Application Development",
+    short: "Custom web applications built for real workflows, users and growth.",
+    description:
+      "We build interactive web applications for businesses that need more than a standard website. From internal dashboards to customer portals, we focus on usability, reliability and maintainable architecture.",
+    benefits: [
+      "Interfaces tailored to real operational workflows",
+      "Responsive experiences for teams and customers",
+      "API and third-party service integration",
+      "Architecture that can evolve as requirements grow",
+    ],
+    features: [
+      "Dashboards and admin portals",
+      "Customer and partner portals",
+      "Authentication and role-based access",
+      "API integrations",
+      "Reporting and data visualization",
+      "Cloud-ready deployment",
+    ],
+    approach: [
+      "Map the business workflow",
+      "Define roles, data and core features",
+      "Prototype the experience",
+      "Develop and integrate",
+      "Test, deploy and iterate",
+    ],
+  },
+  {
+    slug: "software-development",
+    title: "Custom Software Development",
+    short: "Purpose-built software for operations, automation and business growth.",
+    description:
+      "When off-the-shelf tools do not match your workflow, we create custom software around the way your business actually operates. The goal is to reduce friction, centralize information and support long-term growth.",
+    benefits: [
+      "Software designed around your exact business process",
+      "Reduced manual work through automation",
+      "Centralized data and clearer operational visibility",
+      "Flexible foundations for future functionality",
+    ],
+    features: [
+      "CRM and ERP-style systems",
+      "Internal management platforms",
+      "Workflow automation",
+      "Reporting tools",
+      "Data management systems",
+      "Business integrations",
+    ],
+    approach: [
+      "Study the current process",
+      "Identify bottlenecks and automation opportunities",
+      "Design the system architecture",
+      "Build and validate the workflow",
+      "Deploy with ongoing support",
+    ],
+  },
+  {
+    slug: "ui-ux-design",
+    title: "UI/UX Design",
+    short: "Clear, modern interfaces shaped around users and business goals.",
+    description:
+      "We create digital interfaces that balance visual quality with usability. Our UI/UX work focuses on hierarchy, navigation, interaction and consistency so products feel intuitive and purposeful.",
+    benefits: [
+      "Clearer user journeys and easier navigation",
+      "Consistent visual systems across screens",
+      "Responsive design from the beginning",
+      "Prototypes that reduce uncertainty before development",
+    ],
+    features: [
+      "User-flow planning",
+      "Wireframes",
+      "High-fidelity interface design",
+      "Responsive screen design",
+      "Design systems",
+      "Interactive prototypes",
+    ],
+    approach: [
+      "Understand users and goals",
+      "Map journeys and information hierarchy",
+      "Create wireframes",
+      "Develop the visual system",
+      "Prototype and refine",
+    ],
+  },
+  {
+    slug: "saas-development",
+    title: "SaaS Development",
+    short: "Scalable SaaS products designed for recurring use and continuous growth.",
+    description:
+      "We help turn SaaS ideas into structured digital products, from early planning and interface design to application development, subscriptions, dashboards and ongoing improvements.",
+    benefits: [
+      "Product foundations designed for recurring users",
+      "Scalable account and permission structures",
+      "Integration-ready architecture",
+      "A clear path from MVP to future versions",
+    ],
+    features: [
+      "MVP development",
+      "User accounts and authentication",
+      "Subscription-ready product architecture",
+      "Dashboards and usage workflows",
+      "Admin tools",
+      "Product maintenance and iteration",
+    ],
+    approach: [
+      "Clarify the product idea and target user",
+      "Define the MVP",
+      "Design the product experience",
+      "Build the core platform",
+      "Launch, measure and improve",
+    ],
+  },
+  {
+    slug: "maintenance-support",
+    title: "Maintenance & Support",
+    short: "Reliable technical support to keep your digital products healthy and current.",
+    description:
+      "Digital products need attention after launch. We provide practical maintenance and support for websites and applications, including fixes, updates, improvements and ongoing technical assistance.",
+    benefits: [
+      "Faster response to technical issues",
+      "Regular updates and performance improvements",
+      "Reduced risk from outdated dependencies",
+      "A technical partner available as your needs change",
+    ],
+    features: [
+      "Bug fixes",
+      "Security and dependency updates",
+      "Performance improvements",
+      "Content and UI changes",
+      "Feature enhancements",
+      "Technical monitoring and support",
+    ],
+    approach: [
+      "Review the current product",
+      "Prioritize risks and requested changes",
+      "Apply fixes and improvements",
+      "Test updates before release",
+      "Continue with scheduled or on-demand support",
+    ],
+  },
+];
+

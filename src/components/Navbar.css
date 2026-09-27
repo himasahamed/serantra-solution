@@ -1,72 +1,385 @@
-.navbar {
-    width: 100%;
-    background: #ffffff;
-    border-bottom: 1px solid #e5e7eb;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .navbar-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    height: 80px;
-  
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  
-    padding: 0 30px;
-  }
-  
-  .logo {
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-  }
-  
-  .logo-main {
-    font-size: 22px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    color: #0b1120;
-  }
-  
-  .logo-sub {
-    font-size: 10px;
-    letter-spacing: 4px;
-    color: #2563eb;
-    margin-top: 5px;
-  }
-  
-  .nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-  }
-  
-  .nav-menu a {
-    font-size: 15px;
-    font-weight: 500;
-    color: #334155;
-    transition: 0.3s;
-  }
-  
-  .nav-menu a:hover {
-    color: #2563eb;
-  }
-  
-  .quote-btn {
-    background: #2563eb;
-    color: white;
-    padding: 12px 22px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    transition: 0.3s;
-  }
-  
-  .quote-btn:hover {
-    background: #1d4ed8;
-    transform: translateY(-2px);
-  }
+.serantra-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 1000;
+  padding: 16px 22px;
+  pointer-events: none;
+}
+
+.serantra-header-inner {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 30px;
+  pointer-events: auto;
+}
+
+.serantra-logo-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 62px;
+  padding: 10px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  border-radius: 999px;
+  background: rgba(13, 13, 15, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.serantra-logo-pill:hover {
+  transform: translateY(-2px);
+  border-color: rgba(168, 85, 247, 0.18);
+  box-shadow: 0 18px 50px rgba(126, 34, 206, 0.15);
+}
+
+.serantra-logo-symbol {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  transform: rotate(-8deg);
+}
+
+.serantra-logo-symbol span {
+  position: absolute;
+  width: 21px;
+  height: 12px;
+  border: 2px solid #fff;
+  transform: skewX(-25deg) rotate(-28deg);
+  box-shadow: 0 0 16px rgba(192, 132, 252, 0.2);
+}
+
+.serantra-logo-symbol span:first-child {
+  left: 1px;
+  top: 4px;
+}
+
+.serantra-logo-symbol span:last-child {
+  right: 0;
+  bottom: 3px;
+}
+
+.serantra-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.serantra-logo-text strong {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.serantra-logo-text small {
+  margin-top: 6px;
+  color: #8b5cf6;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+}
+
+.serantra-nav-pill {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 7px;
+  border: 1px solid rgba(168, 85, 247, 0.15);
+  border-radius: 999px;
+  background: rgba(16, 14, 18, 0.86);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035), 0 18px 55px rgba(0, 0, 0, 0.28);
+}
+
+.serantra-nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 44px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #aaa3ae;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.serantra-nav-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.serantra-nav-link-active {
+  color: #fff;
+  background: linear-gradient(135deg, #7e22ce, #a855f7, #c084fc);
+  box-shadow: 0 8px 28px rgba(147, 51, 234, 0.4);
+}
+
+.serantra-services-menu {
+  position: relative;
+}
+
+.serantra-dropdown-icon {
+  transition: transform 0.3s ease;
+}
+
+.serantra-dropdown-icon-open {
+  transform: rotate(180deg);
+}
+
+.serantra-services-dropdown {
+  position: absolute;
+  top: calc(100% + 15px);
+  left: 50%;
+  width: 330px;
+  padding-top: 5px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(-8px) scale(0.98);
+  transform-origin: top center;
+  transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.serantra-services-dropdown-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.serantra-dropdown-inner {
+  position: relative;
+  overflow: hidden;
+  padding: 12px;
+  border: 1px solid rgba(168, 85, 247, 0.16);
+  border-radius: 22px;
+  background: rgba(12, 10, 15, 0.96);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+}
+
+.serantra-dropdown-inner::before {
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 100px;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #9333ea;
+  filter: blur(70px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.serantra-dropdown-label {
+  position: relative;
+  z-index: 1;
+  padding: 8px 12px 12px;
+  color: #756d7d;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.serantra-dropdown-item {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 13px 12px;
+  border-radius: 12px;
+  color: #aaa2b2;
+  transition: color 0.25s ease, background 0.25s ease, padding-left 0.3s ease;
+}
+
+.serantra-dropdown-item strong {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.serantra-dropdown-item:hover {
+  padding-left: 17px;
+  color: #fff;
+  background: rgba(147, 51, 234, 0.1);
+}
+
+.serantra-header-cta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 52px;
+  padding: 0 24px;
+  border: 1px solid rgba(216, 180, 254, 0.18);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #7e22ce, #9333ea, #a855f7);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 12px 38px rgba(126, 34, 206, 0.3);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.serantra-header-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(110deg, transparent 25%, rgba(255, 255, 255, 0.2) 48%, transparent 72%);
+  transform: translateX(-130%);
+  animation: header-cta-shimmer 4s ease-in-out infinite;
+}
+
+@keyframes header-cta-shimmer {
+  0%, 60% { transform: translateX(-130%); }
+  100% { transform: translateX(130%); }
+}
+
+.serantra-header-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 48px rgba(147, 51, 234, 0.44);
+}
+
+.serantra-mobile-button {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  background: rgba(16, 14, 18, 0.9);
+  color: #fff;
+}
+
+.serantra-mobile-menu {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 950;
+  padding: 92px 16px 16px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.3s ease;
+}
+
+.serantra-mobile-menu-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.serantra-mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-height: calc(100vh - 115px);
+  overflow-y: auto;
+  padding: 16px;
+  border: 1px solid rgba(168, 85, 247, 0.14);
+  border-radius: 24px;
+  background: rgba(11, 9, 14, 0.97);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+.serantra-mobile-nav > a,
+.serantra-mobile-services-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 14px 15px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: #bbb4c0;
+  text-align: left;
+  font-size: 14px;
+}
+
+.serantra-mobile-nav > a:hover,
+.serantra-mobile-services-button:hover {
+  color: #fff;
+  background: rgba(147, 51, 234, 0.09);
+}
+
+.serantra-mobile-services {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.4s ease, opacity 0.3s ease;
+}
+
+.serantra-mobile-services > div {
+  overflow: hidden;
+  display: grid;
+}
+
+.serantra-mobile-services-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.serantra-mobile-services a {
+  padding: 10px 20px;
+  color: #8d8494;
+  font-size: 13px;
+}
+
+.serantra-mobile-project-button {
+  margin-top: 8px;
+  justify-content: center !important;
+  gap: 10px;
+  background: linear-gradient(135deg, #7e22ce, #9333ea) !important;
+  color: #fff !important;
+}
+
+@media (max-width: 1180px) {
+  .serantra-nav-link { padding: 0 14px; }
+  .serantra-header-inner { gap: 16px; }
+  .serantra-logo-pill { padding: 10px 15px; }
+  .serantra-header-cta { padding: 0 19px; }
+}
+
+@media (max-width: 980px) {
+  .serantra-header { padding: 13px 16px; }
+  .serantra-header-inner { display: flex; justify-content: space-between; }
+  .serantra-nav-pill,
+  .serantra-header-cta { display: none; }
+  .serantra-mobile-button { display: flex; }
+  .serantra-logo-pill { min-height: 54px; padding: 8px 16px; }
+}
+
+@media (max-width: 640px) {
+  .serantra-header { padding: 10px 12px; }
+  .serantra-logo-pill { min-height: 50px; padding: 7px 13px; }
+  .serantra-logo-symbol { width: 27px; height: 27px; }
+  .serantra-logo-symbol span { width: 18px; height: 10px; }
+  .serantra-logo-text strong { font-size: 13px; }
+  .serantra-logo-text small { font-size: 6px; }
+  .serantra-mobile-menu { padding-top: 76px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .serantra-header-cta::before { animation: none; }
+}

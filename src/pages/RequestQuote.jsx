@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import {
   ArrowRight,
   Check,
@@ -56,7 +57,6 @@ export default function RequestQuote() {
         setStatus("success");
         form.reset();
       } else {
-        console.error(result);
         setStatus("error");
       }
     } catch (error) {
@@ -68,10 +68,15 @@ export default function RequestQuote() {
   }
 
   return (
-    <main className="min-h-screen bg-[#050505] pt-20 text-white">
+    <main className="min-h-screen bg-[#0b1220] pt-[72px] text-white">
 
-      <section className="border-b border-white/10">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
+      {/* TOP */}
+
+      <section className="relative overflow-hidden border-b border-white/10">
+
+        <div className="pointer-events-none absolute -right-40 top-0 h-[500px] w-[500px] rounded-full bg-blue-600/10 blur-[140px]" />
+
+        <div className="relative mx-auto max-w-7xl px-6 py-14 lg:px-8 lg:py-20">
 
           <p className="text-xs uppercase tracking-[0.25em] text-blue-400">
             Start a Project
@@ -80,26 +85,27 @@ export default function RequestQuote() {
           <h1 className="mt-6 max-w-4xl text-5xl font-medium tracking-[-0.05em] sm:text-6xl lg:text-7xl">
             Request a
 
-            <span className="block text-zinc-500">
+            <span className="block text-slate-400">
               free project quote.
             </span>
           </h1>
 
-          <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-500">
+          <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-400">
             Tell us about your project requirements. We will review
             your information and contact you to discuss the best
             solution for your business.
           </p>
 
         </div>
+
       </section>
 
 
-      <section className="py-24 lg:py-32">
+      {/* FORM */}
+
+      <section className="py-20 lg:py-28">
 
         <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
-
-          {/* LEFT SIDE */}
 
           <div>
 
@@ -107,14 +113,13 @@ export default function RequestQuote() {
               Why Serantra Solution?
             </p>
 
-            <h2 className="mt-6 text-3xl font-medium tracking-[-0.03em] md:text-4xl">
+            <h2 className="mt-6 text-3xl font-medium md:text-4xl">
               Let's understand your
 
-              <span className="block text-zinc-500">
+              <span className="block text-slate-400">
                 project first.
               </span>
             </h2>
-
 
             <div className="mt-10 space-y-5">
 
@@ -129,43 +134,38 @@ export default function RequestQuote() {
                   key={item}
                   className="flex items-start gap-4"
                 >
-
                   <Check
                     size={17}
                     className="mt-1 shrink-0 text-blue-400"
                   />
 
-                  <p className="leading-7 text-zinc-500">
+                  <p className="leading-7 text-slate-400">
                     {item}
                   </p>
-
                 </div>
               ))}
 
             </div>
 
-
             <div className="mt-14 border-t border-white/10 pt-8">
 
-              <p className="text-xs uppercase tracking-[0.2em] text-zinc-600">
+              <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
                 Contact us directly
               </p>
 
               <a
                 href="mailto:serantrasolution@gmail.com"
-                className="mt-6 flex items-center gap-3 text-sm text-zinc-300 transition hover:text-blue-400"
+                className="mt-6 flex items-center gap-3 text-sm text-slate-300 hover:text-blue-400"
               >
                 <Mail size={17} />
-
                 serantrasolution@gmail.com
               </a>
 
               <a
                 href="tel:0771472539"
-                className="mt-4 flex items-center gap-3 text-sm text-zinc-300 transition hover:text-blue-400"
+                className="mt-4 flex items-center gap-3 text-sm text-slate-300 hover:text-blue-400"
               >
                 <Phone size={17} />
-
                 077 147 2539
               </a>
 
@@ -174,19 +174,11 @@ export default function RequestQuote() {
           </div>
 
 
-          {/* FORM */}
-
           <div>
-
-            <p className="mb-8 text-sm leading-7 text-zinc-500">
-              Fill in the form below and your request will be sent
-              directly to Serantra Solution.
-            </p>
-
 
             {status === "success" ? (
 
-              <div className="py-16">
+              <div className="py-12">
 
                 <Check
                   size={32}
@@ -197,9 +189,9 @@ export default function RequestQuote() {
                   Request received.
                 </h2>
 
-                <p className="mt-4 max-w-lg leading-7 text-zinc-500">
-                  Thank you. Your project request was sent
-                  successfully and we will contact you soon.
+                <p className="mt-4 max-w-lg leading-7 text-slate-400">
+                  Your request was sent successfully. We will contact
+                  you soon.
                 </p>
 
                 <button
@@ -219,13 +211,10 @@ export default function RequestQuote() {
                 className="space-y-8"
               >
 
-                {/* SPAM PROTECTION */}
-
                 <input
                   type="checkbox"
                   name="botcheck"
                   className="hidden"
-                  style={{ display: "none" }}
                   tabIndex="-1"
                   autoComplete="off"
                 />
@@ -233,181 +222,87 @@ export default function RequestQuote() {
 
                 <div className="grid gap-6 md:grid-cols-2">
 
-                  <div>
-                    <label
-                      htmlFor="name"
-                      className="mb-3 block text-xs uppercase tracking-[0.17em] text-zinc-500"
-                    >
-                      Full Name *
-                    </label>
-
-                    <input
-                      id="name"
-                      type="text"
-                      name="name"
-                      required
-                      placeholder="Your full name"
-                      className="w-full border-0 border-b border-white/15 bg-transparent px-0 py-4 text-white outline-none placeholder:text-zinc-700 focus:border-blue-400"
-                    />
-                  </div>
-
-
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="mb-3 block text-xs uppercase tracking-[0.17em] text-zinc-500"
-                    >
-                      Email Address *
-                    </label>
-
-                    <input
-                      id="email"
-                      type="email"
-                      name="email"
-                      required
-                      placeholder="you@company.com"
-                      className="w-full border-0 border-b border-white/15 bg-transparent px-0 py-4 text-white outline-none placeholder:text-zinc-700 focus:border-blue-400"
-                    />
-                  </div>
-
-                </div>
-
-
-                <div className="grid gap-6 md:grid-cols-2">
-
-                  <div>
-                    <label
-                      htmlFor="phone"
-                      className="mb-3 block text-xs uppercase tracking-[0.17em] text-zinc-500"
-                    >
-                      Phone Number
-                    </label>
-
-                    <input
-                      id="phone"
-                      type="tel"
-                      name="phone"
-                      placeholder="+94 77 123 4567"
-                      className="w-full border-0 border-b border-white/15 bg-transparent px-0 py-4 text-white outline-none placeholder:text-zinc-700 focus:border-blue-400"
-                    />
-                  </div>
-
-
-                  <div>
-                    <label
-                      htmlFor="country"
-                      className="mb-3 block text-xs uppercase tracking-[0.17em] text-zinc-500"
-                    >
-                      Country
-                    </label>
-
-                    <input
-                      id="country"
-                      type="text"
-                      name="country"
-                      placeholder="Your country"
-                      className="w-full border-0 border-b border-white/15 bg-transparent px-0 py-4 text-white outline-none placeholder:text-zinc-700 focus:border-blue-400"
-                    />
-                  </div>
-
-                </div>
-
-
-                <div className="grid gap-6 md:grid-cols-2">
-
-                  <div>
-                    <label
-                      htmlFor="company"
-                      className="mb-3 block text-xs uppercase tracking-[0.17em] text-zinc-500"
-                    >
-                      Company
-                    </label>
-
-                    <input
-                      id="company"
-                      type="text"
-                      name="company"
-                      placeholder="Company name"
-                      className="w-full border-0 border-b border-white/15 bg-transparent px-0 py-4 text-white outline-none placeholder:text-zinc-700 focus:border-blue-400"
-                    />
-                  </div>
-
-
-                  <div>
-                    <label
-                      htmlFor="service"
-                      className="mb-3 block text-xs uppercase tracking-[0.17em] text-zinc-500"
-                    >
-                      Service *
-                    </label>
-
-                    <select
-                      id="service"
-                      name="service"
-                      required
-                      defaultValue=""
-                      className="w-full border-0 border-b border-white/15 bg-[#050505] px-0 py-4 text-zinc-400 outline-none focus:border-blue-400"
-                    >
-                      <option value="" disabled>
-                        Select a service
-                      </option>
-
-                      <option value="Website Development">
-                        Website Development
-                      </option>
-
-                      <option value="Web Application Development">
-                        Web Application Development
-                      </option>
-
-                      <option value="Custom Software Development">
-                        Custom Software Development
-                      </option>
-
-                      <option value="UI/UX Design">
-                        UI/UX Design
-                      </option>
-
-                      <option value="SaaS Development">
-                        SaaS Development
-                      </option>
-
-                      <option value="Maintenance & Support">
-                        Maintenance & Support
-                      </option>
-
-                      <option value="Other">
-                        Other
-                      </option>
-                    </select>
-                  </div>
-
-                </div>
-
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="mb-3 block text-xs uppercase tracking-[0.17em] text-zinc-500"
-                  >
-                    Project Details *
-                  </label>
-
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="6"
+                  <input
+                    type="text"
+                    name="name"
                     required
-                    placeholder="Describe your project, goals and requirements..."
-                    className="w-full resize-none border-0 border-b border-white/15 bg-transparent px-0 py-4 leading-7 text-white outline-none placeholder:text-zinc-700 focus:border-blue-400"
+                    placeholder="Full name"
+                    className="w-full border-0 border-b border-white/15 bg-transparent py-4 outline-none placeholder:text-slate-600 focus:border-blue-400"
                   />
+
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="Email address"
+                    className="w-full border-0 border-b border-white/15 bg-transparent py-4 outline-none placeholder:text-slate-600 focus:border-blue-400"
+                  />
+
                 </div>
+
+
+                <div className="grid gap-6 md:grid-cols-2">
+
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone number"
+                    className="w-full border-0 border-b border-white/15 bg-transparent py-4 outline-none placeholder:text-slate-600 focus:border-blue-400"
+                  />
+
+                  <input
+                    type="text"
+                    name="country"
+                    placeholder="Country"
+                    className="w-full border-0 border-b border-white/15 bg-transparent py-4 outline-none placeholder:text-slate-600 focus:border-blue-400"
+                  />
+
+                </div>
+
+
+                <div className="grid gap-6 md:grid-cols-2">
+
+                  <input
+                    type="text"
+                    name="company"
+                    placeholder="Company"
+                    className="w-full border-0 border-b border-white/15 bg-transparent py-4 outline-none placeholder:text-slate-600 focus:border-blue-400"
+                  />
+
+                  <select
+                    name="service"
+                    required
+                    defaultValue=""
+                    className="w-full border-0 border-b border-white/15 bg-[#0b1220] py-4 text-slate-400 outline-none focus:border-blue-400"
+                  >
+                    <option value="" disabled>
+                      Select a service
+                    </option>
+
+                    <option>Website Development</option>
+                    <option>Web Application Development</option>
+                    <option>Custom Software Development</option>
+                    <option>UI/UX Design</option>
+                    <option>SaaS Development</option>
+                    <option>Maintenance & Support</option>
+                    <option>Other</option>
+                  </select>
+
+                </div>
+
+
+                <textarea
+                  name="message"
+                  rows="6"
+                  required
+                  placeholder="Tell us about your project..."
+                  className="w-full resize-none border-0 border-b border-white/15 bg-transparent py-4 leading-7 outline-none placeholder:text-slate-600 focus:border-blue-400"
+                />
 
 
                 {status === "error" && (
                   <p className="text-sm text-red-400">
-                    Something went wrong. Please try again or
-                    contact serantrasolution@gmail.com.
+                    Something went wrong. Please try again.
                   </p>
                 )}
 
@@ -415,16 +310,14 @@ export default function RequestQuote() {
                 <button
                   type="submit"
                   disabled={sending}
-                  className="group flex items-center gap-3 bg-white px-8 py-4 text-sm font-semibold text-black transition hover:bg-blue-500 hover:text-white disabled:opacity-50"
+                  className="group flex items-center gap-3 bg-white px-8 py-4 text-sm font-semibold text-[#0b1220] transition hover:bg-blue-500 hover:text-white disabled:opacity-50"
                 >
-
                   {sending ? (
                     <>
                       <LoaderCircle
                         size={17}
                         className="animate-spin"
                       />
-
                       Sending...
                     </>
                   ) : (
@@ -437,11 +330,9 @@ export default function RequestQuote() {
                       />
                     </>
                   )}
-
                 </button>
 
               </form>
-
             )}
 
           </div>
