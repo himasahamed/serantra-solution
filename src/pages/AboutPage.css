@@ -1,0 +1,2157 @@
+/* =========================================================
+   ABOUT PAGE HERO
+========================================================= */
+
+.about-page-hero {
+    position: relative;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    min-height: 540px;
+  
+    overflow: hidden;
+  
+    padding:
+      140px 0
+      85px;
+  
+    background-color:
+      #09050d;
+  
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(8, 3, 12, 0.88),
+        rgba(38, 8, 56, 0.68),
+        rgba(86, 21, 130, 0.52)
+      ),
+      url("/images/about/about-hero.jpg");
+  
+    background-size:
+      cover;
+  
+    background-position:
+      center;
+  
+    background-repeat:
+      no-repeat;
+  }
+  
+  
+  /* =========================================================
+     HERO OVERLAY
+  ========================================================= */
+  
+  .about-page-hero-overlay {
+    position: absolute;
+  
+    inset: 0;
+  
+    background:
+      linear-gradient(
+        180deg,
+        rgba(5, 3, 8, 0.05),
+        rgba(5, 3, 8, 0.18) 50%,
+        #070509 100%
+      );
+  
+    pointer-events: none;
+  }
+  
+  
+  /* =========================================================
+     HERO GRID
+  ========================================================= */
+  
+  .about-page-hero-grid {
+    position: absolute;
+  
+    inset: 0;
+  
+    opacity: 0.15;
+  
+    background-image:
+      linear-gradient(
+        rgba(192, 132, 252, 0.07)
+        1px,
+        transparent
+        1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(192, 132, 252, 0.07)
+        1px,
+        transparent
+        1px
+      );
+  
+    background-size:
+      72px 72px;
+  
+    pointer-events:
+      none;
+  }
+  
+  
+  /* =========================================================
+     HERO GLOWS
+  ========================================================= */
+  
+  .about-page-hero-glow {
+    position: absolute;
+  
+    border-radius:
+      50%;
+  
+    filter:
+      blur(150px);
+  
+    pointer-events:
+      none;
+  }
+  
+  
+  .about-page-hero-glow-one {
+    width:
+      560px;
+  
+    height:
+      560px;
+  
+    right:
+      -100px;
+  
+    top:
+      -180px;
+  
+    background:
+      rgba(
+        147,
+        51,
+        234,
+        0.3
+      );
+  }
+  
+  
+  .about-page-hero-glow-two {
+    width:
+      430px;
+  
+    height:
+      430px;
+  
+    left:
+      25%;
+  
+    bottom:
+      -310px;
+  
+    background:
+      rgba(
+        217,
+        70,
+        239,
+        0.11
+      );
+  }
+  
+  
+  /* =========================================================
+     HERO CONTAINER
+  ========================================================= */
+  
+  .about-page-hero-container {
+    position: relative;
+  
+    z-index: 2;
+  
+    width:
+      min(
+        1280px,
+        calc(100% - 64px)
+      );
+  
+    margin:
+      0 auto;
+  }
+  
+  
+  /* =========================================================
+     BREADCRUMB
+  ========================================================= */
+  
+  .about-page-breadcrumb {
+    display:
+      flex;
+  
+    align-items:
+      center;
+  
+    gap:
+      12px;
+  
+    margin-bottom:
+      1.5rem;
+  
+    color:
+      #aaa1af;
+  
+    font-size:
+      0.82rem;
+  }
+  
+  
+  .about-page-breadcrumb a {
+    color:
+      #aaa1af;
+  
+    transition:
+      color
+      0.3s ease;
+  }
+  
+  
+  .about-page-breadcrumb a:hover {
+    color:
+      #c084fc;
+  }
+  
+  
+  .about-page-breadcrumb span:last-child {
+    color:
+      #e0d9e5;
+  }
+  
+  
+  /* =========================================================
+     HERO TITLE
+  ========================================================= */
+  
+  .about-page-hero h1 {
+    max-width:
+      850px;
+  
+    margin:
+      0;
+  
+    color:
+      #ffffff;
+  
+    font-size:
+      clamp(
+        3.8rem,
+        7vw,
+        7rem
+      );
+  
+    font-weight:
+      650;
+  
+    line-height:
+      0.95;
+  
+    letter-spacing:
+      -0.06em;
+  }
+  
+  
+  .about-page-hero h1 span {
+    color:
+      transparent;
+  
+    background:
+      linear-gradient(
+        90deg,
+        #c084fc,
+        #9333ea,
+        #d946ef
+      );
+  
+    background-clip:
+      text;
+  
+    -webkit-background-clip:
+      text;
+  }
+  
+  
+  /* =========================================================
+     HERO DESCRIPTION
+  ========================================================= */
+  
+  .about-page-hero-container > p {
+    max-width:
+      670px;
+  
+    margin:
+      1.8rem 0 0;
+  
+    color:
+      #aaa1af;
+  
+    font-size:
+      clamp(
+        1rem,
+        1.5vw,
+        1.15rem
+      );
+  
+    line-height:
+      1.8;
+  }
+  
+  
+  /* =========================================================
+     ABOUT COMPANY
+  ========================================================= */
+  
+  .about-company-section {
+    position:
+      relative;
+  
+    overflow:
+      clip;
+  
+    padding:
+      8rem 0;
+  
+    background:
+      #070509;
+  }
+  
+  
+  /* =========================================================
+     COMPANY BACKGROUND
+  ========================================================= */
+  
+  .about-company-background {
+    position:
+      absolute;
+  
+    inset:
+      0;
+  
+    overflow:
+      hidden;
+  
+    pointer-events:
+      none;
+  }
+  
+  
+  .about-company-grid-bg {
+    position:
+      absolute;
+  
+    inset:
+      0;
+  
+    opacity:
+      0.11;
+  
+    background-image:
+      linear-gradient(
+        rgba(
+          147,
+          51,
+          234,
+          0.045
+        )
+        1px,
+        transparent
+        1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(
+          147,
+          51,
+          234,
+          0.045
+        )
+        1px,
+        transparent
+        1px
+      );
+  
+    background-size:
+      82px 82px;
+  }
+  
+  
+  .about-company-glow {
+    position:
+      absolute;
+  
+    width:
+      550px;
+  
+    height:
+      550px;
+  
+    left:
+      -280px;
+  
+    bottom:
+      -280px;
+  
+    border-radius:
+      50%;
+  
+    background:
+      rgba(
+        126,
+        34,
+        206,
+        0.1
+      );
+  
+    filter:
+      blur(180px);
+  }
+  
+  
+  /* =========================================================
+     COMPANY CONTAINER
+  ========================================================= */
+  
+  .about-company-container {
+    position:
+      relative;
+  
+    z-index:
+      2;
+  
+    display:
+      grid;
+  
+    grid-template-columns:
+      minmax(0, 0.9fr)
+      minmax(0, 1.1fr);
+  
+    align-items:
+      center;
+  
+    gap:
+      clamp(
+        4rem,
+        8vw,
+        8rem
+      );
+  
+    width:
+      min(
+        1120px,
+        calc(100% - 48px)
+      );
+  
+    margin:
+      0 auto;
+  }
+  
+  
+  /* =========================================================
+     COMPANY IMAGE
+  ========================================================= */
+  
+  .about-company-visual {
+    position:
+      relative;
+  }
+  
+  
+  .about-company-image-wrap {
+    position:
+      relative;
+  
+    overflow:
+      hidden;
+  
+    min-height:
+      470px;
+  
+    border:
+      1px solid
+      rgba(
+        147,
+        51,
+        234,
+        0.25
+      );
+  
+    border-radius:
+      22px;
+  
+    background:
+      #120b18;
+  
+    box-shadow:
+      0 30px 80px
+      rgba(
+        0,
+        0,
+        0,
+        0.28
+      );
+  }
+  
+  
+  .about-company-image {
+    position:
+      absolute;
+  
+    inset:
+      0;
+  
+    width:
+      100%;
+  
+    height:
+      100%;
+  
+    object-fit:
+      cover;
+  
+    object-position:
+      center;
+  
+    filter:
+      saturate(0.9)
+      brightness(0.82);
+  
+    transition:
+      transform
+        0.8s
+        cubic-bezier(
+          0.22,
+          1,
+          0.36,
+          1
+        ),
+      filter
+        0.5s ease;
+  }
+  
+  
+  .about-company-image-wrap:hover
+  .about-company-image {
+    transform:
+      scale(1.055);
+  
+    filter:
+      saturate(1)
+      brightness(0.95);
+  }
+  
+  
+  .about-company-image-overlay {
+    position:
+      absolute;
+  
+    inset:
+      0;
+  
+    background:
+      linear-gradient(
+        180deg,
+        rgba(
+          9,
+          5,
+          13,
+          0.02
+        ),
+        rgba(
+          9,
+          5,
+          13,
+          0.12
+        )
+        45%,
+        rgba(
+          9,
+          5,
+          13,
+          0.86
+        )
+      );
+  }
+  
+  
+  .about-company-image-light {
+    position:
+      absolute;
+  
+    left:
+      50%;
+  
+    bottom:
+      -250px;
+  
+    width:
+      350px;
+  
+    height:
+      350px;
+  
+    transform:
+      translateX(-50%);
+  
+    border-radius:
+      50%;
+  
+    background:
+      rgba(
+        147,
+        51,
+        234,
+        0.28
+      );
+  
+    filter:
+      blur(80px);
+  }
+  
+  
+  /* =========================================================
+     COMPANY STATS
+  ========================================================= */
+  
+  .about-company-stats {
+    position:
+      relative;
+  
+    z-index:
+      3;
+  
+    display:
+      grid;
+  
+    grid-template-columns:
+      repeat(
+        3,
+        1fr
+      );
+  
+    gap:
+      1px;
+  
+    width:
+      calc(
+        100% - 40px
+      );
+  
+    margin:
+      -72px auto
+      0;
+  
+    overflow:
+      hidden;
+  
+    border:
+      1px solid
+      rgba(
+        147,
+        51,
+        234,
+        0.22
+      );
+  
+    border-radius:
+      14px;
+  
+    background:
+      rgba(
+        8,
+        6,
+        10,
+        0.91
+      );
+  
+    backdrop-filter:
+      blur(20px);
+  
+    -webkit-backdrop-filter:
+      blur(20px);
+  }
+  
+  
+  .about-company-stats > div {
+    padding:
+      1.2rem
+      0.6rem;
+  
+    text-align:
+      center;
+  
+    background:
+      rgba(
+        255,
+        255,
+        255,
+        0.018
+      );
+  }
+  
+  
+  .about-company-stats strong {
+    display:
+      block;
+  
+    color:
+      #c084fc;
+  
+    font-size:
+      1.2rem;
+  
+    font-weight:
+      650;
+  }
+  
+  
+  .about-company-stats span {
+    display:
+      block;
+  
+    margin-top:
+      5px;
+  
+    color:
+      #756d7b;
+  
+    font-size:
+      7px;
+  
+    letter-spacing:
+      0.08em;
+  
+    text-transform:
+      uppercase;
+  }
+  
+  
+  /* =========================================================
+     SHARED LABEL
+  ========================================================= */
+  
+  .about-page-label {
+    display:
+      flex;
+  
+    align-items:
+      center;
+  
+    gap:
+      10px;
+  
+    color:
+      #c084fc;
+  
+    font-size:
+      9px;
+  
+    font-weight:
+      700;
+  
+    letter-spacing:
+      0.18em;
+  
+    text-transform:
+      uppercase;
+  }
+  
+  
+  .about-page-label span {
+    display:
+      block;
+  
+    width:
+      28px;
+  
+    height:
+      1px;
+  
+    background:
+      linear-gradient(
+        90deg,
+        #9333ea,
+        #d8b4fe
+      );
+  }
+  
+  
+  /* =========================================================
+     COMPANY CONTENT
+  ========================================================= */
+  
+  .about-company-content h2 {
+    margin:
+      1rem 0 0;
+  
+    color:
+      #ffffff;
+  
+    font-size:
+      clamp(
+        2.8rem,
+        4.8vw,
+        4.5rem
+      );
+  
+    font-weight:
+      650;
+  
+    line-height:
+      1;
+  
+    letter-spacing:
+      -0.055em;
+  }
+  
+  
+  .about-company-content h2 span {
+    color:
+      transparent;
+  
+    background:
+      linear-gradient(
+        90deg,
+        #9333ea,
+        #c084fc,
+        #d946ef
+      );
+  
+    background-clip:
+      text;
+  
+    -webkit-background-clip:
+      text;
+  }
+  
+  
+  .about-company-content > p {
+    max-width:
+      620px;
+  
+    margin:
+      1.25rem 0 0;
+  
+    color:
+      #918995;
+  
+    font-size:
+      0.9rem;
+  
+    line-height:
+      1.85;
+  }
+  
+  
+  /* =========================================================
+     COMPANY POINTS
+  ========================================================= */
+  
+  .about-company-points {
+    display:
+      flex;
+  
+    flex-direction:
+      column;
+  
+    gap:
+      13px;
+  
+    margin-top:
+      2rem;
+  
+    padding-top:
+      1.7rem;
+  
+    border-top:
+      1px solid
+      rgba(
+        255,
+        255,
+        255,
+        0.07
+      );
+  }
+  
+  
+  .about-company-points > div {
+    display:
+      flex;
+  
+    align-items:
+      center;
+  
+    gap:
+      11px;
+  
+    color:
+      #b1a9b6;
+  
+    font-size:
+      0.82rem;
+  
+    line-height:
+      1.5;
+  }
+  
+  
+  .about-company-points svg {
+    flex-shrink:
+      0;
+  
+    color:
+      #a855f7;
+  }
+  
+  
+  /* =========================================================
+     WHY CHOOSE SERANTRA
+  ========================================================= */
+  
+  .about-why-section {
+    position:
+      relative;
+  
+    overflow:
+      clip;
+  
+    padding:
+      8rem 0;
+  
+    background:
+      linear-gradient(
+        180deg,
+        #09070c,
+        #0b0710
+      );
+  }
+  
+  
+  .about-why-background {
+    position:
+      absolute;
+  
+    inset:
+      0;
+  
+    overflow:
+      hidden;
+  
+    pointer-events:
+      none;
+  }
+  
+  
+  .about-why-grid-bg {
+    position:
+      absolute;
+  
+    inset:
+      0;
+  
+    opacity:
+      0.1;
+  
+    background-image:
+      linear-gradient(
+        rgba(
+          147,
+          51,
+          234,
+          0.045
+        )
+        1px,
+        transparent
+        1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(
+          147,
+          51,
+          234,
+          0.045
+        )
+        1px,
+        transparent
+        1px
+      );
+  
+    background-size:
+      80px 80px;
+  }
+  
+  
+  .about-why-glow {
+    position:
+      absolute;
+  
+    width:
+      700px;
+  
+    height:
+      400px;
+  
+    left:
+      50%;
+  
+    top:
+      -250px;
+  
+    transform:
+      translateX(-50%);
+  
+    border-radius:
+      50%;
+  
+    background:
+      rgba(
+        126,
+        34,
+        206,
+        0.12
+      );
+  
+    filter:
+      blur(170px);
+  }
+  
+  
+  /* =========================================================
+     WHY CONTAINER
+  ========================================================= */
+  
+  .about-why-container {
+    position:
+      relative;
+  
+    z-index:
+      2;
+  
+    width:
+      min(
+        1100px,
+        calc(100% - 48px)
+      );
+  
+    margin:
+      0 auto;
+  }
+  
+  
+  /* =========================================================
+     WHY HEADING
+  ========================================================= */
+  
+  .about-why-heading {
+    max-width:
+      750px;
+  
+    margin:
+      0 auto
+      4rem;
+  
+    text-align:
+      center;
+  }
+  
+  
+  .about-why-heading
+  .about-page-label {
+    justify-content:
+      center;
+  }
+  
+  
+  .about-why-heading h2 {
+    margin:
+      1rem 0 0;
+  
+    color:
+      #ffffff;
+  
+    font-size:
+      clamp(
+        2.8rem,
+        5vw,
+        4.6rem
+      );
+  
+    font-weight:
+      650;
+  
+    line-height:
+      1;
+  
+    letter-spacing:
+      -0.055em;
+  }
+  
+  
+  .about-why-heading h2 span {
+    color:
+      transparent;
+  
+    background:
+      linear-gradient(
+        90deg,
+        #9333ea,
+        #c084fc,
+        #d946ef
+      );
+  
+    background-clip:
+      text;
+  
+    -webkit-background-clip:
+      text;
+  }
+  
+  
+  .about-why-heading > p {
+    max-width:
+      620px;
+  
+    margin:
+      1.4rem auto 0;
+  
+    color:
+      #918995;
+  
+    font-size:
+      0.9rem;
+  
+    line-height:
+      1.8;
+  }
+  
+  
+  /* =========================================================
+     WHY GRID
+  ========================================================= */
+  
+  .about-why-grid {
+    display:
+      grid;
+  
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(
+          0,
+          1fr
+        )
+      );
+  
+    gap:
+      18px;
+  }
+  
+  
+  /* =========================================================
+     WHY CARD
+  ========================================================= */
+  
+  .about-why-card {
+    position:
+      relative;
+  
+    overflow:
+      hidden;
+  
+    min-height:
+      220px;
+  
+    padding:
+      1.8rem;
+  
+    border:
+      1px solid
+      rgba(
+        147,
+        51,
+        234,
+        0.18
+      );
+  
+    border-radius:
+      14px;
+  
+    background:
+      linear-gradient(
+        145deg,
+        rgba(
+          17,
+          11,
+          22,
+          0.98
+        ),
+        rgba(
+          10,
+          8,
+          13,
+          0.98
+        )
+      );
+  
+    transition:
+      transform
+        0.4s ease,
+      border-color
+        0.4s ease,
+      box-shadow
+        0.4s ease;
+  }
+  
+  
+  .about-why-card:hover {
+    transform:
+      translateY(-6px);
+  
+    border-color:
+      rgba(
+        168,
+        85,
+        247,
+        0.55
+      );
+  
+    box-shadow:
+      0 24px 65px
+      rgba(
+        88,
+        28,
+        135,
+        0.22
+      );
+  }
+  
+  
+  /* =========================================================
+     WHY CARD GLOW
+  ========================================================= */
+  
+  .about-why-card-light {
+    position:
+      absolute;
+  
+    width:
+      300px;
+  
+    height:
+      250px;
+  
+    left:
+      50%;
+  
+    bottom:
+      -210px;
+  
+    transform:
+      translateX(-50%);
+  
+    border-radius:
+      50%;
+  
+    background:
+      radial-gradient(
+        circle,
+        rgba(
+          147,
+          51,
+          234,
+          0.18
+        ),
+        transparent
+        70%
+      );
+  
+    filter:
+      blur(30px);
+  
+    opacity:
+      0;
+  
+    transition:
+      opacity
+        0.4s ease,
+      bottom
+        0.6s ease;
+  }
+  
+  
+  .about-why-card:hover
+  .about-why-card-light {
+    bottom:
+      -130px;
+  
+    opacity:
+      1;
+  }
+  
+  
+  /* =========================================================
+     WHY ICON
+  ========================================================= */
+  
+  .about-why-icon {
+    position:
+      relative;
+  
+    z-index:
+      2;
+  
+    display:
+      flex;
+  
+    align-items:
+      center;
+  
+    justify-content:
+      center;
+  
+    width:
+      42px;
+  
+    height:
+      42px;
+  
+    border-radius:
+      10px;
+  
+    background:
+      rgba(
+        88,
+        28,
+        135,
+        0.3
+      );
+  
+    color:
+      #a855f7;
+  
+    transition:
+      color
+        0.35s ease,
+      background
+        0.35s ease,
+      transform
+        0.35s ease;
+  }
+  
+  
+  .about-why-card:hover
+  .about-why-icon {
+    color:
+      #ffffff;
+  
+    background:
+      linear-gradient(
+        135deg,
+        #7e22ce,
+        #9333ea
+      );
+  
+    transform:
+      translateY(-3px)
+      scale(1.05);
+  }
+  
+  
+  /* =========================================================
+     WHY CARD CONTENT
+  ========================================================= */
+  
+  .about-why-card h3 {
+    position:
+      relative;
+  
+    z-index:
+      2;
+  
+    margin:
+      1.4rem 0 0;
+  
+    color:
+      #ffffff;
+  
+    font-size:
+      0.95rem;
+  
+    font-weight:
+      600;
+  }
+  
+  
+  .about-why-card p {
+    position:
+      relative;
+  
+    z-index:
+      2;
+  
+    margin:
+      0.8rem 0 0;
+  
+    color:
+      #89818e;
+  
+    font-size:
+      0.74rem;
+  
+    line-height:
+      1.75;
+  }
+  
+  
+  /* =========================================================
+     WHY CARD BOTTOM LIGHT
+  ========================================================= */
+  
+  .about-why-bottom-line {
+    position:
+      absolute;
+  
+    left:
+      0;
+  
+    right:
+      0;
+  
+    bottom:
+      0;
+  
+    height:
+      2px;
+  
+    overflow:
+      hidden;
+  
+    opacity:
+      0;
+  }
+  
+  
+  .about-why-bottom-line span {
+    position:
+      absolute;
+  
+    left:
+      -35%;
+  
+    width:
+      35%;
+  
+    height:
+      100%;
+  
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        #7e22ce,
+        #c084fc,
+        #ffffff,
+        transparent
+      );
+  }
+  
+  
+  .about-why-card:hover
+  .about-why-bottom-line {
+    opacity:
+      1;
+  }
+  
+  
+  .about-why-card:hover
+  .about-why-bottom-line span {
+    animation:
+      about-card-light-run
+      1.5s ease
+      forwards;
+  }
+  
+  
+  @keyframes about-card-light-run {
+    from {
+      left:
+        -35%;
+    }
+  
+    to {
+      left:
+        110%;
+    }
+  }
+  
+  
+  /* =========================================================
+     EXPERIENCE CTA
+  ========================================================= */
+  
+  .about-experience-section {
+    position:
+      relative;
+  
+    overflow:
+      hidden;
+  
+    padding:
+      2rem 24px
+      6.5rem;
+  
+    background:
+      #070509;
+  }
+  
+  
+  .about-experience-background {
+    position:
+      absolute;
+  
+    width:
+      700px;
+  
+    height:
+      450px;
+  
+    left:
+      50%;
+  
+    bottom:
+      -300px;
+  
+    transform:
+      translateX(-50%);
+  
+    border-radius:
+      50%;
+  
+    background:
+      rgba(
+        126,
+        34,
+        206,
+        0.1
+      );
+  
+    filter:
+      blur(150px);
+  }
+  
+  
+  /* =========================================================
+     EXPERIENCE CONTAINER
+  ========================================================= */
+  
+  .about-experience-container {
+    position:
+      relative;
+  
+    z-index:
+      2;
+  
+    width:
+      min(
+        850px,
+        100%
+      );
+  
+    margin:
+      0 auto;
+  }
+  
+  
+  /* =========================================================
+     EXPERIENCE CARD
+  ========================================================= */
+  
+  .about-experience-card {
+    position:
+      relative;
+  
+    overflow:
+      hidden;
+  
+    padding:
+      4.7rem 2rem;
+  
+    border:
+      1px solid
+      rgba(
+        147,
+        51,
+        234,
+        0.3
+      );
+  
+    border-radius:
+      23px;
+  
+    background:
+      linear-gradient(
+        120deg,
+        #160b1c,
+        #0d0910
+      );
+  
+    text-align:
+      center;
+  
+    box-shadow:
+      0 25px 75px
+      rgba(
+        0,
+        0,
+        0,
+        0.25
+      );
+  }
+  
+  
+  .about-experience-glow {
+    position:
+      absolute;
+  
+    width:
+      600px;
+  
+    height:
+      350px;
+  
+    left:
+      50%;
+  
+    bottom:
+      -280px;
+  
+    transform:
+      translateX(-50%);
+  
+    border-radius:
+      50%;
+  
+    background:
+      rgba(
+        147,
+        51,
+        234,
+        0.16
+      );
+  
+    filter:
+      blur(90px);
+  
+    transition:
+      bottom
+      0.6s ease;
+  }
+  
+  
+  .about-experience-card:hover
+  .about-experience-glow {
+    bottom:
+      -210px;
+  }
+  
+  
+  /* =========================================================
+     EXPERIENCE MOVING LIGHT
+  ========================================================= */
+  
+  .about-experience-card::after {
+    content:
+      "";
+  
+    position:
+      absolute;
+  
+    top:
+      0;
+  
+    left:
+      -30%;
+  
+    width:
+      28%;
+  
+    height:
+      1px;
+  
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        #7e22ce,
+        #c084fc,
+        #ffffff,
+        transparent
+      );
+  
+    filter:
+      drop-shadow(
+        0 0 7px
+        rgba(
+          192,
+          132,
+          252,
+          0.7
+        )
+      );
+  
+    animation:
+      about-cta-light-run
+      5s linear
+      infinite;
+  }
+  
+  
+  @keyframes about-cta-light-run {
+    from {
+      left:
+        -30%;
+    }
+  
+    to {
+      left:
+        105%;
+    }
+  }
+  
+  
+  /* =========================================================
+     EXPERIENCE TITLE
+  ========================================================= */
+  
+  .about-experience-card h2 {
+    position:
+      relative;
+  
+    z-index:
+      2;
+  
+    margin:
+      0;
+  
+    color:
+      #ffffff;
+  
+    font-size:
+      clamp(
+        2.3rem,
+        4vw,
+        3.8rem
+      );
+  
+    font-weight:
+      650;
+  
+    line-height:
+      1;
+  
+    letter-spacing:
+      -0.045em;
+  }
+  
+  
+  .about-experience-card h2 span {
+    color:
+      transparent;
+  
+    background:
+      linear-gradient(
+        90deg,
+        #9333ea,
+        #c084fc,
+        #d946ef
+      );
+  
+    background-clip:
+      text;
+  
+    -webkit-background-clip:
+      text;
+  }
+  
+  
+  /* =========================================================
+     EXPERIENCE DESCRIPTION
+  ========================================================= */
+  
+  .about-experience-card > p {
+    position:
+      relative;
+  
+    z-index:
+      2;
+  
+    max-width:
+      580px;
+  
+    margin:
+      1.4rem auto 0;
+  
+    color:
+      #aaa2b2;
+  
+    font-size:
+      0.9rem;
+  
+    line-height:
+      1.75;
+  }
+  
+  
+  /* =========================================================
+     EXPERIENCE ACTIONS
+  ========================================================= */
+  
+  .about-experience-actions {
+    position:
+      relative;
+  
+    z-index:
+      2;
+  
+    display:
+      flex;
+  
+    align-items:
+      center;
+  
+    justify-content:
+      center;
+  
+    flex-wrap:
+      wrap;
+  
+    gap:
+      12px;
+  
+    margin-top:
+      2rem;
+  }
+  
+  
+  .about-primary-button,
+  .about-secondary-button {
+    display:
+      inline-flex;
+  
+    align-items:
+      center;
+  
+    justify-content:
+      center;
+  
+    min-height:
+      50px;
+  
+    padding:
+      0 24px;
+  
+    border-radius:
+      999px;
+  
+    font-size:
+      11px;
+  
+    font-weight:
+      600;
+  }
+  
+  
+  .about-primary-button {
+    gap:
+      8px;
+  
+    background:
+      linear-gradient(
+        135deg,
+        #7e22ce,
+        #9333ea,
+        #a855f7
+      );
+  
+    color:
+      #ffffff;
+  
+    box-shadow:
+      0 12px 35px
+      rgba(
+        126,
+        34,
+        206,
+        0.3
+      );
+  
+    transition:
+      gap
+        0.3s ease,
+      transform
+        0.3s ease,
+      box-shadow
+        0.3s ease;
+  }
+  
+  
+  .about-primary-button:hover {
+    gap:
+      12px;
+  
+    transform:
+      translateY(-3px);
+  
+    box-shadow:
+      0 18px 45px
+      rgba(
+        147,
+        51,
+        234,
+        0.42
+      );
+  }
+  
+  
+  .about-secondary-button {
+    border:
+      1px solid
+      rgba(
+        147,
+        51,
+        234,
+        0.4
+      );
+  
+    background:
+      rgba(
+        255,
+        255,
+        255,
+        0.015
+      );
+  
+    color:
+      #d8b4fe;
+  
+    transition:
+      color
+        0.3s ease,
+      background
+        0.3s ease,
+      transform
+        0.3s ease;
+  }
+  
+  
+  .about-secondary-button:hover {
+    color:
+      #ffffff;
+  
+    background:
+      rgba(
+        147,
+        51,
+        234,
+        0.1
+      );
+  
+    transform:
+      translateY(-3px);
+  }
+  
+  
+  /* =========================================================
+     TABLET
+  ========================================================= */
+  
+  @media (max-width: 1000px) {
+  
+    .about-company-container {
+      grid-template-columns:
+        1fr;
+  
+      gap:
+        5rem;
+    }
+  
+  
+    .about-company-visual {
+      width:
+        100%;
+  
+      max-width:
+        650px;
+  
+      margin:
+        0 auto;
+    }
+  
+  
+    .about-company-content {
+      max-width:
+        760px;
+  
+      margin:
+        0 auto;
+    }
+  
+  
+    .about-why-grid {
+      grid-template-columns:
+        repeat(
+          2,
+          minmax(
+            0,
+            1fr
+          )
+        );
+    }
+  
+  }
+  
+  
+  /* =========================================================
+     MOBILE
+  ========================================================= */
+  
+  @media (max-width: 650px) {
+  
+    .about-page-hero {
+      min-height:
+        450px;
+  
+      padding:
+        120px 0
+        70px;
+  
+      background-position:
+        center;
+    }
+  
+  
+    .about-page-hero-container {
+      width:
+        calc(
+          100% - 32px
+        );
+    }
+  
+  
+    .about-page-hero h1 {
+      font-size:
+        clamp(
+          3rem,
+          15vw,
+          4.7rem
+        );
+    }
+  
+  
+    .about-company-section,
+    .about-why-section {
+      padding:
+        5.5rem 0;
+    }
+  
+  
+    .about-company-container,
+    .about-why-container {
+      width:
+        calc(
+          100% - 30px
+        );
+    }
+  
+  
+    .about-company-image-wrap {
+      min-height:
+        350px;
+    }
+  
+  
+    .about-company-stats {
+      width:
+        calc(
+          100% - 20px
+        );
+  
+      margin-top:
+        -55px;
+    }
+  
+  
+    .about-company-stats strong {
+      font-size:
+        1rem;
+    }
+  
+  
+    .about-why-grid {
+      grid-template-columns:
+        1fr;
+    }
+  
+  
+    .about-experience-section {
+      padding:
+        1rem 15px
+        5rem;
+    }
+  
+  
+    .about-experience-card {
+      padding:
+        3.8rem 1.4rem;
+    }
+  
+  
+    .about-experience-actions {
+      flex-direction:
+        column;
+  
+      align-items:
+        stretch;
+    }
+  
+  
+    .about-primary-button,
+    .about-secondary-button {
+      width:
+        100%;
+    }
+  
+  }
+  
+  
+  /* =========================================================
+     REDUCED MOTION
+  ========================================================= */
+  
+  @media (prefers-reduced-motion: reduce) {
+  
+    .about-company-image,
+    .about-why-card,
+    .about-why-icon,
+    .about-why-card-light,
+    .about-primary-button,
+    .about-secondary-button {
+      transition:
+        none;
+    }
+  
+  
+    .about-why-bottom-line span,
+    .about-experience-card::after {
+      animation:
+        none !important;
+    }
+  
+  }

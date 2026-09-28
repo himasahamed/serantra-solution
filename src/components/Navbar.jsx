@@ -16,17 +16,13 @@ import {
 
 import "./Navbar.css";
 
-
 export default function Navbar() {
   const [menuOpen, setMenuOpen] =
     useState(false);
 
-  const location = useLocation();
+  const location =
+    useLocation();
 
-
-  /* =====================================================
-     CLOSE MOBILE MENU AFTER NAVIGATION
-  ===================================================== */
 
   useEffect(() => {
     setMenuOpen(false);
@@ -36,10 +32,6 @@ export default function Navbar() {
   ]);
 
 
-  /* =====================================================
-     NAV ITEMS
-  ===================================================== */
-
   const navItems = [
     {
       name: "Home",
@@ -48,7 +40,7 @@ export default function Navbar() {
 
     {
       name: "About",
-      to: "/#about",
+      to: "/about",
     },
 
     {
@@ -63,19 +55,15 @@ export default function Navbar() {
 
     {
       name: "Projects",
-      to: "/#projects",
+      to: "/projects",
     },
 
     {
       name: "Contact",
-      to: "/#contact",
+      to: "/contact",
     },
   ];
 
-
-  /* =====================================================
-     ACTIVE NAVIGATION
-  ===================================================== */
 
   const isActive = (item) => {
     if (item.name === "Home") {
@@ -86,8 +74,17 @@ export default function Navbar() {
     }
 
 
+    if (item.name === "About") {
+      return (
+        location.pathname ===
+        "/about"
+      );
+    }
+
+
     if (item.name === "Services") {
-      return location.pathname.startsWith(
+      return (
+        location.pathname ===
         "/services"
       );
     }
@@ -101,15 +98,18 @@ export default function Navbar() {
     }
 
 
-    if (
-      item.name === "About" ||
-      item.name === "Projects" ||
-      item.name === "Contact"
-    ) {
+    if (item.name === "Projects") {
       return (
-        location.pathname === "/" &&
-        location.hash ===
-          item.to.replace("/", "")
+        location.pathname ===
+        "/projects"
+      );
+    }
+
+
+    if (item.name === "Contact") {
+      return (
+        location.pathname ===
+        "/contact"
       );
     }
 
@@ -120,10 +120,6 @@ export default function Navbar() {
 
   return (
     <>
-      {/* =================================================
-          DESKTOP HEADER
-      ================================================== */}
-
       <header className="serantra-header">
         <div className="serantra-header-inner">
 
@@ -155,25 +151,27 @@ export default function Navbar() {
           </Link>
 
 
-          {/* NAVIGATION */}
+          {/* DESKTOP NAV */}
 
           <nav
             className="serantra-nav-pill"
             aria-label="Primary navigation"
           >
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.to}
-                className={`serantra-nav-link ${
-                  isActive(item)
-                    ? "serantra-nav-link-active"
-                    : ""
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navItems.map(
+              (item) => (
+                <Link
+                  key={item.name}
+                  to={item.to}
+                  className={`serantra-nav-link ${
+                    isActive(item)
+                      ? "serantra-nav-link-active"
+                      : ""
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              )
+            )}
           </nav>
 
 
@@ -210,24 +208,25 @@ export default function Navbar() {
                 ? "Close navigation menu"
                 : "Open navigation menu"
             }
-            aria-expanded={
-              menuOpen
-            }
+            aria-expanded={menuOpen}
           >
             {menuOpen ? (
-              <X size={22} />
+              <X
+                size={22}
+                strokeWidth={2}
+              />
             ) : (
-              <Menu size={22} />
+              <Menu
+                size={22}
+                strokeWidth={2}
+              />
             )}
           </button>
-
         </div>
       </header>
 
 
-      {/* =================================================
-          MOBILE MENU
-      ================================================== */}
+      {/* MOBILE NAV */}
 
       <div
         className={`serantra-mobile-menu ${
@@ -244,30 +243,23 @@ export default function Navbar() {
             Home
           </Link>
 
-
-          <Link to="/#about">
+          <Link to="/about">
             About
           </Link>
-
-
-          {/* SERVICES IS NOW NORMAL LINK */}
 
           <Link to="/services">
             Services
           </Link>
 
-
           <Link to="/clients">
             Clients
           </Link>
 
-
-          <Link to="/#projects">
+          <Link to="/projects">
             Projects
           </Link>
 
-
-          <Link to="/#contact">
+          <Link to="/contact">
             Contact
           </Link>
 

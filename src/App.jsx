@@ -6,12 +6,16 @@ import {
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+
 import ScrollToTop from "./components/ScrollToTop";
 import SiteMotion from "./components/SiteMotion";
 
 import Home from "./pages/Home";
+import AboutPage from "./pages/AboutPage";
 import Clients from "./pages/Clients";
 import ServicePage from "./pages/ServicePage";
+import ProjectsPage from "./pages/ProjectsPage";
+import ContactPage from "./pages/ContactPage";
 import RequestQuote from "./pages/RequestQuote";
 
 export default function App() {
@@ -25,28 +29,35 @@ export default function App() {
 
       <main id="main-content">
         <Routes>
-          {/* HOME */}
-
           <Route
             path="/"
             element={<Home />}
           />
 
-          {/* SERVICES PAGE */}
+          <Route
+            path="/about"
+            element={<AboutPage />}
+          />
 
           <Route
             path="/services"
             element={<ServicePage />}
           />
 
-          {/* CLIENTS */}
+          <Route
+            path="/projects"
+            element={<ProjectsPage />}
+          />
 
           <Route
             path="/clients"
             element={<Clients />}
           />
 
-          {/* REQUEST QUOTE */}
+          <Route
+            path="/contact"
+            element={<ContactPage />}
+          />
 
           <Route
             path="/request-quote"
