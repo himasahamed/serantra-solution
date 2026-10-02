@@ -12,11 +12,11 @@ import SiteMotion from "./components/SiteMotion";
 
 import Home from "./pages/Home";
 import AboutPage from "./pages/AboutPage";
-import Clients from "./pages/Clients";
 import ServicePage from "./pages/ServicePage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ContactPage from "./pages/ContactPage";
 import RequestQuote from "./pages/RequestQuote";
+
 
 export default function App() {
   return (
@@ -29,35 +29,47 @@ export default function App() {
 
       <main id="main-content">
         <Routes>
+          {/* HOME */}
+
           <Route
             path="/"
             element={<Home />}
           />
+
+
+          {/* ABOUT */}
 
           <Route
             path="/about"
             element={<AboutPage />}
           />
 
+
+          {/* SERVICES */}
+
           <Route
             path="/services"
             element={<ServicePage />}
           />
+
+
+          {/* PROJECTS */}
 
           <Route
             path="/projects"
             element={<ProjectsPage />}
           />
 
-          <Route
-            path="/clients"
-            element={<Clients />}
-          />
+
+          {/* CONTACT */}
 
           <Route
             path="/contact"
             element={<ContactPage />}
           />
+
+
+          {/* REQUEST QUOTE */}
 
           <Route
             path="/request-quote"
