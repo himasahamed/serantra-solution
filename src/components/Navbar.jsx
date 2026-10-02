@@ -16,6 +16,7 @@ import {
 
 import "./Navbar.css";
 
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] =
     useState(false);
@@ -24,6 +25,10 @@ export default function Navbar() {
     useLocation();
 
 
+  /* =====================================================
+     CLOSE MOBILE MENU AFTER ROUTE CHANGE
+  ===================================================== */
+
   useEffect(() => {
     setMenuOpen(false);
   }, [
@@ -31,6 +36,10 @@ export default function Navbar() {
     location.hash,
   ]);
 
+
+  /* =====================================================
+     NAVIGATION
+  ===================================================== */
 
   const navItems = [
     {
@@ -49,11 +58,6 @@ export default function Navbar() {
     },
 
     {
-      name: "Clients",
-      to: "/clients",
-    },
-
-    {
       name: "Projects",
       to: "/projects",
     },
@@ -64,6 +68,10 @@ export default function Navbar() {
     },
   ];
 
+
+  /* =====================================================
+     ACTIVE NAVIGATION
+  ===================================================== */
 
   const isActive = (item) => {
     if (item.name === "Home") {
@@ -85,15 +93,10 @@ export default function Navbar() {
     if (item.name === "Services") {
       return (
         location.pathname ===
-        "/services"
-      );
-    }
-
-
-    if (item.name === "Clients") {
-      return (
-        location.pathname ===
-        "/clients"
+          "/services" ||
+        location.pathname.startsWith(
+          "/services/"
+        )
       );
     }
 
@@ -120,6 +123,10 @@ export default function Navbar() {
 
   return (
     <>
+      {/* =================================================
+          HEADER
+      ================================================== */}
+
       <header className="serantra-header">
         <div className="serantra-header-inner">
 
@@ -128,7 +135,7 @@ export default function Navbar() {
           <Link
             to="/"
             className="serantra-logo-pill"
-            aria-label="Serantra Solution home"
+            aria-label="Serantra Solutions home"
           >
             <div
               className="serantra-logo-symbol"
@@ -151,7 +158,9 @@ export default function Navbar() {
           </Link>
 
 
-          {/* DESKTOP NAV */}
+          {/* =================================================
+              DESKTOP NAVIGATION
+          ================================================== */}
 
           <nav
             className="serantra-nav-pill"
@@ -175,7 +184,9 @@ export default function Navbar() {
           </nav>
 
 
-          {/* START PROJECT */}
+          {/* =================================================
+              START PROJECT BUTTON
+          ================================================== */}
 
           <Link
             to="/request-quote"
@@ -192,7 +203,9 @@ export default function Navbar() {
           </Link>
 
 
-          {/* MOBILE BUTTON */}
+          {/* =================================================
+              MOBILE BUTTON
+          ================================================== */}
 
           <button
             type="button"
@@ -226,7 +239,9 @@ export default function Navbar() {
       </header>
 
 
-      {/* MOBILE NAV */}
+      {/* =================================================
+          MOBILE NAVIGATION
+      ================================================== */}
 
       <div
         className={`serantra-mobile-menu ${
@@ -239,27 +254,66 @@ export default function Navbar() {
           className="serantra-mobile-nav"
           aria-label="Mobile navigation"
         >
-          <Link to="/">
+          <Link
+            to="/"
+            className={
+              location.pathname === "/"
+                ? "mobile-nav-active"
+                : ""
+            }
+          >
             Home
           </Link>
 
-          <Link to="/about">
+
+          <Link
+            to="/about"
+            className={
+              location.pathname === "/about"
+                ? "mobile-nav-active"
+                : ""
+            }
+          >
             About
           </Link>
 
-          <Link to="/services">
+
+          <Link
+            to="/services"
+            className={
+              location.pathname.startsWith(
+                "/services"
+              )
+                ? "mobile-nav-active"
+                : ""
+            }
+          >
             Services
           </Link>
 
-          <Link to="/clients">
-            Clients
-          </Link>
 
-          <Link to="/projects">
+          <Link
+            to="/projects"
+            className={
+              location.pathname ===
+              "/projects"
+                ? "mobile-nav-active"
+                : ""
+            }
+          >
             Projects
           </Link>
 
-          <Link to="/contact">
+
+          <Link
+            to="/contact"
+            className={
+              location.pathname ===
+              "/contact"
+                ? "mobile-nav-active"
+                : ""
+            }
+          >
             Contact
           </Link>
 

@@ -1,7 +1,9 @@
 import {
   ArrowRight,
   Bot,
+  CheckCircle2,
   Code2,
+  FilePenLine,
   FlaskConical,
   Laptop,
   Megaphone,
@@ -11,7 +13,6 @@ import {
   Search,
   Sparkles,
   Target,
-  Workflow,
 } from "lucide-react";
 
 import { Link } from "react-router-dom";
@@ -62,7 +63,7 @@ const services = [
     title: "Brand Identity",
 
     description:
-      "Creating a cohesive brand identity with logo design, typography, and color palette.",
+      "Creating a cohesive brand identity with logo design, typography and a consistent visual language.",
 
     features: [
       "Logo Design",
@@ -78,7 +79,7 @@ const services = [
     title: "Creative Designing",
 
     description:
-      "Crafting visually stunning graphics, from marketing materials to social media content.",
+      "Crafting visually strong graphics, marketing materials and digital content for modern brands.",
 
     features: [
       "Brand Materials",
@@ -89,12 +90,12 @@ const services = [
   },
 
   {
-    icon: Workflow,
+    icon: PenTool,
 
     title: "UI/UX Design",
 
     description:
-      "Designing intuitive and engaging user experiences for websites and applications.",
+      "Designing intuitive and engaging user experiences for websites, software and digital applications.",
 
     features: [
       "User Research",
@@ -110,7 +111,7 @@ const services = [
     title: "Digital Marketing",
 
     description:
-      "Boosting your online presence with SEO, social media strategies, and targeted campaigns.",
+      "Helping businesses strengthen their digital presence through strategic and results-focused marketing.",
 
     features: [
       "SEO Optimization",
@@ -121,17 +122,17 @@ const services = [
   },
 
   {
-    icon: PenTool,
+    icon: FilePenLine,
 
     title: "Creative & Copywriting",
 
     description:
-      "Compelling content and creative copy that drives engagement and conversions.",
+      "Compelling creative content and professional copy designed to communicate your brand clearly.",
 
     features: [
       "Website Copy",
       "Blog Writing",
-      "Ad Campaigns",
+      "Campaign Content",
       "Brand Voice",
     ],
   },
@@ -142,12 +143,12 @@ const services = [
     title: "AI Integration & Automation",
 
     description:
-      "Smart AI solutions and automation to streamline your business processes.",
+      "Smart AI solutions and automation designed to streamline repetitive business processes.",
 
     features: [
       "AI Chatbots",
       "Process Automation",
-      "Machine Learning",
+      "AI Integration",
       "Data Analytics",
     ],
   },
@@ -156,12 +157,11 @@ const services = [
 
 /* =========================================================
    HOW WE WORK
+   NO 01 / 02 / 03 NUMBERS
 ========================================================= */
 
 const processSteps = [
   {
-    number: "01",
-
     icon: Search,
 
     title: "Discovery",
@@ -171,8 +171,6 @@ const processSteps = [
   },
 
   {
-    number: "02",
-
     icon: Target,
 
     title: "Strategy",
@@ -182,8 +180,6 @@ const processSteps = [
   },
 
   {
-    number: "03",
-
     icon: Palette,
 
     title: "Design",
@@ -193,8 +189,6 @@ const processSteps = [
   },
 
   {
-    number: "04",
-
     icon: Code2,
 
     title: "Development",
@@ -204,8 +198,6 @@ const processSteps = [
   },
 
   {
-    number: "05",
-
     icon: FlaskConical,
 
     title: "Testing",
@@ -215,8 +207,6 @@ const processSteps = [
   },
 
   {
-    number: "06",
-
     icon: Rocket,
 
     title: "Launch",
@@ -228,69 +218,38 @@ const processSteps = [
 
 
 export default function ServicePage() {
-  /* =======================================================
-     SERVICE CARD MOUSE LIGHT
-  ======================================================= */
-
-  const handleMouseMove = (event) => {
-    const card =
-      event.currentTarget;
-
-    const rect =
-      card.getBoundingClientRect();
-
-    const x =
-      event.clientX -
-      rect.left;
-
-    const y =
-      event.clientY -
-      rect.top;
-
-    card.style.setProperty(
-      "--service-mouse-x",
-      `${x}px`
-    );
-
-    card.style.setProperty(
-      "--service-mouse-y",
-      `${y}px`
-    );
-  };
-
-
   return (
     <>
       {/* ===================================================
           SERVICES HERO
       ==================================================== */}
 
-      <section className="services-hero">
+      <section className="services-page-hero">
         <div
-          className="services-hero-overlay"
+          className="services-page-hero-overlay"
           aria-hidden="true"
         />
 
         <div
-          className="services-hero-grid"
+          className="services-page-hero-grid"
           aria-hidden="true"
         />
 
         <div
-          className="services-hero-light services-hero-light-one"
+          className="services-page-hero-glow services-page-hero-glow-one"
           aria-hidden="true"
         />
 
         <div
-          className="services-hero-light services-hero-light-two"
+          className="services-page-hero-glow services-page-hero-glow-two"
           aria-hidden="true"
         />
 
 
-        <div className="services-hero-container">
+        <div className="services-page-hero-container">
           {/* BREADCRUMB */}
 
-          <div className="services-breadcrumb">
+          <div className="services-page-breadcrumb">
             <Link to="/">
               Home
             </Link>
@@ -305,9 +264,9 @@ export default function ServicePage() {
           </div>
 
 
-          {/* TITLE */}
+          {/* HERO TITLE */}
 
-          <h1 className="services-hero-title">
+          <h1>
             Our
             <span>
               {" "}Services
@@ -315,176 +274,145 @@ export default function ServicePage() {
           </h1>
 
 
-          {/* DESCRIPTION */}
-
-          <p className="services-hero-description">
-            Comprehensive digital solutions tailored to
-            transform your business and drive growth in
-            the digital age.
+          <p>
+            Comprehensive digital solutions tailored
+            to transform your business and drive
+            sustainable growth in the digital age.
           </p>
         </div>
       </section>
 
 
       {/* ===================================================
-          WHAT WE OFFER
+          SERVICES
       ==================================================== */}
 
-      <section className="all-services-page">
-        {/* BACKGROUND */}
-
+      <section className="services-main-section">
         <div
-          className="all-services-background"
+          className="services-main-background"
           aria-hidden="true"
         >
-          <div className="all-services-grid-background" />
+          <div className="services-main-grid-background" />
 
-          <div className="all-services-main-glow" />
-
-          <div className="all-services-side-glow" />
+          <div className="services-main-glow" />
         </div>
 
 
-        <div className="all-services-container">
+        <div className="services-main-container">
           {/* HEADING */}
 
-          <div className="all-services-heading">
-            <div className="all-services-label">
+          <div className="services-main-heading">
+            <div className="services-section-label">
               <span />
 
-              ABOUT OUR AGENCY
+              WHAT WE OFFER
             </div>
 
 
             <h2>
-              What We
+              Solutions Built Around
               <span>
-                {" "}Offer
+                {" "}Your Goals
               </span>
             </h2>
 
 
             <p>
-              From concept to completion, we provide
-              end-to-end digital solutions that help
-              businesses thrive in today's competitive
-              landscape.
+              From design and development to automation
+              and digital marketing, we provide services
+              designed around real business requirements.
             </p>
-
-
-            <Link
-              to="/request-quote"
-              className="all-services-cta"
-            >
-              Get Started Now
-
-              <ArrowRight
-                size={16}
-                strokeWidth={2}
-              />
-            </Link>
           </div>
 
 
-          {/* =================================================
-              8 SERVICE CARDS
-          ================================================== */}
+          {/* SERVICE CARDS */}
 
-          <div className="all-services-grid">
-            {services.map(
-              (service, index) => {
-                const Icon =
-                  service.icon;
+          <div className="services-page-grid">
+            {services.map((service) => {
+              const Icon = service.icon;
 
-                return (
-                  <article
-                    key={service.title}
-                    className="all-service-card"
-                    onMouseMove={handleMouseMove}
-                  >
-                    {/* CURSOR GLOW */}
+              return (
+                <article
+                  key={service.title}
+                  className="services-page-card"
+                >
+                  <div
+                    className="services-page-card-glow"
+                    aria-hidden="true"
+                  />
 
-                    <div
-                      className="all-service-cursor-glow"
-                      aria-hidden="true"
+
+                  {/* ICON */}
+
+                  <div className="services-page-icon">
+                    <Icon
+                      size={24}
+                      strokeWidth={1.7}
                     />
+                  </div>
 
 
-                    {/* NUMBER */}
+                  {/* TITLE */}
 
-                    <span className="all-service-number">
-                      {String(
-                        index + 1
-                      ).padStart(
-                        2,
-                        "0"
-                      )}
-                    </span>
+                  <h3>
+                    {service.title}
+                  </h3>
 
 
-                    {/* ICON */}
+                  {/* DESCRIPTION */}
 
-                    <div className="all-service-icon">
-                      <Icon
-                        size={23}
-                        strokeWidth={1.9}
-                      />
-                    </div>
+                  <p className="services-page-card-description">
+                    {service.description}
+                  </p>
 
 
-                    {/* TITLE */}
+                  {/* FEATURES */}
 
-                    <h3>
-                      {service.title}
-                    </h3>
+                  <ul className="services-page-feature-list">
+                    {service.features.map(
+                      (feature) => (
+                        <li key={feature}>
+                          <CheckCircle2
+                            size={13}
+                            strokeWidth={2}
+                          />
 
-
-                    {/* DESCRIPTION */}
-
-                    <p className="all-service-description">
-                      {service.description}
-                    </p>
-
-
-                    {/* FEATURES */}
-
-                    <ul className="all-service-features">
-                      {service.features.map(
-                        (feature) => (
-                          <li key={feature}>
-                            <span />
-
+                          <span>
                             {feature}
-                          </li>
-                        )
-                      )}
-                    </ul>
+                          </span>
+                        </li>
+                      )
+                    )}
+                  </ul>
 
 
-                    {/* VISUAL ONLY */}
+                  {/*
+                    Learn More is intentionally NOT linked.
+                    It does not navigate anywhere.
+                  */}
 
-                    <div className="all-service-learn-more">
-                      Learn More
+                  <button
+                    type="button"
+                    className="services-page-learn-more"
+                  >
+                    Learn More
 
-                      <ArrowRight
-                        size={14}
-                        strokeWidth={2}
-                      />
-                    </div>
+                    <ArrowRight
+                      size={14}
+                      strokeWidth={1.9}
+                    />
+                  </button>
 
 
-                    {/* BOTTOM LIGHT */}
-
-                    <div
-                      className="all-service-bottom-light"
-                      aria-hidden="true"
-                    >
-                      <span />
-                    </div>
-                  </article>
-                );
-              }
-            )}
+                  <div
+                    className="services-page-card-light"
+                    aria-hidden="true"
+                  >
+                    <span />
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -495,13 +423,11 @@ export default function ServicePage() {
       ==================================================== */}
 
       <section className="service-process-section">
-        {/* BACKGROUND */}
-
         <div
           className="service-process-background"
           aria-hidden="true"
         >
-          <div className="service-process-grid-bg" />
+          <div className="service-process-grid-background" />
 
           <div className="service-process-glow" />
         </div>
@@ -511,7 +437,7 @@ export default function ServicePage() {
           {/* HEADING */}
 
           <div className="service-process-heading">
-            <div className="service-process-label">
+            <div className="services-section-label">
               <span />
 
               OUR PROCESS
@@ -527,94 +453,83 @@ export default function ServicePage() {
 
 
             <p>
-              A proven methodology that delivers
-              exceptional results every time.
+              A structured process designed to move
+              your project from idea to successful
+              digital solution.
             </p>
           </div>
 
 
-          {/* PROCESS GRID */}
+          {/* =================================================
+              PROCESS CARDS
+              NUMBERS REMOVED
+          ================================================== */}
 
           <div className="service-process-grid">
-            {processSteps.map(
-              (step) => {
-                const Icon =
-                  step.icon;
+            {processSteps.map((step) => {
+              const Icon = step.icon;
 
-                return (
-                  <article
-                    key={step.number}
-                    className="service-process-card"
-                  >
-                    {/* NUMBER */}
-
-                    <span className="service-process-number">
-                      {step.number}
-                    </span>
+              return (
+                <article
+                  key={step.title}
+                  className="service-process-card"
+                >
+                  <div
+                    className="service-process-card-glow"
+                    aria-hidden="true"
+                  />
 
 
-                    {/* ICON */}
-
-                    <div className="service-process-icon">
-                      <Icon
-                        size={23}
-                        strokeWidth={1.8}
-                      />
-                    </div>
-
-
-                    {/* TITLE */}
-
-                    <h3>
-                      {step.title}
-                    </h3>
-
-
-                    {/* DESCRIPTION */}
-
-                    <p>
-                      {step.description}
-                    </p>
-
-
-                    {/* LIGHT */}
-
-                    <div
-                      className="service-process-card-light"
-                      aria-hidden="true"
+                  <div className="service-process-icon">
+                    <Icon
+                      size={24}
+                      strokeWidth={1.8}
                     />
-                  </article>
-                );
-              }
-            )}
+                  </div>
+
+
+                  <h3>
+                    {step.title}
+                  </h3>
+
+
+                  <p>
+                    {step.description}
+                  </p>
+
+
+                  <div
+                    className="service-process-bottom-light"
+                    aria-hidden="true"
+                  >
+                    <span />
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
 
 
       {/* ===================================================
-          READY TO START PROJECT CTA
+          CTA
       ==================================================== */}
 
-      <section className="service-project-cta-section">
-        {/* BACKGROUND LIGHT */}
-
+      <section className="services-cta-section">
         <div
-          className="service-project-cta-glow"
-          aria-hidden="true"
-        />
-
-        {/* BACKGROUND GRID */}
-
-        <div
-          className="service-project-cta-grid"
+          className="services-cta-background"
           aria-hidden="true"
         />
 
 
-        <div className="service-project-cta-container">
-          <div className="service-project-cta-content">
-            {/* TITLE */}
+        <div className="services-cta-container">
+          <div className="services-cta-card">
+            <div
+              className="services-cta-glow"
+              aria-hidden="true"
+            />
+
 
             <h2>
               Ready to Start Your
@@ -624,21 +539,17 @@ export default function ServicePage() {
             </h2>
 
 
-            {/* DESCRIPTION */}
-
             <p>
-              Let’s discuss how we can help transform
-              your ideas into reality. Get in touch with
-              our team today.
+              Let’s discuss your requirements and
+              create the right digital solution for
+              your business.
             </p>
 
 
-            {/* BUTTONS */}
-
-            <div className="service-project-cta-actions">
+            <div className="services-cta-actions">
               <Link
                 to="/request-quote"
-                className="service-project-primary-button"
+                className="services-primary-cta"
               >
                 Get Free Quote
 
@@ -650,8 +561,8 @@ export default function ServicePage() {
 
 
               <Link
-                to="/#projects"
-                className="service-project-secondary-button"
+                to="/projects"
+                className="services-secondary-cta"
               >
                 View Our Work
               </Link>
