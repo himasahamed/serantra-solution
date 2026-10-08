@@ -1,8 +1,4 @@
-import {
-  useEffect,
-  useState,
-} from "react";
-
+import { useEffect, useState } from "react";
 import {
   ArrowUpRight,
   Menu,
@@ -25,21 +21,10 @@ export default function Navbar() {
     useLocation();
 
 
-  /* =====================================================
-     CLOSE MOBILE MENU AFTER ROUTE CHANGE
-  ===================================================== */
-
   useEffect(() => {
     setMenuOpen(false);
-  }, [
-    location.pathname,
-    location.hash,
-  ]);
+  }, [location.pathname]);
 
-
-  /* =====================================================
-     NAVIGATION
-  ===================================================== */
 
   const navItems = [
     {
@@ -69,124 +54,68 @@ export default function Navbar() {
   ];
 
 
-  /* =====================================================
-     ACTIVE NAVIGATION
-  ===================================================== */
-
   const isActive = (item) => {
     if (item.name === "Home") {
-      return (
-        location.pathname === "/" &&
-        !location.hash
-      );
+      return location.pathname === "/";
     }
-
-
-    if (item.name === "About") {
-      return (
-        location.pathname ===
-        "/about"
-      );
-    }
-
 
     if (item.name === "Services") {
       return (
-        location.pathname ===
-          "/services" ||
+        location.pathname === "/services" ||
         location.pathname.startsWith(
           "/services/"
         )
       );
     }
 
-
-    if (item.name === "Projects") {
-      return (
-        location.pathname ===
-        "/projects"
-      );
-    }
-
-
-    if (item.name === "Contact") {
-      return (
-        location.pathname ===
-        "/contact"
-      );
-    }
-
-
-    return false;
+    return (
+      location.pathname === item.to
+    );
   };
 
 
   return (
     <>
-      {/* =================================================
-          HEADER
-      ================================================== */}
-
       <header className="serantra-header">
         <div className="serantra-header-inner">
 
-          {/* LOGO */}
+          {/* NAVBAR LOGO */}
 
           <Link
             to="/"
-            className="serantra-logo-pill"
+            className="serantra-navbar-logo"
             aria-label="Serantra Solutions home"
           >
-            <div
-              className="serantra-logo-symbol"
-              aria-hidden="true"
-            >
-              <span />
-              <span />
-            </div>
-
-
-            <div className="serantra-logo-text">
-              <strong>
-                SERANTRA
-              </strong>
-
-              <small>
-                SOLUTION
-              </small>
-            </div>
+            <img
+              src="/images/brand/serantra-navbar-logo.png"
+              alt="Serantra Solutions"
+            />
           </Link>
 
 
-          {/* =================================================
-              DESKTOP NAVIGATION
-          ================================================== */}
+          {/* DESKTOP NAVIGATION */}
 
           <nav
             className="serantra-nav-pill"
             aria-label="Primary navigation"
           >
-            {navItems.map(
-              (item) => (
-                <Link
-                  key={item.name}
-                  to={item.to}
-                  className={`serantra-nav-link ${
-                    isActive(item)
-                      ? "serantra-nav-link-active"
-                      : ""
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              )
-            )}
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.to}
+                className={`serantra-nav-link ${
+                  isActive(item)
+                    ? "serantra-nav-link-active"
+                    : ""
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
           </nav>
 
 
-          {/* =================================================
-              START PROJECT BUTTON
-          ================================================== */}
+          {/* START PROJECT */}
 
           <Link
             to="/request-quote"
@@ -203,17 +132,14 @@ export default function Navbar() {
           </Link>
 
 
-          {/* =================================================
-              MOBILE BUTTON
-          ================================================== */}
+          {/* MOBILE BUTTON */}
 
           <button
             type="button"
             className="serantra-mobile-button"
             onClick={() =>
               setMenuOpen(
-                (current) =>
-                  !current
+                (current) => !current
               )
             }
             aria-label={
@@ -224,24 +150,16 @@ export default function Navbar() {
             aria-expanded={menuOpen}
           >
             {menuOpen ? (
-              <X
-                size={22}
-                strokeWidth={2}
-              />
+              <X size={22} />
             ) : (
-              <Menu
-                size={22}
-                strokeWidth={2}
-              />
+              <Menu size={22} />
             )}
           </button>
         </div>
       </header>
 
 
-      {/* =================================================
-          MOBILE NAVIGATION
-      ================================================== */}
+      {/* MOBILE MENU */}
 
       <div
         className={`serantra-mobile-menu ${
@@ -250,72 +168,20 @@ export default function Navbar() {
             : ""
         }`}
       >
-        <nav
-          className="serantra-mobile-nav"
-          aria-label="Mobile navigation"
-        >
-          <Link
-            to="/"
-            className={
-              location.pathname === "/"
-                ? "mobile-nav-active"
-                : ""
-            }
-          >
-            Home
-          </Link>
-
-
-          <Link
-            to="/about"
-            className={
-              location.pathname === "/about"
-                ? "mobile-nav-active"
-                : ""
-            }
-          >
-            About
-          </Link>
-
-
-          <Link
-            to="/services"
-            className={
-              location.pathname.startsWith(
-                "/services"
-              )
-                ? "mobile-nav-active"
-                : ""
-            }
-          >
-            Services
-          </Link>
-
-
-          <Link
-            to="/projects"
-            className={
-              location.pathname ===
-              "/projects"
-                ? "mobile-nav-active"
-                : ""
-            }
-          >
-            Projects
-          </Link>
-
-
-          <Link
-            to="/contact"
-            className={
-              location.pathname ===
-              "/contact"
-                ? "mobile-nav-active"
-                : ""
-            }
-          >
-            Contact
-          </Link>
+        <nav className="serantra-mobile-nav">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              to={item.to}
+              className={
+                isActive(item)
+                  ? "serantra-mobile-nav-active"
+                  : ""
+              }
+            >
+              {item.name}
+            </Link>
+          ))}
 
 
           <Link
@@ -326,7 +192,6 @@ export default function Navbar() {
 
             <ArrowUpRight
               size={17}
-              strokeWidth={2}
             />
           </Link>
         </nav>
