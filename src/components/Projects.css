@@ -3,1189 +3,1194 @@
 ========================================================= */
 
 .projects-section {
-    position: relative;
-  
-    overflow: clip;
-  
-    padding: 8.5rem 0;
-  
-    background: #070509;
-  }
-  
-  
-  /* =========================================================
-     BACKGROUND
-  ========================================================= */
-  
-  .projects-background {
-    position: absolute;
-  
-    inset: 0;
-  
-    overflow: hidden;
-  
-    pointer-events: none;
-  }
-  
-  
-  .projects-grid {
-    position: absolute;
-  
-    inset: 0;
-  
-    opacity: 0.18;
-  
-    background-image:
-      linear-gradient(
-        rgba(147, 51, 234, 0.045) 1px,
-        transparent 1px
-      ),
-      linear-gradient(
-        90deg,
-        rgba(147, 51, 234, 0.045) 1px,
-        transparent 1px
-      );
-  
-    background-size: 82px 82px;
-  
-    mask-image:
-      linear-gradient(
-        to bottom,
-        transparent,
-        black 15%,
-        black 85%,
-        transparent
-      );
-  }
-  
-  
-  .projects-glow {
-    position: absolute;
-  
-    border-radius: 999px;
-  
-    filter: blur(170px);
-  
-    pointer-events: none;
-  }
-  
-  
-  .projects-glow-one {
-    width: 500px;
-    height: 500px;
-  
-    top: 10%;
-    right: -250px;
-  
-    background: rgba(126, 34, 206, 0.12);
-  }
-  
-  
-  .projects-glow-two {
-    width: 450px;
-    height: 450px;
-  
-    left: -260px;
-    bottom: 5%;
-  
-    background: rgba(217, 70, 239, 0.07);
-  }
-  
-  
-  /* =========================================================
-     CONTAINER
-  ========================================================= */
-  
-  .projects-container {
-    position: relative;
-  
-    z-index: 2;
-  
-    width: min(
-      1320px,
-      calc(100% - 48px)
+  position: relative;
+
+  overflow: clip;
+
+  padding: 8.5rem 0;
+
+  background: #071827;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.projects-background {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+
+.projects-grid {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.18;
+
+  background-image:
+    linear-gradient(
+      rgba(25, 196, 207, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(25, 196, 207, 0.045) 1px,
+      transparent 1px
     );
-  
-    margin: 0 auto;
+
+  background-size: 82px 82px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 15%,
+      black 85%,
+      transparent
+    );
+}
+
+
+.projects-glow {
+  position: absolute;
+
+  border-radius: 999px;
+
+  filter: blur(170px);
+
+  pointer-events: none;
+}
+
+
+.projects-glow-one {
+  width: 500px;
+  height: 500px;
+
+  top: 10%;
+  right: -250px;
+
+  background: rgba(25, 196, 207, 0.12);
+}
+
+
+.projects-glow-two {
+  width: 450px;
+  height: 450px;
+
+  left: -260px;
+  bottom: 5%;
+
+  background: rgba(45, 143, 232, 0.07);
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.projects-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(
+    1320px,
+    calc(100% - 48px)
+  );
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.projects-heading {
+  margin-bottom: 4.5rem;
+}
+
+
+.projects-eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 1.8rem;
+
+  color: #42d9e0;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.24em;
+
+  text-transform: uppercase;
+}
+
+
+.projects-eyebrow span {
+  display: block;
+
+  width: 30px;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #19c4cf,
+      #55b2f2
+    );
+}
+
+
+.projects-heading-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(260px, 420px);
+
+  align-items: end;
+
+  gap: 5rem;
+}
+
+
+.projects-heading h2 {
+  max-width: 850px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      2.8rem,
+      5vw,
+      5rem
+    );
+
+  font-weight: 600;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.055em;
+}
+
+
+.projects-heading h2 span {
+  display: block;
+}
+
+
+.project-gradient-text {
+  color: transparent;
+
+  background:
+    linear-gradient(
+      90deg,
+      #19c4cf,
+      #42d9e0,
+      #2d8fe8,
+      #55b2f2,
+      #19c4cf
+    );
+
+  background-size: 260% 100%;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  animation:
+    project-title-gradient
+    6s
+    linear
+    infinite;
+}
+
+
+@keyframes project-title-gradient {
+
+  0% {
+    background-position: 0% 50%;
   }
-  
-  
-  /* =========================================================
-     HEADING
-  ========================================================= */
-  
-  .projects-heading {
-    margin-bottom: 4.5rem;
+
+  100% {
+    background-position: 260% 50%;
   }
-  
-  
-  .projects-eyebrow {
-    display: flex;
-  
-    align-items: center;
-  
-    gap: 12px;
-  
-    margin-bottom: 1.8rem;
-  
-    color: #c084fc;
-  
-    font-size: 10px;
-  
-    font-weight: 600;
-  
-    letter-spacing: 0.24em;
-  
-    text-transform: uppercase;
-  }
-  
-  
-  .projects-eyebrow span {
-    display: block;
-  
-    width: 30px;
-    height: 1px;
-  
-    background:
-      linear-gradient(
-        90deg,
-        #9333ea,
-        #d8b4fe
+
+}
+
+
+.projects-heading-layout > p {
+  margin: 0 0 0.4rem;
+
+  color: #8fa7b7;
+
+  font-size: 0.95rem;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   BENTO PROJECT GRID
+========================================================= */
+
+.projects-grid-layout {
+  display: grid;
+
+  grid-template-columns:
+    repeat(12, minmax(0, 1fr));
+
+  gap: 20px;
+
+  grid-auto-rows: 390px;
+}
+
+
+/* row 1 */
+
+.project-card:nth-child(1) {
+  grid-column: span 7;
+}
+
+
+.project-card:nth-child(2) {
+  grid-column: span 5;
+}
+
+
+/* row 2 */
+
+.project-card:nth-child(3) {
+  grid-column: span 5;
+}
+
+
+.project-card:nth-child(4) {
+  grid-column: span 7;
+}
+
+
+/* row 3 */
+
+.project-card:nth-child(5),
+.project-card:nth-child(6) {
+  grid-column: span 6;
+}
+
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
+
+.project-card {
+  position: relative;
+
+  overflow: hidden;
+
+  min-width: 0;
+
+  border:
+    1px solid
+    rgba(66, 217, 224, 0.09);
+
+  border-radius: 22px;
+
+  background: #0c243a;
+
+  box-shadow:
+    0 24px 70px
+    rgba(0, 0, 0, 0.23);
+
+  isolation: isolate;
+
+  cursor: pointer;
+
+  will-change:
+    transform,
+    opacity;
+
+  backface-visibility: hidden;
+
+  transition:
+    border-color 0.45s ease,
+    box-shadow 0.45s ease,
+    transform 0.45s
+      cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.project-card:hover {
+  border-color:
+    rgba(66, 217, 224, 0.38);
+
+  box-shadow:
+    0 32px 90px
+    rgba(25, 196, 207, 0.19);
+
+  transform: translateY(-4px);
+}
+
+
+/* =========================================================
+   PROJECT IMAGE
+========================================================= */
+
+.project-card-image {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transform: scale(1.001);
+
+  filter:
+    saturate(0.85)
+    contrast(1.03);
+
+  transition:
+    transform
+      0.9s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    filter
+      0.6s ease;
+}
+
+
+/*
+   EFFECT 2:
+   Slight image zoom
+*/
+
+.project-card:hover
+.project-card-image {
+  transform: scale(1.075);
+
+  filter:
+    saturate(1)
+    contrast(1.04);
+}
+
+
+/* =========================================================
+   DARK OVERLAY
+========================================================= */
+
+.project-card-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5, 21, 35, 0.12) 0%,
+      rgba(5, 21, 35, 0.18) 28%,
+      rgba(5, 21, 35, 0.66) 76%,
+      rgba(5, 21, 35, 0.91) 100%
+    );
+
+  transition:
+    background
+    0.65s ease;
+}
+
+
+/*
+   EFFECT 3:
+   Overlay becomes stronger on hover
+*/
+
+.project-card:hover
+.project-card-overlay {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5, 21, 35, 0.28) 0%,
+      rgba(5, 21, 35, 0.45) 32%,
+      rgba(5, 21, 35, 0.82) 73%,
+      rgba(5, 21, 35, 0.97) 100%
+    );
+}
+
+
+/* =========================================================
+   PURPLE HOVER LIGHT
+   CLASS NAME UNCHANGED - ONLY COLOR UPDATED
+========================================================= */
+
+.project-card-purple-light {
+  position: absolute;
+
+  z-index: 2;
+
+  width: 420px;
+  height: 300px;
+
+  left: -160px;
+  bottom: -180px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(25, 196, 207, 0.24),
+      rgba(45, 143, 232, 0.1) 38%,
+      transparent 72%
+    );
+
+  filter: blur(45px);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    left
+      0.9s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    bottom
+      0.9s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    opacity
+      0.5s ease;
+}
+
+
+.project-card:hover
+.project-card-purple-light {
+  left: 18%;
+  bottom: -80px;
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   TOP LABEL + YEAR
+========================================================= */
+
+.project-card-top {
+  position: absolute;
+
+  top: 24px;
+  left: 24px;
+  right: 24px;
+
+  z-index: 5;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+.project-category {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 30px;
+
+  padding: 0 12px;
+
+  border:
+    1px solid
+    rgba(123, 229, 233, 0.16);
+
+  border-radius: 999px;
+
+  background:
+    rgba(7, 24, 39, 0.55);
+
+  color: #ffffff;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  backdrop-filter: blur(12px);
+
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease;
+}
+
+
+.project-card:hover
+.project-category {
+  background:
+    rgba(25, 196, 207, 0.18);
+
+  border-color:
+    rgba(66, 217, 224, 0.35);
+}
+
+
+.project-year {
+  color:
+    rgba(255, 255, 255, 0.52);
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   PROJECT CONTENT
+========================================================= */
+
+.project-card-content {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 5;
+
+  padding: 0 26px 27px;
+
+  pointer-events: none;
+}
+
+
+.project-card-content-inner {
+  max-width: 650px;
+
+  /*
+     EFFECT 4:
+     content moves upward
+  */
+
+  transform: translateY(76px);
+
+  transition:
+    transform
+      0.65s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
       );
+}
+
+
+.project-card:hover
+.project-card-content-inner {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   PROJECT NUMBER
+========================================================= */
+
+.project-number {
+  display: none;
+}
+
+
+/* =========================================================
+   PROJECT TITLE
+========================================================= */
+
+.project-card h3 {
+  margin: 0;
+
+  max-width: 650px;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      1.55rem,
+      2.2vw,
+      2.3rem
+    );
+
+  font-weight: 600;
+
+  line-height: 1.08;
+
+  letter-spacing: -0.035em;
+
+  text-shadow:
+    0 5px 24px
+    rgba(0, 0, 0, 0.4);
+
+  transition:
+    transform 0.55s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      );
+}
+
+
+.project-card:hover h3 {
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.project-subtitle {
+  margin: 9px 0 0;
+
+  color:
+    rgba(220, 242, 247, 0.78);
+
+  font-size: 12px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   HOVER DETAILS
+
+   EFFECT 1:
+   Full details smoothly appear
+========================================================= */
+
+.project-hover-details {
+  max-height: 72px;
+
+  margin-top: 0;
+
+  opacity: 0;
+
+  transform: translateY(18px);
+
+  transition:
+    opacity
+      0.45s ease,
+    transform
+      0.55s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    margin-top
+      0.55s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      );
+}
+
+
+.project-card:hover
+.project-hover-details {
+  margin-top: 16px;
+
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+.project-description {
+  max-width: 610px;
+
+  margin: 0;
+
+  color:
+    rgba(214, 231, 240, 0.82);
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   VIEW PROJECT BUTTON
+========================================================= */
+
+.project-view-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 40px;
+
+  margin-top: 15px;
+
+  padding: 0 16px;
+
+  border:
+    1px solid
+    rgba(123, 229, 233, 0.22);
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #19c4cf,
+      #2d8fe8
+    );
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  box-shadow:
+    0 10px 30px
+    rgba(25, 196, 207, 0.3);
+
+  pointer-events: auto;
+
+  transition:
+    gap 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.project-view-button:hover {
+  gap: 11px;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 38px
+    rgba(45, 143, 232, 0.42);
+}
+
+
+/* =========================================================
+   LARGE BACKGROUND PROJECT NUMBER
+========================================================= */
+
+.project-background-number {
+  position: absolute;
+
+  right: 22px;
+  bottom: 7px;
+
+  z-index: 3;
+
+  color:
+    rgba(255, 255, 255, 0.045);
+
+  font-size:
+    clamp(
+      3.7rem,
+      7vw,
+      6.8rem
+    );
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: -0.08em;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.45s ease,
+    transform 0.55s ease;
+}
+
+
+.project-card:hover
+.project-background-number {
+  opacity: 0.35;
+
+  transform:
+    translateY(8px)
+    scale(1.05);
+}
+
+
+/* =========================================================
+   BOTTOM TRAVELLING LIGHT
+========================================================= */
+
+.project-hover-line {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 8;
+
+  height: 2px;
+
+  overflow: hidden;
+
+  opacity: 0;
+}
+
+
+.project-hover-line span {
+  position: absolute;
+
+  top: 0;
+  left: -35%;
+
+  width: 35%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #19c4cf,
+      #42d9e0,
+      #ffffff,
+      #2d8fe8,
+      transparent
+    );
+
+  filter:
+    drop-shadow(
+      0 0 6px
+      rgba(66, 217, 224, 0.7)
+    );
+}
+
+
+.project-card:hover
+.project-hover-line {
+  opacity: 1;
+}
+
+
+.project-card:hover
+.project-hover-line span {
+  animation:
+    project-line-travel
+    1.7s
+    ease
+    forwards;
+}
+
+
+@keyframes project-line-travel {
+
+  from {
+    left: -35%;
   }
-  
-  
+
+  to {
+    left: 110%;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+
+  .projects-section {
+    padding:
+      7rem 0;
+  }
+
+
   .projects-heading-layout {
-    display: grid;
-  
     grid-template-columns:
-      minmax(0, 1fr)
-      minmax(260px, 420px);
-  
-    align-items: end;
-  
-    gap: 5rem;
+      1fr;
+
+    gap:
+      1.5rem;
   }
-  
-  
+
+
+  .projects-heading-layout > p {
+    max-width:
+      620px;
+  }
+
+
+  .projects-grid-layout {
+    grid-auto-rows:
+      350px;
+  }
+
+
+  .project-card:nth-child(1),
+  .project-card:nth-child(4) {
+    grid-column:
+      span 7;
+  }
+
+
+  .project-card:nth-child(2),
+  .project-card:nth-child(3) {
+    grid-column:
+      span 5;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .projects-section {
+    padding:
+      5.5rem 0;
+  }
+
+
+  .projects-container {
+    width:
+      calc(100% - 32px);
+  }
+
+
+  .projects-heading {
+    margin-bottom:
+      3rem;
+  }
+
+
   .projects-heading h2 {
-    max-width: 850px;
-  
-    margin: 0;
-  
-    color: #ffffff;
-  
     font-size:
       clamp(
-        2.8rem,
-        5vw,
-        5rem
+        2.6rem,
+        11vw,
+        4rem
       );
-  
-    font-weight: 600;
-  
-    line-height: 0.98;
-  
-    letter-spacing: -0.055em;
   }
-  
-  
-  .projects-heading h2 span {
-    display: block;
-  }
-  
-  
-  .project-gradient-text {
-    color: transparent;
-  
-    background:
-      linear-gradient(
-        90deg,
-        #7e22ce,
-        #9333ea,
-        #c084fc,
-        #d946ef,
-        #9333ea
-      );
-  
-    background-size: 260% 100%;
-  
-    background-clip: text;
-    -webkit-background-clip: text;
-  
-    animation:
-      project-title-gradient
-      6s
-      linear
-      infinite;
-  }
-  
-  
-  @keyframes project-title-gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-  
-    100% {
-      background-position: 260% 50%;
-    }
-  }
-  
-  
-  .projects-heading-layout > p {
-    margin: 0 0 0.4rem;
-  
-    color: #8f8796;
-  
-    font-size: 0.95rem;
-  
-    line-height: 1.8;
-  }
-  
-  
-  /* =========================================================
-     BENTO PROJECT GRID
-  ========================================================= */
-  
+
+
   .projects-grid-layout {
-    display: grid;
-  
     grid-template-columns:
-      repeat(12, minmax(0, 1fr));
-  
-    gap: 20px;
-  
-    grid-auto-rows: 390px;
+      1fr;
+
+    gap:
+      15px;
+
+    grid-auto-rows:
+      auto;
   }
-  
-  
-  /* row 1 */
-  
-  .project-card:nth-child(1) {
-    grid-column: span 7;
-  }
-  
-  
-  .project-card:nth-child(2) {
-    grid-column: span 5;
-  }
-  
-  
-  /* row 2 */
-  
-  .project-card:nth-child(3) {
-    grid-column: span 5;
-  }
-  
-  
-  .project-card:nth-child(4) {
-    grid-column: span 7;
-  }
-  
-  
-  /* row 3 */
-  
+
+
+  .project-card:nth-child(1),
+  .project-card:nth-child(2),
+  .project-card:nth-child(3),
+  .project-card:nth-child(4),
   .project-card:nth-child(5),
   .project-card:nth-child(6) {
-    grid-column: span 6;
+    grid-column:
+      auto;
   }
-  
-  
-  /* =========================================================
-     PROJECT CARD
-  ========================================================= */
-  
+
+
   .project-card {
-    position: relative;
-  
-    overflow: hidden;
-  
-    min-width: 0;
-  
-    border:
-      1px solid
-      rgba(255, 255, 255, 0.09);
-  
-    border-radius: 22px;
-  
-    background: #100c13;
-  
-    box-shadow:
-      0 24px 70px
-      rgba(0, 0, 0, 0.23);
-  
-    isolation: isolate;
-  
-    cursor: pointer;
-  
-    will-change:
-      transform,
-      opacity;
-  
-    backface-visibility: hidden;
-  
-    transition:
-      border-color 0.45s ease,
-      box-shadow 0.45s ease,
-      transform 0.45s
-        cubic-bezier(0.22, 1, 0.36, 1);
+    min-height:
+      430px;
+
+    border-radius:
+      18px;
   }
-  
-  
-  .project-card:hover {
-    border-color:
-      rgba(192, 132, 252, 0.38);
-  
-    box-shadow:
-      0 32px 90px
-      rgba(88, 28, 135, 0.19);
-  
-    transform: translateY(-4px);
-  }
-  
-  
-  /* =========================================================
-     PROJECT IMAGE
-  ========================================================= */
-  
-  .project-card-image {
-    position: absolute;
-  
-    inset: 0;
-  
-    z-index: 0;
-  
-    width: 100%;
-    height: 100%;
-  
-    object-fit: cover;
-  
-    transform: scale(1.001);
-  
-    filter:
-      saturate(0.85)
-      contrast(1.03);
-  
-    transition:
-      transform
-        0.9s
-        cubic-bezier(
-          0.22,
-          1,
-          0.36,
-          1
-        ),
-      filter
-        0.6s ease;
-  }
-  
-  
-  /*
-     EFFECT 2:
-     Slight image zoom
-  */
-  
-  .project-card:hover
-  .project-card-image {
-    transform: scale(1.075);
-  
-    filter:
-      saturate(1)
-      contrast(1.04);
-  }
-  
-  
-  /* =========================================================
-     DARK OVERLAY
-  ========================================================= */
-  
-  .project-card-overlay {
-    position: absolute;
-  
-    inset: 0;
-  
-    z-index: 1;
-  
-    background:
-      linear-gradient(
-        180deg,
-        rgba(5, 3, 7, 0.12) 0%,
-        rgba(5, 3, 7, 0.18) 28%,
-        rgba(5, 3, 7, 0.66) 76%,
-        rgba(5, 3, 7, 0.91) 100%
-      );
-  
-    transition:
-      background
-      0.65s ease;
-  }
-  
-  
-  /*
-     EFFECT 3:
-     Overlay becomes stronger on hover
-  */
-  
-  .project-card:hover
-  .project-card-overlay {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(5, 3, 7, 0.28) 0%,
-        rgba(5, 3, 7, 0.45) 32%,
-        rgba(5, 3, 7, 0.82) 73%,
-        rgba(5, 3, 7, 0.97) 100%
-      );
-  }
-  
-  
-  /* =========================================================
-     PURPLE HOVER LIGHT
-  ========================================================= */
-  
-  .project-card-purple-light {
-    position: absolute;
-  
-    z-index: 2;
-  
-    width: 420px;
-    height: 300px;
-  
-    left: -160px;
-    bottom: -180px;
-  
-    border-radius: 50%;
-  
-    background:
-      radial-gradient(
-        circle,
-        rgba(147, 51, 234, 0.24),
-        rgba(126, 34, 206, 0.1) 38%,
-        transparent 72%
-      );
-  
-    filter: blur(45px);
-  
-    opacity: 0;
-  
-    pointer-events: none;
-  
-    transition:
-      left
-        0.9s
-        cubic-bezier(
-          0.22,
-          1,
-          0.36,
-          1
-        ),
-      bottom
-        0.9s
-        cubic-bezier(
-          0.22,
-          1,
-          0.36,
-          1
-        ),
-      opacity
-        0.5s ease;
-  }
-  
-  
-  .project-card:hover
-  .project-card-purple-light {
-    left: 18%;
-    bottom: -80px;
-  
-    opacity: 1;
-  }
-  
-  
-  /* =========================================================
-     TOP LABEL + YEAR
-  ========================================================= */
-  
+
+
   .project-card-top {
-    position: absolute;
-  
-    top: 24px;
-    left: 24px;
-    right: 24px;
-  
-    z-index: 5;
-  
-    display: flex;
-  
-    align-items: center;
-  
-    justify-content: space-between;
-  
-    gap: 20px;
+    top:
+      18px;
+
+    left:
+      18px;
+
+    right:
+      18px;
   }
-  
-  
-  .project-category {
-    display: inline-flex;
-  
-    align-items: center;
-  
-    justify-content: center;
-  
-    min-height: 30px;
-  
-    padding: 0 12px;
-  
-    border:
-      1px solid
-      rgba(255, 255, 255, 0.16);
-  
-    border-radius: 999px;
-  
-    background:
-      rgba(255, 255, 255, 0.08);
-  
-    color: #ffffff;
-  
-    font-size: 8px;
-  
-    font-weight: 700;
-  
-    letter-spacing: 0.08em;
-  
-    text-transform: uppercase;
-  
-    backdrop-filter: blur(12px);
-  
-    transition:
-      background 0.35s ease,
-      border-color 0.35s ease;
-  }
-  
-  
-  .project-card:hover
-  .project-category {
-    background:
-      rgba(147, 51, 234, 0.18);
-  
-    border-color:
-      rgba(192, 132, 252, 0.35);
-  }
-  
-  
-  .project-year {
-    color:
-      rgba(255, 255, 255, 0.52);
-  
-    font-size: 10px;
-  
-    font-weight: 600;
-  }
-  
-  
-  /* =========================================================
-     PROJECT CONTENT
-  ========================================================= */
-  
+
+
   .project-card-content {
-    position: absolute;
-  
-    left: 0;
-    right: 0;
-    bottom: 0;
-  
-    z-index: 5;
-  
-    padding: 0 26px 27px;
-  
-    pointer-events: none;
+    padding:
+      0 20px 22px;
   }
-  
-  
+
+
+  /*
+     Mobile devices don't have hover.
+     Therefore full details remain visible.
+  */
+
   .project-card-content-inner {
-    max-width: 650px;
-  
-    /*
-       EFFECT 4:
-       content moves upward
-    */
-  
-    transform: translateY(76px);
-  
-    transition:
-      transform
-        0.65s
-        cubic-bezier(
-          0.22,
-          1,
-          0.36,
-          1
-        );
-  }
-  
-  
-  .project-card:hover
-  .project-card-content-inner {
-    transform: translateY(0);
-  }
-  
-  
-  /* =========================================================
-     PROJECT NUMBER
-  ========================================================= */
-  
-  .project-number {
-    display: none;
-  }
-  
-  
-  /* =========================================================
-     PROJECT TITLE
-  ========================================================= */
-  
-  .project-card h3 {
-    margin: 0;
-  
-    max-width: 650px;
-  
-    color: #ffffff;
-  
-    font-size:
-      clamp(
-        1.55rem,
-        2.2vw,
-        2.3rem
-      );
-  
-    font-weight: 600;
-  
-    line-height: 1.08;
-  
-    letter-spacing: -0.035em;
-  
-    text-shadow:
-      0 5px 24px
-      rgba(0, 0, 0, 0.4);
-  
-    transition:
-      transform 0.55s
-        cubic-bezier(
-          0.22,
-          1,
-          0.36,
-          1
-        );
-  }
-  
-  
-  .project-card:hover h3 {
-    transform: translateY(-3px);
-  }
-  
-  
-  /* =========================================================
-     SUBTITLE
-  ========================================================= */
-  
-  .project-subtitle {
-    margin: 9px 0 0;
-  
-    color:
-      rgba(255, 255, 255, 0.72);
-  
-    font-size: 12px;
-  
-    font-weight: 500;
-  }
-  
-  
-  /* =========================================================
-     HOVER DETAILS
-  
-     EFFECT 1:
-     Full details smoothly appear
-  ========================================================= */
-  
-  .project-hover-details {
-    max-height: 72px;
-  
-    margin-top: 0;
-  
-    opacity: 0;
-  
-    transform: translateY(18px);
-  
-    transition:
-      opacity
-        0.45s ease,
-      transform
-        0.55s
-        cubic-bezier(
-          0.22,
-          1,
-          0.36,
-          1
-        ),
-      margin-top
-        0.55s
-        cubic-bezier(
-          0.22,
-          1,
-          0.36,
-          1
-        );
-  }
-  
-  
-  .project-card:hover
-  .project-hover-details {
-    margin-top: 16px;
-  
-    opacity: 1;
-  
-    transform: translateY(0);
-  }
-  
-  
-  .project-description {
-    max-width: 610px;
-  
-    margin: 0;
-  
-    color:
-      rgba(223, 216, 228, 0.79);
-  
-    font-size: 12px;
-  
-    line-height: 1.7;
-  }
-  
-  
-  /* =========================================================
-     VIEW PROJECT BUTTON
-  ========================================================= */
-  
-  .project-view-button {
-    display: inline-flex;
-  
-    align-items: center;
-  
-    justify-content: center;
-  
-    gap: 8px;
-  
-    min-height: 40px;
-  
-    margin-top: 15px;
-  
-    padding: 0 16px;
-  
-    border:
-      1px solid
-      rgba(233, 213, 255, 0.18);
-  
-    border-radius: 999px;
-  
-    background:
-      linear-gradient(
-        135deg,
-        #7e22ce,
-        #9333ea
-      );
-  
-    color: #ffffff;
-  
-    font-size: 11px;
-  
-    font-weight: 600;
-  
-    box-shadow:
-      0 10px 30px
-      rgba(126, 34, 206, 0.3);
-  
-    pointer-events: auto;
-  
-    transition:
-      gap 0.3s ease,
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
-  }
-  
-  
-  .project-view-button:hover {
-    gap: 11px;
-  
-    transform: translateY(-2px);
-  
-    box-shadow:
-      0 14px 38px
-      rgba(147, 51, 234, 0.42);
-  }
-  
-  
-  /* =========================================================
-     LARGE BACKGROUND PROJECT NUMBER
-  ========================================================= */
-  
-  .project-background-number {
-    position: absolute;
-  
-    right: 22px;
-    bottom: 7px;
-  
-    z-index: 3;
-  
-    color:
-      rgba(255, 255, 255, 0.045);
-  
-    font-size:
-      clamp(
-        3.7rem,
-        7vw,
-        6.8rem
-      );
-  
-    font-weight: 700;
-  
-    line-height: 1;
-  
-    letter-spacing: -0.08em;
-  
-    pointer-events: none;
-  
-    transition:
-      opacity 0.45s ease,
-      transform 0.55s ease;
-  }
-  
-  
-  .project-card:hover
-  .project-background-number {
-    opacity: 0.35;
-  
     transform:
-      translateY(8px)
-      scale(1.05);
+      translateY(0);
   }
-  
-  
-  /* =========================================================
-     BOTTOM TRAVELLING LIGHT
-  ========================================================= */
-  
-  .project-hover-line {
-    position: absolute;
-  
-    left: 0;
-    right: 0;
-    bottom: 0;
-  
-    z-index: 8;
-  
-    height: 2px;
-  
-    overflow: hidden;
-  
-    opacity: 0;
+
+
+  .project-hover-details {
+    max-height:
+      none;
+
+    margin-top:
+      14px;
+
+    opacity:
+      1;
+
+    transform:
+      none;
   }
-  
-  
-  .project-hover-line span {
-    position: absolute;
-  
-    top: 0;
-    left: -35%;
-  
-    width: 35%;
-    height: 100%;
-  
+
+
+  .project-card-overlay {
     background:
       linear-gradient(
-        90deg,
-        transparent,
-        #7e22ce,
-        #c084fc,
-        #ffffff,
-        #9333ea,
-        transparent
-      );
-  
-    filter:
-      drop-shadow(
-        0 0 6px
-        rgba(192, 132, 252, 0.7)
+        180deg,
+        rgba(5, 21, 35, 0.18) 0%,
+        rgba(5, 21, 35, 0.34) 32%,
+        rgba(5, 21, 35, 0.79) 70%,
+        rgba(5, 21, 35, 0.97) 100%
       );
   }
-  
-  
-  .project-card:hover
-  .project-hover-line {
-    opacity: 1;
+
+
+  .project-background-number {
+    font-size:
+      5rem;
   }
-  
-  
-  .project-card:hover
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .project-card {
+    min-height:
+      460px;
+  }
+
+
+  .project-card h3 {
+    font-size:
+      1.55rem;
+  }
+
+
+  .project-description {
+    font-size:
+      11px;
+
+    line-height:
+      1.65;
+  }
+
+
+  .project-view-button {
+    min-height:
+      39px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .project-gradient-text {
+    animation:
+      none;
+  }
+
+
+  .project-card,
+  .project-card-image,
+  .project-card-overlay,
+  .project-card-content-inner,
+  .project-hover-details,
+  .project-card h3,
+  .project-background-number,
+  .project-card-purple-light {
+    transition:
+      none;
+  }
+
+
   .project-hover-line span {
     animation:
-      project-line-travel
-      1.7s
-      ease
-      forwards;
+      none !important;
   }
-  
-  
-  @keyframes project-line-travel {
-    from {
-      left: -35%;
-    }
-  
-    to {
-      left: 110%;
-    }
-  }
-  
-  
-  /* =========================================================
-     TABLET
-  ========================================================= */
-  
-  @media (max-width: 1024px) {
-  
-    .projects-section {
-      padding:
-        7rem 0;
-    }
-  
-  
-    .projects-heading-layout {
-      grid-template-columns:
-        1fr;
-  
-      gap:
-        1.5rem;
-    }
-  
-  
-    .projects-heading-layout > p {
-      max-width:
-        620px;
-    }
-  
-  
-    .projects-grid-layout {
-      grid-auto-rows:
-        350px;
-    }
-  
-  
-    .project-card:nth-child(1),
-    .project-card:nth-child(4) {
-      grid-column:
-        span 7;
-    }
-  
-  
-    .project-card:nth-child(2),
-    .project-card:nth-child(3) {
-      grid-column:
-        span 5;
-    }
-  
-  }
-  
-  
-  /* =========================================================
-     MOBILE
-  ========================================================= */
-  
-  @media (max-width: 767px) {
-  
-    .projects-section {
-      padding:
-        5.5rem 0;
-    }
-  
-  
-    .projects-container {
-      width:
-        calc(100% - 32px);
-    }
-  
-  
-    .projects-heading {
-      margin-bottom:
-        3rem;
-    }
-  
-  
-    .projects-heading h2 {
-      font-size:
-        clamp(
-          2.6rem,
-          11vw,
-          4rem
-        );
-    }
-  
-  
-    .projects-grid-layout {
-      grid-template-columns:
-        1fr;
-  
-      gap:
-        15px;
-  
-      grid-auto-rows:
-        auto;
-    }
-  
-  
-    .project-card:nth-child(1),
-    .project-card:nth-child(2),
-    .project-card:nth-child(3),
-    .project-card:nth-child(4),
-    .project-card:nth-child(5),
-    .project-card:nth-child(6) {
-      grid-column:
-        auto;
-    }
-  
-  
-    .project-card {
-      min-height:
-        430px;
-  
-      border-radius:
-        18px;
-    }
-  
-  
-    .project-card-top {
-      top:
-        18px;
-  
-      left:
-        18px;
-  
-      right:
-        18px;
-    }
-  
-  
-    .project-card-content {
-      padding:
-        0 20px 22px;
-    }
-  
-  
-    /*
-       Mobile devices don't have hover.
-       Therefore full details remain visible.
-    */
-  
-    .project-card-content-inner {
-      transform:
-        translateY(0);
-    }
-  
-  
-    .project-hover-details {
-      max-height:
-        none;
-  
-      margin-top:
-        14px;
-  
-      opacity:
-        1;
-  
-      transform:
-        none;
-    }
-  
-  
-    .project-card-overlay {
-      background:
-        linear-gradient(
-          180deg,
-          rgba(5, 3, 7, 0.18) 0%,
-          rgba(5, 3, 7, 0.34) 32%,
-          rgba(5, 3, 7, 0.79) 70%,
-          rgba(5, 3, 7, 0.97) 100%
-        );
-    }
-  
-  
-    .project-background-number {
-      font-size:
-        5rem;
-    }
-  
-  }
-  
-  
-  /* =========================================================
-     SMALL MOBILE
-  ========================================================= */
-  
-  @media (max-width: 480px) {
-  
-    .project-card {
-      min-height:
-        460px;
-    }
-  
-  
-    .project-card h3 {
-      font-size:
-        1.55rem;
-    }
-  
-  
-    .project-description {
-      font-size:
-        11px;
-  
-      line-height:
-        1.65;
-    }
-  
-  
-    .project-view-button {
-      min-height:
-        39px;
-    }
-  
-  }
-  
-  
-  /* =========================================================
-     REDUCED MOTION
-  ========================================================= */
-  
-  @media (prefers-reduced-motion: reduce) {
-  
-    .project-gradient-text {
-      animation:
-        none;
-    }
-  
-  
-    .project-card,
-    .project-card-image,
-    .project-card-overlay,
-    .project-card-content-inner,
-    .project-hover-details,
-    .project-card h3,
-    .project-background-number,
-    .project-card-purple-light {
-      transition:
-        none;
-    }
-  
-  
-    .project-hover-line span {
-      animation:
-        none !important;
-    }
-  
-  }
+
+}

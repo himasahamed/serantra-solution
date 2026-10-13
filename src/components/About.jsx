@@ -1,58 +1,229 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import "./About.css";
 
 export default function About() {
   return (
-    <section id="about" className="about-section">
+    <section className="about-section">
+      {/* =====================================================
+          BACKGROUND
+      ====================================================== */}
+
+      <div
+        className="about-background"
+        aria-hidden="true"
+      >
+        <div className="about-grid-bg" />
+
+        <div className="about-glow about-glow-one" />
+
+        <div className="about-glow about-glow-two" />
+      </div>
+
+      {/* =====================================================
+          CONTAINER
+      ====================================================== */}
+
       <div className="about-shell">
-        <div className="about-kicker motion-reveal">
+        {/* ===================================================
+            SECTION LABEL
+        ==================================================== */}
+
+        <div className="about-kicker">
           <span />
-          About Serantra
+
+          SERANTRA IN NUMBERS
         </div>
 
-        <div className="about-grid">
-          <div>
-            <h2 className="about-title motion-reveal">
-              We turn business ideas into
-              <span> useful digital products.</span>
-            </h2>
-          </div>
+        {/* ===================================================
+            DASHBOARD
+        ==================================================== */}
 
-          <div className="about-copy motion-stagger">
+        <div className="about-dashboard">
+          {/* =================================================
+              LEFT CARD
+              PROJECTS COMPLETED
+          ================================================== */}
+
+          <div className="about-project-card">
+            <div className="about-card-label">
+              PROJECTS COMPLETED
+            </div>
+
+            <div className="about-project-number">
+              10+
+            </div>
+
+            <h3>
+              Projects Completed
+            </h3>
+
             <p>
-              Serantra Solution helps businesses plan, design and build modern digital products—from
-              company websites to web applications, custom software and SaaS platforms.
-            </p>
-            <p>
-              Our focus is simple: understand the real requirement first, then create a solution that is
-              clear, scalable and practical for the people who will actually use it.
+              Websites, software solutions and digital
+              experiences successfully developed for
+              businesses and growing brands.
             </p>
 
-            <Link to="/request-quote" className="about-link">
-              Tell us what you want to build
-              <ArrowUpRight size={17} />
+            <Link
+              to="/projects"
+              className="about-project-link"
+            >
+              See Our Work
+
+              <ArrowRight
+                size={16}
+                strokeWidth={2}
+              />
             </Link>
-          </div>
-        </div>
 
-        <div className="about-principles motion-stagger">
-          <div>
-            <strong>Strategy</strong>
-            <span>We start with goals, users and requirements.</span>
+            {/* DECORATIVE SHAPE */}
+
+            <div
+              className="about-project-decoration"
+              aria-hidden="true"
+            >
+              <span />
+              <span />
+              <span />
+            </div>
           </div>
-          <div>
-            <strong>Design</strong>
-            <span>We make complex products feel clear and usable.</span>
+
+          {/* =================================================
+              CENTER CARD
+              CLIENT SATISFACTION
+          ================================================== */}
+
+          <div className="about-center-card">
+            {/* LEFT VISUAL */}
+
+            <div className="about-center-visual">
+              <div className="about-progress-ring">
+                <div className="about-progress-ring-inner">
+                  <span>
+                    98%
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* RIGHT CONTENT */}
+
+            <div className="about-center-content">
+              <h3>
+                Client Satisfaction
+              </h3>
+
+              <p>
+                We measure success by how clients feel
+                after launch, not just on launch day.
+              </p>
+
+              <div className="about-satisfaction-actions">
+                <span className="about-revisions">
+                  ↓ Revisions
+                </span>
+
+                <span className="about-repeat-clients">
+                  ↑ Repeat clients
+                </span>
+              </div>
+            </div>
           </div>
-          <div>
-            <strong>Engineering</strong>
-            <span>We build maintainable systems for long-term growth.</span>
+
+          {/* =================================================
+              RIGHT COLUMN
+          ================================================== */}
+
+          <div className="about-right-column">
+            {/* ===============================================
+                SERVICES CARD
+            ================================================ */}
+
+            <div className="about-services-card">
+              <div className="about-card-label">
+                WHAT WE DO
+              </div>
+
+              <div className="about-services-top">
+                <strong>
+                  8
+                </strong>
+
+                <div className="about-service-badge">
+                  SERVICES
+                </div>
+              </div>
+
+              <h3>
+                Core Services
+              </h3>
+
+              <div className="about-service-line">
+                <span />
+                <span />
+                <span />
+                <span />
+              </div>
+
+              <div className="about-service-footer">
+                <span>
+                  Development
+                </span>
+
+                <span>
+                  Design
+                </span>
+
+                <span>
+                  Digital
+                </span>
+              </div>
+            </div>
+
+            {/* ===============================================
+                DIGITAL SOLUTIONS CARD
+            ================================================ */}
+
+            <div className="about-solutions-card">
+              <div className="about-solutions-header">
+                <div>
+                  <div className="about-card-label">
+                    OUR FOCUS
+                  </div>
+
+                  <h3>
+                    Digital Solutions
+                  </h3>
+                </div>
+
+                <div className="about-solution-icons">
+                  <span>
+                    WD
+                  </span>
+
+                  <span>
+                    SD
+                  </span>
+
+                  <span>
+                    UX
+                  </span>
+
+                  <span>
+                    AI
+                  </span>
+                </div>
+              </div>
+
+              <p>
+                Strategy, design and technology working
+                together to create modern digital
+                products and business solutions.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-
-      <div className="section-motion-line" aria-hidden="true" />
     </section>
   );
 }

@@ -1,132 +1,736 @@
-.quote-page { background: #070509; }
-.quote-shell { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+/* =========================================================
+   SERANTRA SOLUTIONS
+   REQUEST QUOTE PAGE
+   NAVY + CYAN + BLUE THEME
+========================================================= */
+
+.quote-page {
+  min-height: 100vh;
+
+  background:
+    #071827;
+
+  color:
+    #ffffff;
+}
+
+
+/* =========================================================
+   MAIN SHELL
+========================================================= */
+
+.quote-shell {
+  width:
+    min(
+      1120px,
+      calc(100% - 48px)
+    );
+
+  margin:
+    0 auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .quote-hero {
-  padding: 11rem 0 6rem;
+  position:
+    relative;
+
+  overflow:
+    hidden;
+
+  padding:
+    11rem 0
+    6rem;
+
   background:
-    radial-gradient(circle at 80% 10%, rgba(147, 51, 234, 0.17), transparent 30%),
-    #070509;
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(25, 196, 207, 0.16),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 60% 80%,
+      rgba(45, 143, 232, 0.08),
+      transparent 35%
+    ),
+
+    linear-gradient(
+      135deg,
+      #071827,
+      #091d30
+    );
 }
+
+
+/* =========================================================
+   HERO GRID
+========================================================= */
+
+.quote-hero::before {
+  content:
+    "";
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  opacity:
+    0.12;
+
+  background-image:
+    linear-gradient(
+      rgba(66, 217, 224, 0.05) 1px,
+      transparent 1px
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(66, 217, 224, 0.05) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    78px 78px;
+
+  pointer-events:
+    none;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.quote-hero
+.quote-shell {
+  position:
+    relative;
+
+  z-index:
+    2;
+}
+
+
+/* =========================================================
+   KICKER
+========================================================= */
 
 .quote-kicker {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: #c084fc;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    12px;
+
+  color:
+    #42d9e0;
+
+  font-size:
+    10px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.22em;
+
+  text-transform:
+    uppercase;
 }
 
-.quote-kicker span { width: 28px; height: 1px; background: #9333ea; }
+
+.quote-kicker span {
+  width:
+    28px;
+
+  height:
+    1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #19c4cf,
+      #2d8fe8
+    );
+
+  box-shadow:
+    0 0 10px
+    rgba(25, 196, 207, 0.45);
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
 
 .quote-hero h1 {
-  max-width: 900px;
-  margin: 1.4rem 0 0;
-  color: #fff;
-  font-size: clamp(3.5rem, 7vw, 7rem);
-  line-height: 0.94;
-  letter-spacing: -0.065em;
-  font-weight: 620;
+  max-width:
+    900px;
+
+  margin:
+    1.4rem 0 0;
+
+  color:
+    #ffffff;
+
+  font-size:
+    clamp(
+      3.5rem,
+      7vw,
+      7rem
+    );
+
+  line-height:
+    0.94;
+
+  letter-spacing:
+    -0.065em;
+
+  font-weight:
+    620;
 }
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
 
 .quote-hero p {
-  max-width: 650px;
-  margin: 1.7rem 0 0;
-  color: #968e9c;
-  font-size: 1rem;
-  line-height: 1.85;
+  max-width:
+    650px;
+
+  margin:
+    1.7rem 0 0;
+
+  color:
+    #a9bcc9;
+
+  font-size:
+    1rem;
+
+  line-height:
+    1.85;
 }
 
-.quote-form-section { padding: 2rem 0 8rem; }
+
+/* =========================================================
+   FORM SECTION
+========================================================= */
+
+.quote-form-section {
+  position:
+    relative;
+
+  padding:
+    2rem 0
+    8rem;
+
+  background:
+    #071827;
+}
+
+
+/* =========================================================
+   FORM SECTION AMBIENT LIGHT
+========================================================= */
+
+.quote-form-section::before {
+  content:
+    "";
+
+  position:
+    absolute;
+
+  width:
+    650px;
+
+  height:
+    650px;
+
+  right:
+    -420px;
+
+  top:
+    15%;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(25, 196, 207, 0.06);
+
+  filter:
+    blur(160px);
+
+  pointer-events:
+    none;
+}
+
+
+/* =========================================================
+   LAYOUT
+========================================================= */
 
 .quote-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-  gap: 7rem;
-  align-items: start;
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(0, 0.8fr)
+    minmax(0, 1.2fr);
+
+  gap:
+    7rem;
+
+  align-items:
+    start;
 }
 
-.quote-side { position: sticky; top: 130px; }
-.quote-side > span { color: #c084fc; font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
-.quote-side h2 { margin: 1.1rem 0 0; color: #fff; font-size: clamp(2.5rem, 4vw, 4.2rem); line-height: 1; letter-spacing: -0.05em; font-weight: 590; }
-.quote-side p { margin: 1.5rem 0 0; color: #8f8795; line-height: 1.8; }
+
+/* =========================================================
+   LEFT SIDE
+========================================================= */
+
+.quote-side {
+  position:
+    sticky;
+
+  top:
+    130px;
+}
+
+
+.quote-side > span {
+  color:
+    #42d9e0;
+
+  font-size:
+    10px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.2em;
+
+  text-transform:
+    uppercase;
+}
+
+
+.quote-side h2 {
+  margin:
+    1.1rem 0 0;
+
+  color:
+    #ffffff;
+
+  font-size:
+    clamp(
+      2.5rem,
+      4vw,
+      4.2rem
+    );
+
+  line-height:
+    1;
+
+  letter-spacing:
+    -0.05em;
+
+  font-weight:
+    590;
+}
+
+
+.quote-side p {
+  margin:
+    1.5rem 0 0;
+
+  color:
+    #8fa7b7;
+
+  line-height:
+    1.8;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
 
 .quote-form {
-  display: grid;
-  gap: 1.4rem;
-  padding-top: 0.2rem;
+  display:
+    grid;
+
+  gap:
+    1.4rem;
+
+  padding-top:
+    0.2rem;
 }
 
-.quote-grid-two { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
 
-.quote-form label { display: grid; gap: 0.7rem; }
-.quote-form label > span { color: #b3aabb; font-size: 0.78rem; font-weight: 500; }
+/* =========================================================
+   TWO COLUMNS
+========================================================= */
+
+.quote-grid-two {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap:
+    1.2rem;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.quote-form label {
+  display:
+    grid;
+
+  gap:
+    0.7rem;
+}
+
+
+.quote-form label > span {
+  color:
+    #b7c8d2;
+
+  font-size:
+    0.78rem;
+
+  font-weight:
+    500;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
 
 .quote-form input,
 .quote-form select,
 .quote-form textarea {
-  width: 100%;
-  border: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 0;
-  padding: 0.9rem 0;
-  background: transparent;
-  color: #fff;
-  outline: none;
-  transition: border-color 0.3s ease;
+  width:
+    100%;
+
+  border:
+    0;
+
+  border-bottom:
+    1px solid
+    rgba(66, 217, 224, 0.16);
+
+  border-radius:
+    0;
+
+  padding:
+    0.9rem 0;
+
+  background:
+    transparent;
+
+  color:
+    #ffffff;
+
+  outline:
+    none;
+
+  transition:
+    border-color
+      0.3s ease,
+    background
+      0.3s ease,
+    box-shadow
+      0.3s ease;
 }
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.quote-form input::placeholder,
+.quote-form textarea::placeholder {
+  color:
+    #6f899a;
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
 
 .quote-form input:focus,
 .quote-form select:focus,
-.quote-form textarea:focus { border-color: #a855f7; }
-.quote-form textarea { resize: vertical; min-height: 160px; }
+.quote-form textarea:focus {
+  border-color:
+    #42d9e0;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(25, 196, 207, 0.025)
+    );
+
+  box-shadow:
+    0 6px 12px -12px
+    rgba(25, 196, 207, 0.8);
+}
+
+
+/* =========================================================
+   SELECT OPTIONS
+========================================================= */
+
+.quote-form select option {
+  color:
+    #ffffff;
+
+  background:
+    #091d30;
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.quote-form textarea {
+  resize:
+    vertical;
+
+  min-height:
+    160px;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
 
 .quote-form button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  width: max-content;
-  min-height: 54px;
-  margin-top: 0.6rem;
-  padding: 0 24px;
-  border: 0;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #7e22ce, #9333ea, #a855f7);
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 14px 42px rgba(126, 34, 206, 0.28);
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    9px;
+
+  width:
+    max-content;
+
+  min-height:
+    54px;
+
+  margin-top:
+    0.6rem;
+
+  padding:
+    0 24px;
+
+  border:
+    0;
+
+  border-radius:
+    999px;
+
+  background:
+    linear-gradient(
+      110deg,
+      #19c4cf,
+      #2d8fe8 55%,
+      #7657ed
+    );
+
+  color:
+    #ffffff;
+
+  font-weight:
+    600;
+
+  cursor:
+    pointer;
+
+  box-shadow:
+    0 14px 42px
+    rgba(45, 143, 232, 0.26);
+
+  transition:
+    transform
+      0.3s ease,
+    box-shadow
+      0.3s ease,
+    gap
+      0.3s ease;
 }
 
-.quote-form button:disabled { opacity: 0.65; cursor: wait; }
-.quote-botcheck { display: none !important; }
+
+.quote-form button:hover:not(:disabled) {
+  transform:
+    translateY(-3px);
+
+  gap:
+    13px;
+
+  box-shadow:
+    0 20px 50px
+    rgba(25, 196, 207, 0.2);
+}
+
+
+.quote-form button:disabled {
+  opacity:
+    0.65;
+
+  cursor:
+    wait;
+}
+
+
+/* =========================================================
+   BOT CHECK
+========================================================= */
+
+.quote-botcheck {
+  display:
+    none !important;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
 
 .quote-status {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  padding-top: 0.5rem;
-  color: #cfc8d4;
-  font-size: 0.9rem;
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    9px;
+
+  padding-top:
+    0.5rem;
+
+  color:
+    #b4c6d0;
+
+  font-size:
+    0.9rem;
 }
 
-.quote-status-success { color: #d8b4fe; }
-.quote-status-error { color: #fda4af; }
+
+/* SUCCESS */
+
+.quote-status-success {
+  color:
+    #6ee7b7;
+}
+
+
+/* ERROR */
+
+.quote-status-error {
+  color:
+    #fda4af;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media (max-width: 850px) {
-  .quote-layout { grid-template-columns: 1fr; gap: 3.5rem; }
-  .quote-side { position: static; }
+
+  .quote-layout {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      3.5rem;
+  }
+
+
+  .quote-side {
+    position:
+      static;
+  }
+
 }
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 640px) {
-  .quote-shell { width: calc(100% - 30px); }
-  .quote-hero { padding: 9rem 0 5rem; }
-  .quote-form-section { padding-bottom: 6rem; }
-  .quote-grid-two { grid-template-columns: 1fr; }
-  .quote-form button { width: 100%; }
+
+  .quote-shell {
+    width:
+      calc(
+        100% - 30px
+      );
+  }
+
+
+  .quote-hero {
+    padding:
+      9rem 0
+      5rem;
+  }
+
+
+  .quote-form-section {
+    padding-bottom:
+      6rem;
+  }
+
+
+  .quote-grid-two {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .quote-form button {
+    width:
+      100%;
+  }
+
 }
-
-

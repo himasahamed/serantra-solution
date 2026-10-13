@@ -1,12 +1,12 @@
 import {
   ArrowRight,
   Bot,
-  CheckCircle2,
+  Braces,
   Code2,
-  FilePenLine,
   FlaskConical,
-  Laptop,
   Megaphone,
+  Monitor,
+  Paintbrush,
   Palette,
   PenTool,
   Rocket,
@@ -20,19 +20,12 @@ import { Link } from "react-router-dom";
 import "./ServicePage.css";
 
 
-/* =========================================================
-   SERVICES
-========================================================= */
-
 const services = [
   {
-    icon: Laptop,
-
+    icon: Monitor,
     title: "Software Development",
-
     description:
-      "Custom software solutions tailored to your unique business requirements with modern technologies.",
-
+      "Custom software solutions designed around your business requirements, workflows and future growth.",
     features: [
       "Custom Applications",
       "System Integration",
@@ -43,28 +36,22 @@ const services = [
 
   {
     icon: Code2,
-
     title: "Web Development",
-
     description:
-      "Building high-performance, responsive websites tailored to your business needs with modern technologies.",
-
+      "Fast, responsive and modern websites developed to strengthen your digital presence and business performance.",
     features: [
       "Responsive Design",
       "Fast Performance",
-      "SEO Optimized",
+      "SEO Friendly",
       "Modern Frameworks",
     ],
   },
 
   {
     icon: Palette,
-
     title: "Brand Identity",
-
     description:
-      "Creating a cohesive brand identity with logo design, typography and a consistent visual language.",
-
+      "Modern visual identity systems that help businesses build a clear, professional and memorable digital presence.",
     features: [
       "Logo Design",
       "Style Guides",
@@ -75,12 +62,9 @@ const services = [
 
   {
     icon: Sparkles,
-
     title: "Creative Designing",
-
     description:
-      "Crafting visually strong graphics, marketing materials and digital content for modern brands.",
-
+      "Creative digital designs for websites, campaigns, social media and modern business communication.",
     features: [
       "Brand Materials",
       "Social Media",
@@ -90,13 +74,10 @@ const services = [
   },
 
   {
-    icon: PenTool,
-
+    icon: Paintbrush,
     title: "UI/UX Design",
-
     description:
-      "Designing intuitive and engaging user experiences for websites, software and digital applications.",
-
+      "Simple, intuitive and user-focused interface designs for websites, applications and digital products.",
     features: [
       "User Research",
       "Wireframing",
@@ -107,12 +88,9 @@ const services = [
 
   {
     icon: Megaphone,
-
     title: "Digital Marketing",
-
     description:
-      "Helping businesses strengthen their digital presence through strategic and results-focused marketing.",
-
+      "Digital strategies designed to improve visibility, engagement and long-term online business growth.",
     features: [
       "SEO Optimization",
       "Social Media",
@@ -122,13 +100,10 @@ const services = [
   },
 
   {
-    icon: FilePenLine,
-
+    icon: PenTool,
     title: "Creative & Copywriting",
-
     description:
-      "Compelling creative content and professional copy designed to communicate your brand clearly.",
-
+      "Clear and engaging content that communicates your business message and supports your digital brand.",
     features: [
       "Website Copy",
       "Blog Writing",
@@ -139,170 +114,152 @@ const services = [
 
   {
     icon: Bot,
-
     title: "AI Integration & Automation",
-
     description:
-      "Smart AI solutions and automation designed to streamline repetitive business processes.",
-
+      "Smart AI and automation solutions designed to improve workflows, productivity and digital operations.",
     features: [
       "AI Chatbots",
       "Process Automation",
       "AI Integration",
-      "Data Analytics",
+      "Data Solutions",
     ],
   },
 ];
 
 
-/* =========================================================
-   HOW WE WORK
-   NO 01 / 02 / 03 NUMBERS
-========================================================= */
-
-const processSteps = [
+const process = [
   {
     icon: Search,
-
     title: "Discovery",
-
     description:
-      "We dive deep into understanding your business, goals, users and project requirements.",
+      "We understand your business, goals, users and project requirements.",
   },
 
   {
     icon: Target,
-
     title: "Strategy",
-
     description:
-      "We create a clear project strategy and roadmap aligned with your business objectives.",
+      "We create a clear project direction, roadmap and technical plan.",
   },
 
   {
-    icon: Palette,
-
+    icon: Paintbrush,
     title: "Design",
-
     description:
-      "We create modern visuals, user journeys and intuitive digital experiences.",
+      "We create modern visuals and intuitive user experiences.",
   },
 
   {
-    icon: Code2,
-
+    icon: Braces,
     title: "Development",
-
     description:
-      "We build robust, responsive and scalable solutions using modern technologies.",
+      "We develop responsive, scalable and reliable digital solutions.",
   },
 
   {
     icon: FlaskConical,
-
     title: "Testing",
-
     description:
-      "We perform detailed quality testing to ensure reliable and smooth performance.",
+      "We test quality, usability, responsiveness and performance.",
   },
 
   {
     icon: Rocket,
-
     title: "Launch",
-
     description:
-      "We deploy your project and provide the support needed for a successful launch.",
+      "We deploy your project and provide continued technical support.",
   },
 ];
 
 
 export default function ServicePage() {
   return (
-    <>
-      {/* ===================================================
-          SERVICES HERO
-      ==================================================== */}
+    <main className="service-page">
 
-      <section className="services-page-hero">
+      {/* =====================================================
+          HERO
+      ===================================================== */}
+
+      <section className="service-page-hero">
         <div
-          className="services-page-hero-overlay"
+          className="service-page-grid"
           aria-hidden="true"
         />
 
         <div
-          className="services-page-hero-grid"
+          className="service-page-hero-glow service-page-hero-glow-one"
           aria-hidden="true"
         />
 
         <div
-          className="services-page-hero-glow services-page-hero-glow-one"
-          aria-hidden="true"
-        />
-
-        <div
-          className="services-page-hero-glow services-page-hero-glow-two"
+          className="service-page-hero-glow service-page-hero-glow-two"
           aria-hidden="true"
         />
 
 
-        <div className="services-page-hero-container">
-          {/* BREADCRUMB */}
+        <div className="service-page-container">
 
-          <div className="services-page-breadcrumb">
+          <div className="service-page-breadcrumb">
             <Link to="/">
               Home
             </Link>
 
             <span>
-              ›
+              /
             </span>
 
-            <span>
+            <strong>
               Services
-            </span>
+            </strong>
           </div>
 
 
-          {/* HERO TITLE */}
+          <div className="service-page-hero-content">
 
-          <h1>
-            Our
-            <span>
-              {" "}Services
-            </span>
-          </h1>
+            <div className="service-page-label">
+              <span />
+
+              DIGITAL SOLUTIONS
+            </div>
 
 
-          <p>
-            Comprehensive digital solutions tailored
-            to transform your business and drive
-            sustainable growth in the digital age.
-          </p>
+            <h1>
+              Our{" "}
+
+              <span>
+                Services
+              </span>
+            </h1>
+
+
+            <p>
+              Modern digital solutions designed to help
+              businesses build stronger products, improve
+              digital experiences and grow with confidence.
+            </p>
+
+          </div>
         </div>
       </section>
 
 
-      {/* ===================================================
+      {/* =====================================================
           SERVICES
-      ==================================================== */}
+      ===================================================== */}
 
-      <section className="services-main-section">
+      <section className="service-page-services">
+
         <div
-          className="services-main-background"
+          className="service-page-services-glow"
           aria-hidden="true"
-        >
-          <div className="services-main-grid-background" />
-
-          <div className="services-main-glow" />
-        </div>
+        />
 
 
-        <div className="services-main-container">
-          {/* HEADING */}
+        <div className="service-page-container">
 
-          <div className="services-main-heading">
-            <div className="services-section-label">
+          <div className="service-page-heading">
+
+            <div className="service-page-label">
               <span />
 
               WHAT WE OFFER
@@ -310,134 +267,97 @@ export default function ServicePage() {
 
 
             <h2>
-              Solutions Built Around
+              Solutions for your
               <span>
-                {" "}Your Goals
+                digital growth.
               </span>
             </h2>
 
 
             <p>
-              From design and development to automation
-              and digital marketing, we provide services
-              designed around real business requirements.
+              We combine development, design, technology and
+              digital strategy to create solutions that match
+              your business needs.
             </p>
+
           </div>
 
 
-          {/* SERVICE CARDS */}
+          <div className="service-page-grid-list">
 
-          <div className="services-page-grid">
             {services.map((service) => {
               const Icon = service.icon;
 
               return (
                 <article
                   key={service.title}
-                  className="services-page-card"
+                  className="service-page-card"
                 >
                   <div
-                    className="services-page-card-glow"
+                    className="service-page-card-glow"
                     aria-hidden="true"
                   />
 
 
-                  {/* ICON */}
-
-                  <div className="services-page-icon">
+                  <div className="service-page-card-icon">
                     <Icon
-                      size={24}
+                      size={25}
                       strokeWidth={1.7}
                     />
                   </div>
 
-
-                  {/* TITLE */}
 
                   <h3>
                     {service.title}
                   </h3>
 
 
-                  {/* DESCRIPTION */}
-
-                  <p className="services-page-card-description">
+                  <p>
                     {service.description}
                   </p>
 
 
-                  {/* FEATURES */}
+                  <ul>
+                    {service.features.map((feature) => (
+                      <li key={feature}>
+                        <span />
 
-                  <ul className="services-page-feature-list">
-                    {service.features.map(
-                      (feature) => (
-                        <li key={feature}>
-                          <CheckCircle2
-                            size={13}
-                            strokeWidth={2}
-                          />
-
-                          <span>
-                            {feature}
-                          </span>
-                        </li>
-                      )
-                    )}
+                        {feature}
+                      </li>
+                    ))}
                   </ul>
 
 
-                  {/*
-                    Learn More is intentionally NOT linked.
-                    It does not navigate anywhere.
-                  */}
-
-                  <button
-                    type="button"
-                    className="services-page-learn-more"
-                  >
-                    Learn More
+                  <div className="service-page-card-footer">
+                    <span>
+                      Explore Service
+                    </span>
 
                     <ArrowRight
-                      size={14}
-                      strokeWidth={1.9}
+                      size={16}
+                      strokeWidth={1.8}
                     />
-                  </button>
-
-
-                  <div
-                    className="services-page-card-light"
-                    aria-hidden="true"
-                  >
-                    <span />
                   </div>
                 </article>
               );
             })}
+
           </div>
         </div>
       </section>
 
 
-      {/* ===================================================
+      {/* =====================================================
           HOW WE WORK
-      ==================================================== */}
+      ===================================================== */}
 
-      <section className="service-process-section">
-        <div
-          className="service-process-background"
-          aria-hidden="true"
-        >
-          <div className="service-process-grid-background" />
+      <section className="service-page-process">
 
-          <div className="service-process-glow" />
-        </div>
+        <div className="service-page-container">
 
+          <div className="service-page-heading">
 
-        <div className="service-process-container">
-          {/* HEADING */}
-
-          <div className="service-process-heading">
-            <div className="services-section-label">
+            <div className="service-page-label">
               <span />
 
               OUR PROCESS
@@ -445,45 +365,35 @@ export default function ServicePage() {
 
 
             <h2>
-              How We
+              How We{" "}
               <span>
-                {" "}Work
+                Work
               </span>
             </h2>
 
 
             <p>
-              A structured process designed to move
-              your project from idea to successful
-              digital solution.
+              A simple and transparent process from your
+              initial idea through development and launch.
             </p>
+
           </div>
 
 
-          {/* =================================================
-              PROCESS CARDS
-              NUMBERS REMOVED
-          ================================================== */}
+          <div className="service-page-process-grid">
 
-          <div className="service-process-grid">
-            {processSteps.map((step) => {
+            {process.map((step) => {
               const Icon = step.icon;
 
               return (
                 <article
                   key={step.title}
-                  className="service-process-card"
+                  className="service-page-process-item"
                 >
-                  <div
-                    className="service-process-card-glow"
-                    aria-hidden="true"
-                  />
-
-
-                  <div className="service-process-icon">
+                  <div className="service-page-process-icon">
                     <Icon
-                      size={24}
-                      strokeWidth={1.8}
+                      size={23}
+                      strokeWidth={1.7}
                     />
                   </div>
 
@@ -496,80 +406,73 @@ export default function ServicePage() {
                   <p>
                     {step.description}
                   </p>
-
-
-                  <div
-                    className="service-process-bottom-light"
-                    aria-hidden="true"
-                  >
-                    <span />
-                  </div>
                 </article>
               );
             })}
+
           </div>
         </div>
       </section>
 
 
-      {/* ===================================================
+      {/* =====================================================
           CTA
-      ==================================================== */}
+      ===================================================== */}
 
-      <section className="services-cta-section">
-        <div
-          className="services-cta-background"
-          aria-hidden="true"
-        />
+      <section className="service-page-cta-section">
 
+        <div className="service-page-container">
 
-        <div className="services-cta-container">
-          <div className="services-cta-card">
+          <div className="service-page-cta">
+
             <div
-              className="services-cta-glow"
+              className="service-page-cta-glow"
               aria-hidden="true"
             />
 
 
-            <h2>
-              Ready to Start Your
-              <span>
-                {" "}Project?
-              </span>
-            </h2>
+            <div className="service-page-cta-content">
+
+              <div className="service-page-label">
+                <span />
+
+                START YOUR PROJECT
+              </div>
 
 
-            <p>
-              Let’s discuss your requirements and
-              create the right digital solution for
-              your business.
-            </p>
+              <h2>
+                Ready to build something
+                <span>
+                  great?
+                </span>
+              </h2>
 
 
-            <div className="services-cta-actions">
-              <Link
-                to="/request-quote"
-                className="services-primary-cta"
-              >
-                Get Free Quote
+              <p>
+                Tell us about your idea and we’ll help you
+                plan the right digital solution for your
+                business.
+              </p>
 
-                <ArrowRight
-                  size={17}
-                  strokeWidth={2}
-                />
-              </Link>
-
-
-              <Link
-                to="/projects"
-                className="services-secondary-cta"
-              >
-                View Our Work
-              </Link>
             </div>
+
+
+            <Link
+              to="/request-quote"
+              className="service-page-cta-button"
+            >
+              Start a Project
+
+              <ArrowRight
+                size={18}
+                strokeWidth={2}
+              />
+            </Link>
+
           </div>
         </div>
       </section>
-    </>
+
+    </main>
   );
 }
