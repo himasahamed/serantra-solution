@@ -1,201 +1,240 @@
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import {
-  ArrowUpRight,
-  Menu,
-  X,
-} from "lucide-react";
-
-import {
   Link,
+  NavLink,
   useLocation,
 } from "react-router-dom";
 
 import "./Navbar.css";
 
 
+const navLinks = [
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "About",
+    path: "/about",
+  },
+  {
+    name: "Services",
+    path: "/services",
+  },
+  {
+    name: "Projects",
+    path: "/projects",
+  },
+  {
+    name: "Contact",
+    path: "/contact",
+  },
+];
+
+
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] =
+  const [mobileOpen, setMobileOpen] =
+    useState(false);
+
+  const [scrolled, setScrolled] =
     useState(false);
 
   const location =
     useLocation();
 
 
+  /* =======================================================
+     CLOSE MOBILE MENU AFTER ROUTE CHANGE
+  ======================================================= */
+
   useEffect(() => {
-    setMenuOpen(false);
+    setMobileOpen(false);
   }, [location.pathname]);
 
 
-  const navItems = [
-    {
-      name: "Home",
-      to: "/",
-    },
+  /* =======================================================
+     NAVBAR SCROLL EFFECT
+  ======================================================= */
 
-    {
-      name: "About",
-      to: "/about",
-    },
-
-    {
-      name: "Services",
-      to: "/services",
-    },
-
-    {
-      name: "Projects",
-      to: "/projects",
-    },
-
-    {
-      name: "Contact",
-      to: "/contact",
-    },
-  ];
-
-
-  const isActive = (item) => {
-    if (item.name === "Home") {
-      return location.pathname === "/";
-    }
-
-    if (item.name === "Services") {
-      return (
-        location.pathname === "/services" ||
-        location.pathname.startsWith(
-          "/services/"
-        )
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(
+        window.scrollY > 20
       );
-    }
+    };
 
-    return (
-      location.pathname === item.to
+    handleScroll();
+
+    window.addEventListener(
+      "scroll",
+      handleScroll
     );
-  };
+
+    return () => {
+      window.removeEventListener(
+        "scroll",
+        handleScroll
+      );
+    };
+  }, []);
 
 
   return (
-    <>
-      <header className="serantra-header">
-        <div className="serantra-header-inner">
+    <header
+      className={`serantra-navbar ${
+        scrolled
+          ? "serantra-navbar-scrolled"
+          : ""
+      }`}
+    >
+      <div className="navbar-container">
 
-          {/* NAVBAR LOGO */}
+        {/* =================================================
+            LOGO
+        ================================================== */}
 
-          <Link
-            to="/"
-            className="serantra-navbar-logo"
-            aria-label="Serantra Solutions home"
-          >
-            <img
-              src="/images/brand/serantra-navbar-logo.png"
-              alt="Serantra Solutions"
-            />
-          </Link>
+        <Link
+          to="/"
+          className="navbar-logo"
+          aria-label="Serantra Solutions Home"
+        >
+          <img
+            src="/images/brand/serantra-navbar-logo.png"
+            alt="Serantra Solutions"
+          />
+        </Link>
 
 
-          {/* DESKTOP NAVIGATION */}
+        {/* =================================================
+            DESKTOP NAVIGATION
+        ================================================== */}
 
-          <nav
-            className="serantra-nav-pill"
-            aria-label="Primary navigation"
-          >
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.to}
-                className={`serantra-nav-link ${
-                  isActive(item)
-                    ? "serantra-nav-link-active"
+        <nav
+          className="navbar-navigation"
+          aria-label="Main navigation"
+        >
+          {navLinks.map((item) => (
+            <NavLink
+              key={item.name}
+              to={item.path}
+              end={item.path === "/"}
+              className={({ isActive }) =>
+                `navbar-nav-link ${
+                  isActive
+                    ? "navbar-nav-link-active"
                     : ""
-                }`}
-              >
+                }`
+              }
+            >
+              <span>
                 {item.name}
-              </Link>
-            ))}
-          </nav>
+              </span>
+            </NavLink>
+          ))}
+        </nav>
 
 
-          {/* START PROJECT */}
+        {/* =================================================
+            START PROJECT BUTTON
+        ================================================== */}
 
-          <Link
-            to="/request-quote"
-            className="serantra-header-cta"
-          >
-            <span>
-              Start a Project
-            </span>
+        <Link
+          to="/request-quote"
+          className="navbar-project-button"
+        >
+          <span>
+            Start a Project
+          </span>
 
-            <ArrowUpRight
-              size={16}
-              strokeWidth={2}
+          <ArrowUpRight
+            size={16}
+            strokeWidth={1.9}
+          />
+        </Link>
+
+
+        {/* =================================================
+            MOBILE BUTTON
+        ================================================== */}
+
+        <button
+          type="button"
+          className="navbar-mobile-toggle"
+          onClick={() =>
+            setMobileOpen(
+              (current) => !current
+            )
+          }
+          aria-label={
+            mobileOpen
+              ? "Close navigation menu"
+              : "Open navigation menu"
+          }
+          aria-expanded={mobileOpen}
+        >
+          {mobileOpen ? (
+            <X
+              size={21}
+              strokeWidth={1.8}
             />
-          </Link>
+          ) : (
+            <Menu
+              size={21}
+              strokeWidth={1.8}
+            />
+          )}
+        </button>
+      </div>
 
 
-          {/* MOBILE BUTTON */}
-
-          <button
-            type="button"
-            className="serantra-mobile-button"
-            onClick={() =>
-              setMenuOpen(
-                (current) => !current
-              )
-            }
-            aria-label={
-              menuOpen
-                ? "Close navigation menu"
-                : "Open navigation menu"
-            }
-            aria-expanded={menuOpen}
-          >
-            {menuOpen ? (
-              <X size={22} />
-            ) : (
-              <Menu size={22} />
-            )}
-          </button>
-        </div>
-      </header>
-
-
-      {/* MOBILE MENU */}
+      {/* ===================================================
+          MOBILE NAVIGATION
+      ==================================================== */}
 
       <div
-        className={`serantra-mobile-menu ${
-          menuOpen
-            ? "serantra-mobile-menu-open"
+        className={`navbar-mobile-menu ${
+          mobileOpen
+            ? "navbar-mobile-menu-open"
             : ""
         }`}
       >
-        <nav className="serantra-mobile-nav">
-          {navItems.map((item) => (
-            <Link
+        <nav
+          className="navbar-mobile-navigation"
+          aria-label="Mobile navigation"
+        >
+          {navLinks.map((item) => (
+            <NavLink
               key={item.name}
-              to={item.to}
-              className={
-                isActive(item)
-                  ? "serantra-mobile-nav-active"
-                  : ""
+              to={item.path}
+              end={item.path === "/"}
+              className={({ isActive }) =>
+                `navbar-mobile-link ${
+                  isActive
+                    ? "navbar-mobile-link-active"
+                    : ""
+                }`
               }
             >
-              {item.name}
-            </Link>
+              <span>
+                {item.name}
+              </span>
+            </NavLink>
           ))}
-
 
           <Link
             to="/request-quote"
-            className="serantra-mobile-project-button"
+            className="navbar-mobile-project"
           >
             Start a Project
 
             <ArrowUpRight
-              size={17}
+              size={15}
+              strokeWidth={1.8}
             />
           </Link>
         </nav>
       </div>
-    </>
+    </header>
   );
 }

@@ -1,192 +1,213 @@
 /* =========================================================
    SERANTRA SOLUTIONS NAVBAR
+   ACTIVE + HOVER UNDERLINE DESIGN
 ========================================================= */
 
-.serantra-header {
-  position: fixed;
 
-  z-index: 1000;
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.serantra-navbar {
+  position: fixed;
 
   top: 0;
   left: 0;
   right: 0;
 
-  padding:
-    18px 28px;
+  z-index: 1000;
 
-  pointer-events: none;
+  width: 100%;
+
+  padding:
+    14px 0;
+
+  background:
+    rgba(7, 24, 39, 0.72);
+
+  border-bottom:
+    1px solid
+    rgba(66, 217, 224, 0.05);
+
+  backdrop-filter:
+    blur(18px);
+
+  -webkit-backdrop-filter:
+    blur(18px);
+
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    padding 0.35s ease;
 }
 
 
 /* =========================================================
-   HEADER INNER
+   SCROLLED
 ========================================================= */
 
-.serantra-header-inner {
+.serantra-navbar-scrolled {
+  padding:
+    10px 0;
+
+  background:
+    rgba(7, 24, 39, 0.93);
+
+  border-bottom-color:
+    rgba(66, 217, 224, 0.1);
+
+  box-shadow:
+    0 12px 40px
+    rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.navbar-container {
   display: grid;
 
   grid-template-columns:
-    1fr auto 1fr;
+    auto
+    1fr
+    auto;
 
   align-items: center;
 
-  gap: 24px;
+  gap:
+    30px;
 
   width:
     min(
-      1450px,
-      100%
+      1280px,
+      calc(100% - 48px)
     );
 
   margin:
     0 auto;
-
-  pointer-events: auto;
 }
 
 
 /* =========================================================
-   NAVBAR LOGO
+   LOGO
 ========================================================= */
 
-.serantra-navbar-logo {
+.navbar-logo {
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
-  width: 190px;
-  height: 64px;
+  flex-shrink: 0;
+
+  min-width:
+    205px;
+
+  height:
+    58px;
 
   padding:
-    7px 14px;
-
-  overflow: hidden;
+    8px 18px;
 
   border:
     1px solid
-    rgba(66, 217, 224, 0.15);
+    rgba(66, 217, 224, 0.14);
 
   border-radius:
     22px;
 
   background:
-    linear-gradient(
-      135deg,
-      rgba(7, 24, 39, 0.94),
-      rgba(9, 29, 48, 0.9)
-    );
+    rgba(9, 29, 48, 0.55);
 
-  backdrop-filter:
-    blur(20px);
-
-  -webkit-backdrop-filter:
-    blur(20px);
-
-  box-shadow:
-    0 14px 40px
-    rgba(0, 0, 0, 0.2);
+  text-decoration:
+    none;
 
   transition:
-    transform 0.3s ease,
     border-color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
 
-.serantra-navbar-logo:hover {
+.navbar-logo:hover {
   transform:
-    translateY(-2px);
+    translateY(-1px);
 
   border-color:
-    rgba(66, 217, 224, 0.32);
+    rgba(66, 217, 224, 0.28);
+
+  background:
+    rgba(16, 43, 69, 0.75);
 
   box-shadow:
-    0 15px 45px
-    rgba(0, 0, 0, 0.3),
-
-    0 0 30px
+    0 10px 30px
     rgba(25, 196, 207, 0.07);
 }
 
 
-/* =========================================================
-   NAVBAR LOGO IMAGE
-========================================================= */
-
-.serantra-navbar-logo img {
+.navbar-logo img {
   display: block;
 
-  width: 100%;
-  height: 100%;
+  width:
+    165px;
 
-  max-width: 165px;
+  max-width:
+    100%;
 
-  object-fit: contain;
+  height:
+    auto;
 
-  object-position: center;
+  object-fit:
+    contain;
 }
 
 
 /* =========================================================
-   DESKTOP NAV PILL
+   DESKTOP NAVIGATION
 ========================================================= */
 
-.serantra-nav-pill {
+.navbar-navigation {
   display: flex;
 
   align-items: center;
 
-  gap: 4px;
-
-  padding: 6px;
-
-  border:
-    1px solid
-    rgba(66, 217, 224, 0.25);
-
-  border-radius:
-    999px;
-
-  background:
-    linear-gradient(
-      120deg,
-      rgba(7, 24, 39, 0.9),
-      rgba(9, 29, 48, 0.88)
-    );
-
-  backdrop-filter:
-    blur(24px);
-
-  -webkit-backdrop-filter:
-    blur(24px);
-
-  box-shadow:
-    0 16px 45px
-    rgba(0, 0, 0, 0.25);
-}
-
-
-/* =========================================================
-   NAV LINKS
-========================================================= */
-
-.serantra-nav-link {
-  display: flex;
-
-  align-items: center;
   justify-content: center;
 
-  min-height: 48px;
+  gap:
+    clamp(
+      1.4rem,
+      3vw,
+      3.2rem
+    );
+}
+
+
+/* =========================================================
+   NAVIGATION LINK
+========================================================= */
+
+.navbar-nav-link {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height:
+    44px;
 
   padding:
-    0 22px;
-
-  border-radius:
-    999px;
+    0 2px;
 
   color:
-    #a9bcc9;
+    #9eb2c0;
 
   font-size:
     12px;
@@ -194,151 +215,279 @@
   font-weight:
     500;
 
+  line-height:
+    1;
+
+  text-decoration:
+    none;
+
   transition:
-    color 0.3s ease,
-    background 0.3s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+    color 0.3s ease;
 }
 
 
-.serantra-nav-link:hover {
-  color:
-    #ffffff;
-}
+.navbar-nav-link span {
+  position: relative;
 
-
-/* =========================================================
-   ACTIVE NAV LINK
-========================================================= */
-
-.serantra-nav-link-active {
-  color:
-    #ffffff;
-
-  background:
-    linear-gradient(
-      120deg,
-      #19c4cf 0%,
-      #218fd9 45%,
-      #2d8fe8 100%
-    );
-
-  box-shadow:
-    0 8px 26px
-    rgba(25, 196, 207, 0.3),
-
-    0 0 22px
-    rgba(45, 143, 232, 0.08);
+  z-index: 2;
 }
 
 
 /* =========================================================
-   START PROJECT BUTTON
+   UNDERLINE
 ========================================================= */
 
-.serantra-header-cta {
-  justify-self: end;
+.navbar-nav-link::after {
+  content: "";
 
-  display: inline-flex;
+  position: absolute;
 
-  align-items: center;
-  justify-content: center;
+  left: 50%;
 
-  gap: 9px;
+  bottom: 3px;
 
-  min-height: 52px;
+  width:
+    100%;
 
-  padding:
-    0 26px;
-
-  border:
-    1px solid
-    rgba(66, 217, 224, 0.32);
+  height:
+    1px;
 
   border-radius:
     999px;
 
+  background:
+    linear-gradient(
+      90deg,
+      #19c4cf,
+      #42d9e0,
+      #2d8fe8
+    );
+
+  box-shadow:
+    0 0 8px
+    rgba(25, 196, 207, 0.35);
+
+  transform:
+    translateX(-50%)
+    scaleX(0);
+
+  transform-origin:
+    center;
+
+  opacity:
+    0;
+
+  transition:
+    transform 0.32s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    opacity 0.25s ease;
+}
+
+
+/* =========================================================
+   HOVER LINK
+========================================================= */
+
+.navbar-nav-link:hover {
   color:
     #ffffff;
+}
+
+
+.navbar-nav-link:hover::after {
+  transform:
+    translateX(-50%)
+    scaleX(1);
+
+  opacity:
+    1;
+}
+
+
+/* =========================================================
+   ACTIVE CURRENT PAGE
+========================================================= */
+
+.navbar-nav-link-active {
+  color:
+    #ffffff;
+}
+
+
+/* ACTIVE UNDERLINE ALWAYS VISIBLE */
+
+.navbar-nav-link-active::after {
+  transform:
+    translateX(-50%)
+    scaleX(1);
+
+  opacity:
+    1;
+}
+
+
+/* =========================================================
+   ACTIVE LINK SMALL GLOW
+========================================================= */
+
+.navbar-nav-link-active::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+
+  bottom: -3px;
+
+  width:
+    38px;
+
+  height:
+    12px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(25, 196, 207, 0.14);
+
+  filter:
+    blur(9px);
+
+  transform:
+    translateX(-50%);
+
+  pointer-events:
+    none;
+}
+
+
+/* =========================================================
+   START PROJECT
+========================================================= */
+
+.navbar-project-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap:
+    9px;
+
+  min-height:
+    48px;
+
+  padding:
+    0 22px;
+
+  border:
+    1px solid
+    rgba(66, 217, 224, 0.28);
+
+  border-radius:
+    999px;
 
   background:
     linear-gradient(
-      115deg,
-      #19c4cf 0%,
-      #218fd9 48%,
-      #2d8fe8 100%
+      110deg,
+      #19c4cf,
+      #2d8fe8
     );
 
+  color:
+    #ffffff;
+
   font-size:
-    12px;
+    11px;
 
   font-weight:
     600;
 
+  text-decoration:
+    none;
+
   box-shadow:
-    0 15px 42px
-    rgba(25, 196, 207, 0.3);
+    0 10px 30px
+    rgba(25, 196, 207, 0.17);
 
   transition:
+    gap 0.3s ease,
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
 
-.serantra-header-cta:hover {
+.navbar-project-button:hover {
+  gap:
+    13px;
+
   transform:
-    translateY(-3px);
+    translateY(-2px);
 
   box-shadow:
-    0 20px 52px
-    rgba(45, 143, 232, 0.4),
-
-    0 0 26px
-    rgba(25, 196, 207, 0.08);
+    0 15px 40px
+    rgba(45, 143, 232, 0.28);
 }
 
 
 /* =========================================================
-   MOBILE BUTTON
+   MOBILE TOGGLE
 ========================================================= */
 
-.serantra-mobile-button {
-  display: none;
+.navbar-mobile-toggle {
+  display:
+    none;
 
-  align-items: center;
-  justify-content: center;
+  align-items:
+    center;
 
-  width: 46px;
-  height: 46px;
+  justify-content:
+    center;
+
+  width:
+    44px;
+
+  height:
+    44px;
+
+  padding:
+    0;
 
   border:
     1px solid
-    rgba(66, 217, 224, 0.15);
+    rgba(66, 217, 224, 0.17);
 
   border-radius:
     13px;
 
   background:
-    rgba(7, 24, 39, 0.94);
+    rgba(16, 43, 69, 0.72);
 
   color:
     #ffffff;
 
-  cursor: pointer;
+  cursor:
+    pointer;
 
   transition:
-    border-color 0.3s ease,
-    background 0.3s ease;
+    background 0.3s ease,
+    border-color 0.3s ease;
 }
 
 
-.serantra-mobile-button:hover {
+.navbar-mobile-toggle:hover {
   border-color:
-    rgba(66, 217, 224, 0.35);
+    rgba(66, 217, 224, 0.4);
 
   background:
-    rgba(25, 196, 207, 0.05);
+    rgba(25, 196, 207, 0.1);
 }
 
 
@@ -346,123 +495,198 @@
    MOBILE MENU
 ========================================================= */
 
-.serantra-mobile-menu {
-  position: fixed;
+.navbar-mobile-menu {
+  display:
+    none;
 
-  z-index: 999;
+  max-height:
+    0;
 
-  top: 86px;
+  overflow:
+    hidden;
 
-  left: 16px;
-  right: 16px;
+  opacity:
+    0;
 
-  padding: 14px;
+  visibility:
+    hidden;
+
+  transition:
+    max-height 0.45s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+.navbar-mobile-navigation {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  width:
+    calc(100% - 30px);
+
+  margin:
+    12px auto 0;
+
+  padding:
+    15px;
 
   border:
     1px solid
-    rgba(66, 217, 224, 0.12);
+    rgba(66, 217, 224, 0.13);
 
   border-radius:
     20px;
 
   background:
-    rgba(7, 24, 39, 0.97);
-
-  backdrop-filter:
-    blur(25px);
-
-  -webkit-backdrop-filter:
-    blur(25px);
+    rgba(9, 29, 48, 0.98);
 
   box-shadow:
-    0 25px 70px
-    rgba(0, 0, 0, 0.4);
+    0 25px 60px
+    rgba(0, 0, 0, 0.25);
 
-  opacity: 0;
-
-  visibility: hidden;
-
-  transform:
-    translateY(-15px);
-
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease,
-    visibility 0.3s ease;
-}
-
-
-.serantra-mobile-menu-open {
-  opacity: 1;
-
-  visibility: visible;
-
-  transform:
-    translateY(0);
+  backdrop-filter:
+    blur(20px);
 }
 
 
 /* =========================================================
-   MOBILE NAV
+   MOBILE LINK
 ========================================================= */
 
-.serantra-mobile-nav {
-  display: flex;
+.navbar-mobile-link {
+  position: relative;
 
-  flex-direction: column;
-
-  gap: 4px;
-}
-
-
-.serantra-mobile-nav > a {
   display: flex;
 
   align-items: center;
 
-  min-height: 48px;
+  min-height:
+    52px;
 
   padding:
-    0 14px;
+    0 15px;
 
-  border-radius:
-    11px;
+  border-bottom:
+    1px solid
+    rgba(66, 217, 224, 0.07);
 
   color:
-    #a9bcc9;
+    #9eb2c0;
 
   font-size:
     13px;
 
+  font-weight:
+    500;
+
+  text-decoration:
+    none;
+
   transition:
     color 0.3s ease,
-    background 0.3s ease;
+    padding-left 0.3s ease;
 }
 
 
-.serantra-mobile-nav > a:hover {
-  color:
-    #ffffff;
-
-  background:
-    rgba(25, 196, 207, 0.05);
+.navbar-mobile-link span {
+  position:
+    relative;
 }
 
 
 /* =========================================================
-   MOBILE ACTIVE
+   MOBILE UNDERLINE
 ========================================================= */
 
-.serantra-mobile-nav-active {
-  color:
-    #ffffff !important;
+.navbar-mobile-link span::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom:
+    -7px;
+
+  width:
+    100%;
+
+  height:
+    1px;
+
+  border-radius:
+    999px;
 
   background:
     linear-gradient(
-      100deg,
-      rgba(25, 196, 207, 0.13),
-      rgba(45, 143, 232, 0.18)
-    ) !important;
+      90deg,
+      #19c4cf,
+      #2d8fe8
+    );
+
+  transform:
+    scaleX(0);
+
+  transform-origin:
+    left;
+
+  opacity:
+    0;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+
+.navbar-mobile-link:hover {
+  color:
+    #ffffff;
+
+  padding-left:
+    20px;
+}
+
+
+.navbar-mobile-link:hover
+span::after {
+  transform:
+    scaleX(1);
+
+  opacity:
+    1;
+}
+
+
+/* ACTIVE MOBILE LINK */
+
+.navbar-mobile-link-active {
+  color:
+    #ffffff;
+}
+
+
+.navbar-mobile-link-active
+span::after {
+  transform:
+    scaleX(1);
+
+  opacity:
+    1;
 }
 
 
@@ -470,112 +694,167 @@
    MOBILE START PROJECT
 ========================================================= */
 
-.serantra-mobile-project-button {
-  display: flex !important;
+.navbar-mobile-project {
+  display: flex;
 
   align-items: center;
+
   justify-content: center;
 
-  gap: 8px;
+  gap:
+    8px;
 
-  margin-top: 7px;
+  min-height:
+    48px;
 
-  color:
-    #ffffff !important;
+  margin-top:
+    14px;
+
+  border-radius:
+    999px;
 
   background:
     linear-gradient(
       110deg,
       #19c4cf,
-      #218fd9,
       #2d8fe8
-    ) !important;
+    );
+
+  color:
+    #ffffff;
+
+  font-size:
+    11px;
+
+  font-weight:
+    600;
+
+  text-decoration:
+    none;
 }
 
 
 /* =========================================================
-   TABLET
+   TABLET / MOBILE
 ========================================================= */
 
-@media (max-width: 1080px) {
+@media (max-width: 980px) {
 
-  .serantra-nav-link {
-    padding:
-      0 16px;
+  .navbar-container {
+    display: flex;
+
+    justify-content:
+      space-between;
+
+    gap:
+      18px;
   }
 
 
-  .serantra-navbar-logo {
+  .navbar-navigation,
+  .navbar-project-button {
+    display:
+      none;
+  }
+
+
+  .navbar-mobile-toggle {
+    display:
+      flex;
+  }
+
+
+  .navbar-mobile-menu {
+    display:
+      block;
+  }
+
+
+  .navbar-mobile-menu-open {
+    max-height:
+      500px;
+
+    padding-bottom:
+      12px;
+
+    opacity:
+      1;
+
+    visibility:
+      visible;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+
+  .serantra-navbar {
+    padding:
+      10px 0;
+  }
+
+
+  .navbar-container {
+    width:
+      calc(100% - 28px);
+  }
+
+
+  .navbar-logo {
+    min-width:
+      0;
+
+    width:
+      190px;
+
+    height:
+      52px;
+
+    padding:
+      8px 15px;
+
+    border-radius:
+      18px;
+  }
+
+
+  .navbar-logo img {
+    width:
+      155px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .navbar-logo {
     width:
       165px;
   }
 
 
-  .serantra-header-cta {
-    padding:
-      0 20px;
-  }
-
-}
-
-
-/* =========================================================
-   MOBILE NAVBAR
-========================================================= */
-
-@media (max-width: 900px) {
-
-  .serantra-header {
-    padding:
-      14px 16px;
-  }
-
-
-  .serantra-header-inner {
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 16px;
-  }
-
-
-  .serantra-nav-pill,
-  .serantra-header-cta {
-    display: none;
-  }
-
-
-  .serantra-mobile-button {
-    display: flex;
-  }
-
-
-  .serantra-navbar-logo {
-    width: 158px;
-    height: 56px;
-
-    padding:
-      6px 11px;
-  }
-
-
-  .serantra-navbar-logo img {
-    max-width:
+  .navbar-logo img {
+    width:
       138px;
   }
 
-}
 
+  .navbar-mobile-toggle {
+    width:
+      41px;
 
-/* =========================================================
-   DESKTOP ONLY
-========================================================= */
-
-@media (min-width: 901px) {
-
-  .serantra-mobile-menu {
-    display: none;
+    height:
+      41px;
   }
 
 }
@@ -587,10 +866,13 @@
 
 @media (prefers-reduced-motion: reduce) {
 
-  .serantra-navbar-logo,
-  .serantra-nav-link,
-  .serantra-header-cta,
-  .serantra-mobile-menu {
+  .navbar-nav-link,
+  .navbar-nav-link::after,
+  .navbar-project-button,
+  .navbar-logo,
+  .navbar-mobile-link,
+  .navbar-mobile-link span::after,
+  .navbar-mobile-menu {
     transition:
       none !important;
   }
